@@ -1,13 +1,18 @@
-import React from 'react'
-
-import Footer from "./Footer"
+import React from 'react';
+import Discount from './Discount';
+import Features from './Feature';
+import FeatureBrand from './FeatureBrand';
+import Footer from './Footer';
 
 const LandingPage = () => {
-  return (
-    <React.Fragment>
-        <Footer/>
-    </React.Fragment>
-  )
-}
+	return (
+		<React.Fragment>
+			<Features />
+			<Discount />
+			<FeatureBrand />
+			<Footer />
+		</React.Fragment>
+	);
+};
 
-export default LandingPage
+export default LandingPage;
