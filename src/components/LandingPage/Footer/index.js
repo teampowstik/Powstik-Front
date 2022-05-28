@@ -1,21 +1,23 @@
 import React from "react";
 import styled from "styled-components";
 
-import footerLogo from "../../assets/powstik.png";
-import appStore from "../../assets/app-store.png";
-import playStore from "../../assets/play-store.png";
-import facebook from "../../assets/Vector.png";
-import twitter from "../../assets/Vector2.png";
-import pinterest from "../../assets/Vector3.png";
-import instagram from "../../assets/Vector4.png";
-import linkedIn from "../../assets/Vector5.png";
+import footerLogo from "../../../assets/powstik.png";
+import appStore from "../../../assets/app-store.png";
+import playStore from "../../../assets/play-store.png";
+import facebook from "../../../assets/Vector.png";
+import twitter from "../../../assets/Vector2.png";
+import pinterest from "../../../assets/Vector3.png";
+import instagram from "../../../assets/Vector4.png";
+import linkedIn from "../../../assets/Vector5.png";
 
 const Footer = () => {
   return (
     <Container>
       <Container1>
         <Column1>
+          <Image0>
           <img src={footerLogo} alt="footerLogo"/>
+          </Image0>
         </Column1>
         <Column2>
           <Text1 onClick={() => window.open("https://www.google.com")}>About</Text1>
@@ -69,7 +71,6 @@ const Container = styled.div`
   height: auto;
   overflow: hidden;
   bottom: 0;
-  position: absolute;
 `;
 
 const Container1 = styled.div`
@@ -77,8 +78,11 @@ const Container1 = styled.div`
   height: auto;
   overflow: hidden;
   display: flex;
+  justify-content: space-evenly;
   margin-bottom:5%;
 `;
+
+const Image0 = styled.div``;
 
 const Column1 = styled.div`
   height: fit-content;
@@ -86,11 +90,12 @@ const Column1 = styled.div`
   border-radius: 0px;
   margin-top: 2%;
   margin-left: 6%;
-  cursor: pointer;
 `;
 
+
+
 const Column2 = styled.div`
-  width: fit-content;
+  min-width: fit-content;
   height: fit-content;
   margin-top: 2%;
   margin-left: 15%;
@@ -112,7 +117,6 @@ const Column3 = styled.div`
   width: fit-content;
   height: fit-content;
   margin-top: 2%;
-  margin-left: 30%;
   color: white;
 `;
 
@@ -123,16 +127,21 @@ const Text2 = styled.div`
   font-weight: 600;
   line-height: 25px;
   letter-spacing: 0em;
+  min-width: 30vw;
 `;
 
 const ImageContainer = styled.div`
   display: flex;
-  margin-top: 3%;
+  gap: 1em;
   cursor: pointer;
+  width: 100%;
+  margin: 0 auto;
 `;
 
-const Image1 = styled.div`
+const Image1 = styled.image`
   margin: 2%;
+  width: auto;
+  height: auto;
 `;
 
 const Line = ({ color }) => (
