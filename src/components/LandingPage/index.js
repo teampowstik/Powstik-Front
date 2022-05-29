@@ -3,6 +3,7 @@ import Discount from './Discount';
 import Features from './Feature';
 import FeatureBrand from './FeatureBrand';
 import Footer from './Footer';
+import Varieties from './ProductsVarieties';
 
 const LandingPage = () => {
 	return (
@@ -10,6 +11,8 @@ const LandingPage = () => {
 			<Features />
 			<Discount />
 			<FeatureBrand />
+			<Varieties />
+
 			<Footer />
 		</React.Fragment>
 	);

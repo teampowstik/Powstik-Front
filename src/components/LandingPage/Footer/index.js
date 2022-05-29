@@ -20,7 +20,7 @@ const Footer = () => {
           </Image0>
         </Column1>
         <Column2>
-          <Text1 onClick={() => window.open("https://www.google.com")}>About</Text1>
+          <Text1>About</Text1>
           <Text1>Terms of Service</Text1>
           <Text1>Privacy Policy</Text1>
           <Text1>Refund Policy</Text1>
@@ -51,13 +51,13 @@ const Footer = () => {
             <img src={twitter} alt="twitter"/>
           </Image2>
           <Image2>
-            <img src={pinterest} alt=""/>
+            <img src={pinterest} alt="pinterest"/>
           </Image2>
           <Image2>
-            <img src={instagram} />
+            <img src={instagram} alt="instagram" onClick={() => window.open("https://www.instagram.com/powstik_nutrition/")}/>
           </Image2>
           <Image2>
-            <img src={linkedIn} />
+            <img src={linkedIn} alt="linkedin" onClick={() => window.open("https://www.linkedin.com/company/powstik/")}/>
           </Image2>
         </Column5>
       </Container2>
@@ -67,38 +67,77 @@ const Footer = () => {
 
 const Container = styled.div`
   background-color: #333333;
-  width: 100vw;
+  min-width: 100vw;
   height: auto;
-  overflow: hidden;
-  bottom: 0;
-`;
+  `;
 
 const Container1 = styled.div`
-  width: auto;
-  height: auto;
-  overflow: hidden;
+  max-width: 100%;
+  height: 100%;
   display: flex;
-  justify-content: space-evenly;
   margin-bottom:5%;
+  /* For iphone */
+  @media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
+    flex-direction: column;
+  }
+
+  /* For galaxy phones */
+  @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 2) {
+    flex-direction: column;
+  }
+
+  /* For HTC Phones */
+  @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+    flex-direction: column;
+  }
+
+  /* For Pixel Phones */
+  @media screen and (device-width: 360px) and (device-height: 640px) and (-webkit-device-pixel-ratio: 3) {
+    flex-direction: column;
+  }
+
+  /* For iPad */
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    flex-direction: column;
+  }
+
+  /* For Kindle */
+  @media only screen and (min-device-width: 800px) and (max-device-width: 1280px) and (-webkit-min-device-pixel-ratio: 1.5) {
+    flex-direction: column;
+  }
+
+  /* ----------- Non-Retina Screens ----------- */
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) {
+  }
+
+  /* ----------- Retina Screens ----------- */
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  }
 `;
 
-const Image0 = styled.div``;
+const Image0 = styled.div`
+  width: auto;
+  height: auto;
+  cursor: pointer;
+`;
 
 const Column1 = styled.div`
   height: fit-content;
   width: fit-content;
   border-radius: 0px;
   margin-top: 2%;
-  margin-left: 6%;
+  margin-left: auto;
+  margin-right: auto;
 `;
-
-
 
 const Column2 = styled.div`
   min-width: fit-content;
   height: fit-content;
   margin-top: 2%;
-  margin-left: 15%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 5%;
+  
 `;
 
 const Text1 = styled.div`
@@ -114,10 +153,14 @@ const Text1 = styled.div`
 `;
 
 const Column3 = styled.div`
-  width: fit-content;
-  height: fit-content;
+  width: auto;
+  height: auto;
   margin-top: 2%;
   color: white;
+  margin-left:auto;
+  margin-right: auto;
+  padding-left: 5%;
+  
 `;
 
 const Text2 = styled.div`
@@ -132,10 +175,9 @@ const Text2 = styled.div`
 
 const ImageContainer = styled.div`
   display: flex;
-  gap: 1em;
+  justify-content: center;
   cursor: pointer;
   width: 100%;
-  margin: 0 auto;
 `;
 
 const Image1 = styled.image`
@@ -155,11 +197,12 @@ const Line = ({ color }) => (
 
 const Container2 = styled.div`
   color: #f6f6f6;
-  width: auto;
+  max-width: 100%;
   height: auto;
   overflow: hidden;
   display: flex;
   justify-content: space-between;
+  
 `;
 
 const Column4 = styled.div`
@@ -188,6 +231,8 @@ const Column5 = styled.div`
   margin-top: 0.2%;
   margin-right: 15.5%;
   display: flex;
+  padding-left: 5%
+  
 `;
 
 const Image2 = styled.div`
