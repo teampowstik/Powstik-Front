@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import myImage from '../../../Assets/Images/Logo.png'
+import myImage from '../../../assets/Images/Logo.png'
 
 export const HeaderBox = styled.div`
 background-color:#FFFFFF;

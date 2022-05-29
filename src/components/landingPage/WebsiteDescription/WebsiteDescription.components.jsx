@@ -1,8 +1,8 @@
 import React from 'react'
-import { ShopText, Description, DescriptionImageContainer, DescriptionWrapper, Diseases, LeafLogo, NutritionWork, Rating, ShopButton, DescriptionImage } from './WebsiteDescription.styles'
-import LeafImage from '../../../Assets/Images/logo-leaf-new 1.png'
+import { ShopText, Description, DescriptionImageContainer, DescriptionWrapper, Diseases, LeafLogo, NutritionWork, Rating, ShopButton } from './WebsiteDescription.styles'
+import LeafImage from '../../../assets/Images/logo-leaf-new 1.png'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import Image from '../../../Assets/Images/organic.png'
+import Image from '../../../assets/Images/organic.png'
 function WebsiteDescription() {
     return (
         <DescriptionWrapper>

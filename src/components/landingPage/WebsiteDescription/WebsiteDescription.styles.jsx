@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import PackageImage from '../../../Assets/Images/organic.png';
+import PackageImage from '../../../assets/Images/organic.png';
 
 export const DescriptionWrapper = styled.div`
 display: flex ;

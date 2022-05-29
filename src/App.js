@@ -1,11 +1,10 @@
-import Header from './components/landingPage/Header/Header.component';
-import WebsiteDescription from './components/landingPage/WebsiteDescription/WebsiteDescription.components';
+
+import LandingPage from './components/landingPage/index';
 
 function App() {
   return (
     <div className="App">
-      <Header />
-      <WebsiteDescription />
+      <LandingPage />
     </div>
   );
 }
