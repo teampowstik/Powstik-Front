@@ -10,8 +10,9 @@ const LandingPage = () => {
 		<React.Fragment>
 			<Features />
 			<Discount />
-			<FeatureBrand />
+
 			<Varieties />
+			<FeatureBrand />
 
 			<Footer />
 		</React.Fragment>
