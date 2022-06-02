@@ -14,7 +14,9 @@ const Discount = () => {
 		<React.Fragment>
 			<Wrapper>
 				<div className="left">
-					<H1 className="p1">Get 25% Off On Your First Purchase!</H1>
+					<H1 size="34" className="p1">
+						Get 25% Off On Your First Purchase!
+					</H1>
 					<H2>Try It For Free. No Registration Needed.</H2>
 				</div>
 				<div>
