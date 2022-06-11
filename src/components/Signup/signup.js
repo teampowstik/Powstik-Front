@@ -30,11 +30,11 @@ const Signup = () => {
 							<form>
 								<div className="fdiv">
 									<P1 color="#000"> UserName or Email Address *</P1>
-									<Input placeholder="xyz" />
+									<Input placeholder="username" />
 									<P1 color="#000"> Password*</P1>
-									<Input placeholder="xyz" />
+									<Input placeholder="password" />
 									<P1 color="#000"> Confirm Password*</P1>
-									<Input placeholder="xyz" />
+									<Input placeholder="password" />
 
 									<div>
 										<input type="radio" name="r1" /> <span>i am a customer</span>

@@ -30,9 +30,9 @@ const Login = () => {
 							<form>
 								<div className="fdiv">
 									<P1 color="#000"> UserName or Email Address *</P1>
-									<Input placeholder="xyz" />
+									<Input placeholder="something@gmail" />
 									<P1 color="#000"> Password*</P1>
-									<Input placeholder="xyz" />
+									<Input placeholder="*******" />
 									<div className="cbox ">
 										<div>
 											<input type="checkbox" name="cbox" />
@@ -50,7 +50,7 @@ const Login = () => {
 									<div className="gdiv">
 										<GoognleButton />
 										<span>
-											didnt have account <a href="#"> signup</a>
+											didnt have account <a href="/register"> signup</a>
 										</span>
 									</div>
 								</div>
