@@ -1,12 +1,11 @@
-
-import LandingPage from './components/landingPage/index';
+import LandingPage from './components/LandingPage/index';
 
 function App() {
-  return (
-    <div className="App">
-      <LandingPage />
-    </div>
-  );
+	return (
+		<div className="App">
+			<LandingPage />
+		</div>
+	);
 }
 
 export default App;
