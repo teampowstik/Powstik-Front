@@ -9,6 +9,8 @@ import Login from './components/Login/login';
 import Signup from './components/Signup/signup';
 import HomePage from './components/HomePage';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 function App() {
 	return (
 		<Router>

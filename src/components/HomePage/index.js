@@ -4,9 +4,9 @@ import CardSlider from './SlickSlider';
 
 const HomePage = () => {
   return (
-    <React.Fragment>
+    <div>
         <CardSlider/>
-    </React.Fragment>
+    </div>
   )
 }
 
