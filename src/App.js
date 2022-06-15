@@ -7,16 +7,18 @@ import './App.css';
 import LandingPage from './components/LandingPage';
 import Login from './components/Login/login';
 import Signup from './components/Signup/signup';
+import HomePage from './components/HomePage';
 
 function App() {
 	return (
 		<Router>
 			<div className="App">
 				<Routes>
-					<Route path="/" element={<Login />} />
+					{/* <Route path="/" element={<Login />} />
 					<Route path="/login" element={<Login />} />
-					<Route path="/register" element={<Signup />} />
+					<Route path="/register" element={<Signup />} /> */}
 				</Routes>
+				<HomePage/>
 			</div>
 		</Router>
 	);
