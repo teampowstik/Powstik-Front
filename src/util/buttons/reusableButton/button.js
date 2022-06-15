@@ -2,39 +2,40 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Button } from 'react-bootstrap';
-import googleIcon from '../../assets/googleIcon.svg';
+import buttonCart from '../../../assets/buttonCart.svg';
 import { Link } from 'react-router-dom';
-const GoogleButton = () => {
+const GButton = (props) => {
 	return (
 		<React.Fragment>
 			<Wrapper>
 				<Button className="mybutton" variant="primary" size="lg" block>
-					<img src={googleIcon} alt="fb" />
-					Sign in with google
+					{props.title}
 				</Button>
 			</Wrapper>
 		</React.Fragment>
 	);
 };
 
-export default GoogleButton;
+export default GButton;
 const Wrapper = styled.div`
-	.mybutton {
-		background-color: rgba(139, 195, 74, 0.2);
+	${'' /* background-color: ; */} .mybutton {
+		background-color: ${(props) => props.bg || '#111111'};
 
-		width: 274.33px;
-		height: 47.33px;
+		height: 34px;
+		min-width: 110px;
 		border: none;
 		text-align: center;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-
-		font-size: 20px;
-		color: black;
+		max-width: 170px;
+		font-size: 15px;
+		color: white;
+		padding: 15px;
 	}
-	:hover {
+	.mybutton:hover {
 		cursor: pointer;
-		background-color: rgba(139, 195, 74, 0.3);
+		scale: 1.5;
+		background-color: rgba(139, 195, 74, 0.2);
 	}
 `;

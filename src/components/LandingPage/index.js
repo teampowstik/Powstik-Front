@@ -1,8 +1,10 @@
 import React from 'react';
-import Discount from './Discount';
-import Features from './Feature';
+import BankOffer from './BankOffer/bankoffer';
+import Characteristics from './Characteristics/characteristics';
+
 import FeatureBrand from './FeatureBrand';
 import Footer from './Footer';
+
 // import Header from './Header/Header.component';
 // import Varieties from './ProductsVarieties';
 // import WebsiteDescription from './WebsiteDescription/WebsiteDescription.components';
@@ -10,12 +12,10 @@ import Footer from './Footer';
 const LandingPage = () => {
 	return (
 		<React.Fragment>
-			<Features />
-			<Discount />
+			<BankOffer />
+			<Characteristics />
 
 			<FeatureBrand />
-
-			<Footer />
 		</React.Fragment>
 	);
 };
