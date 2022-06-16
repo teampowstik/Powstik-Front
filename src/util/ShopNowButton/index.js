@@ -21,7 +21,7 @@ export default BookButton;
 const Wrapper = styled.div`
 	.mybutton {
 		background-color: #8bc34a;
-		border-radius: 20px;
+		border-radius: 5px;
 		width: 174.33px;
 		height: 47.33px;
 		border: none;

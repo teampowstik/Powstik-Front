@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import BuyNowButton from '../../../util/ShopNowButton/index';
-import { H1, H2 } from '../../../util/StyledComponent/premadeComponent';
+import { H1 } from '../../../util/StyledComponent/premadeComponent';
 //images
 import fb1 from '../../../assets/fb1.svg';
 import fb2 from '../../../assets/fb2.svg';
@@ -17,7 +17,7 @@ const Discount = () => {
 					<H1 size="34" className="p1">
 						Get 25% Off On Your First Purchase!
 					</H1>
-					<H2>Try It For Free. No Registration Needed.</H2>
+					<H1>Try It For Free. No Registration Needed.</H1>
 				</div>
 				<div>
 					<BuyNowButton />

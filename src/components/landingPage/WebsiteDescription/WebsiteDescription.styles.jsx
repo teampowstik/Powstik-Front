@@ -1,22 +1,22 @@
 import styled from "styled-components";
-import PackageImage from '../../../assets/Images/organic.png';
 
 export const DescriptionWrapper = styled.div`
 display: flex ;
 @media (max-width: 974px){
-    flex-direction: column;
+    flex-direction: column-reverse;
+    align-items:center ;
+    justify-content:center ;
 }
 `;
 
 export const DescriptionImageContainer = styled.div`
-width:100% ;
+width:90% ;
 display: flex ;
 align-items:center ;
 justify-content:center ;
 `;
 
 export const DescriptionImage = styled.div`
-background-image:url(${PackageImage}) ;
 background-size:cover ;
 background-repeat:no-repeat ;
 height:100% ;
@@ -25,18 +25,15 @@ export const Description = styled.div`
 display:flex ;
 flex-direction: column;
 padding-top: 40px ;
-margin-left:20px ;
+margin-left:100px ;
 @media (max-width: 974px){
     align-items:center ;
     justify-content:center ;
     padding: 0 10px ;
     margin-right: 20px ;
     text-align: center;
+    margin-left:0 ;
 }
-`;
-
-export const LeafLogo = styled.div`
-margin-bottom: 20px;
 `;
 
 export const Diseases = styled.div`
@@ -59,7 +56,7 @@ line-height: 70px;
 export const Rating = styled.div`
 font-family: 'Open Sans';
 font-style: normal;
-font-weight: 400;
+font-weight: 700;
 font-size: 16px;
 line-height: 22px;
 margin: 10px 0; ;

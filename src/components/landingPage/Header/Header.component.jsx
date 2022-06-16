@@ -1,10 +1,12 @@
 import React from 'react'
 import { CompanyHeaderName, CompanyNameImage, HamburgerMenu, HeaderBox, HeaderLink, HeaderLinks } from './Header.styles'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import SearchIcon from '@mui/icons-material/Search';
+
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
 import BurgerButton from '../BurgerButton/BurgerButton.component';
+import AccountImage from '../../../assets/Group.svg';
+import InputField from '../InputField/InputField.components';
 
 const Header = () => {
 
@@ -16,17 +18,17 @@ const Header = () => {
                     <CompanyNameImage></CompanyNameImage>
                 </CompanyHeaderName>
                 <HeaderLink>
-                    <HeaderLinks>Home</HeaderLinks>
-                    <HeaderLinks>Product</HeaderLinks>
-                    <HeaderLinks>Account</HeaderLinks>
+                    <HeaderLinks>Products</HeaderLinks>
+                    <HeaderLinks>Services</HeaderLinks>
+                    <InputField />
                     <ShoppingCartIcon />
-                    <SearchIcon />
+                    <img src={AccountImage} alt='Account' style={{ width: 30, height: 30 }} />
                 </HeaderLink>
                 <HamburgerMenu onClick={() => setOpen(!open)}>
                     <MenuIcon fontSize='large' />
                 </HamburgerMenu>
             </HeaderBox>
-            <BurgerButton open={open}/>
+            <BurgerButton open={open} />
         </>
     )
 }
