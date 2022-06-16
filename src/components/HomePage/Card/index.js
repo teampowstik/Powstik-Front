@@ -28,7 +28,7 @@ export default ProductCard;
 
 const StyledCard = styled(Card)`
   background-color:#E8F3DB;
-  width: 18em;
+  width: 16em;
 `;
 
 const DiscountTag = styled.div`
