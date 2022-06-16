@@ -2,6 +2,7 @@ import React from 'react'
 
 import CardSlider from './SlickSlider';
 import Headers from './Headers';
+import Footer from './Footer';
 
 const HomePage = () => {
   return (
@@ -12,6 +13,7 @@ const HomePage = () => {
         <CardSlider/>
         <Headers main="Mother & Child" sub="Choicest Groceries, Pulses, Millets, and cereals from around your country. "/>
         <CardSlider/>
+        <Footer />
     </div>
   )
 }
