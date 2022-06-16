@@ -17,7 +17,7 @@ export const CompanyHeaderName = styled.div`
 background-color:#FFFFFF;
 width:30%;
 height: 100%;
-margin: 0.8rem 5rem;
+margin: 0.8rem 0;
 display:flex ;
 color: #8BC34A;
 @media (max-width: 900px) {
@@ -39,6 +39,7 @@ align-items:center ;
 width: 70%;
 @media (max-width: 900px) {
     display: none ;
+    width: 30% ;
 }
 `;
 
