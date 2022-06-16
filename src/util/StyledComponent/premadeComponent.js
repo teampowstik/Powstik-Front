@@ -7,7 +7,6 @@ export const H1 = styled.p`
 	line-height: ${(props) => props.lineHeight + 'px' || '46px'};
 	margin: 0px !important;
 	/* or 128% */
-
 	/* primary */
 
 	color: ${(props) => props.color || '#111111'};

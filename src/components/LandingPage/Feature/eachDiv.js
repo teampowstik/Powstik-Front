@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import BuyNowButton from '../../../util/ShopNowButton/index';
-import { H1, H2, P1, P2 } from '../../../util/StyledComponent/premadeComponent';
+import BuyNowButton from '../../../util/buttons/ShopNowButton/index';
+import { H1, P1 } from '../../../util/StyledComponent/premadeComponent';
 //images
 import fb1 from '../../../assets/fb1.svg';
 import fb2 from '../../../assets/fb2.svg';
@@ -17,7 +17,7 @@ const Div = (props) => {
 				<img src={props.item.icon} height="20" alt="icon" />
 			</div>
 			<div className="right">
-				<P2 className="p1"> {props.item.txt1} </P2>
+				<P1 className="p1"> {props.item.txt1} </P1>
 				<P1 className="p1"> {props.item.txt2} </P1>
 			</div>
 		</Cd>
