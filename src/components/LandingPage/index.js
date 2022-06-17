@@ -12,6 +12,8 @@ import Features from './Feature';
 //import FeatureBrand from './FeatureBrand';
 //import Footer from './Footer';
 import DiscountBar from './DiscountComponent/Discount.component';
+import FooterWhite from './FooterWhite';
+import ProductBox from './ProductBox';
 // import Header from './Header/Header.component';
 // import Varieties from './ProductsVarieties';
 // import WebsiteDescription from './WebsiteDescription/WebsiteDescription.components';
@@ -24,8 +26,11 @@ const LandingPage = () => {
 			<WebsiteDescription />
 			<BankOffer />
 			<Characteristics />
+			<ProductBox />
 
 			<FeatureBrand />
+
+			<FooterWhite />
 		</React.Fragment>
 	);
 };
