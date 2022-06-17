@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Button } from 'react-bootstrap';
-import buttonCart from '../../assets/buttonCart.svg';
+import buttonCart from '../../../assets/buttonCart.svg';
 import { Link } from 'react-router-dom';
 const BookButton = () => {
 	return (
