@@ -14,12 +14,11 @@ const CardHeaders = (props) => {
 export default CardHeaders;
 
 const Container = styled.div`
-  width: 85vw;
+  max-width: 100vw;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 1rem;
   margin-top: 1rem;
+  margin-left: 4rem;
 `;
 
 const MainHeader = styled.div`
