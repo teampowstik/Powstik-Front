@@ -37,26 +37,6 @@ function SamplePrevArrow(props) {
   );
 }
 
-// const NextArrow = ({onClick}) => {
-
-//   return (
-//     <div
-//       style={{ ...style, display: "block", background: "#8BC34A" }}
-//       onClick={onClick}
-//     >
-//       <img src={facebook} />
-//       </div>
-//   )
-// }
-
-// const PrevArrow = ({onClick}) => {
-//   return (
-//     <div className="arrow prev" onClick={onClick}>
-//       <img src={facebook} />
-//     </div>
-//   )
-// }
-
 const CardSlider = () => {
   var settings = {
     dots: false,
