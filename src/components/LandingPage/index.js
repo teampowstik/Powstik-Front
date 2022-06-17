@@ -24,8 +24,9 @@ const LandingPage = () => {
 			<Header />
 			<DiscountBar />
 			<WebsiteDescription />
-			<BankOffer />
 			<Characteristics />
+			<BankOffer />
+
 			<ProductBox />
 
 			<FeatureBrand />

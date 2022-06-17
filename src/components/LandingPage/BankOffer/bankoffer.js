@@ -53,7 +53,7 @@ const BankOffer = () => {
 };
 export default BankOffer;
 const MW = styled.div`
-	padding: 20px;
+	padding: 70px;
 	@media (max-width: 768px) {
 		text-align: center;
 	}
