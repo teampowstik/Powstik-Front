@@ -7,6 +7,7 @@ import loginImg from '../../assets/login.png';
 import { Input } from './../../util/StyledComponent/input';
 import LSButton from './../../util/buttons/LoginButton/loginbutton';
 import GoognleButton from './../../util/buttons/googleLoginButton/googlebutton';
+import Footer from '../../util/components/Footer';
 
 const Login = () => {
 	return (
@@ -59,6 +60,7 @@ const Login = () => {
 					</div>
 				</Wrapper2>
 			</Wrapper>
+			<Footer />
 		</React.Fragment>
 	);
 };

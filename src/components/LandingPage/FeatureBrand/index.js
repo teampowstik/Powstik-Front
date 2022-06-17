@@ -25,7 +25,7 @@ const Fb = () => {
 	);
 };
 export default Fb;
-const MW = styled.div`padding: 20px;`;
+const MW = styled.div`padding: 70px;`;
 
 const Wrapper = styled.div`
 	${'' /* background-color: ; */} min-height: 100px;
