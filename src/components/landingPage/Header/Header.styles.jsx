@@ -7,6 +7,7 @@ display:flex;
 flex-direction: row;
 align-items: center;
 margin: 0 2rem;
+padding-top: 5px;
 height:80px ;
 @media (max-width: 900px) {
     margin: 0.8rem 3rem;
