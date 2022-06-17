@@ -11,6 +11,8 @@ import prod3 from "../../../assets/product3.png";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 import arrowLeft from "../../../assets/arrow-left.png";
 import arrowRight from "../../../assets/arrow-without-bg-right.png";
@@ -36,26 +38,6 @@ function SamplePrevArrow(props) {
     </div>
   );
 }
-
-// const NextArrow = ({onClick}) => {
-
-//   return (
-//     <div
-//       style={{ ...style, display: "block", background: "#8BC34A" }}
-//       onClick={onClick}
-//     >
-//       <img src={facebook} />
-//       </div>
-//   )
-// }
-
-// const PrevArrow = ({onClick}) => {
-//   return (
-//     <div className="arrow prev" onClick={onClick}>
-//       <img src={facebook} />
-//     </div>
-//   )
-// }
 
 const CardSlider = () => {
   var settings = {

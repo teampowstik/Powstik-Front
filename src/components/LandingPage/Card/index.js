@@ -66,7 +66,8 @@ const ProductPrice = styled.div`
 
 const StyledBtn = styled.button`
   background: #FFFFFF;
-  border-radius: 0px;
+  border-radius: 1px;
+  border: 0px;
 
   font-weight: 600;
   font-size: 17.0549px;
@@ -76,6 +77,7 @@ const StyledBtn = styled.button`
   padding-right:1rem;
   padding-top:0.5rem;
   padding-bottom:0.5rem;
+  margin-right: 0.7rem;
   
   float: right;
 `;
