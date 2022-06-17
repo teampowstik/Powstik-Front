@@ -6,20 +6,21 @@ import styled from "styled-components";
 import ProductCard from "../Card";
 
 import prod1 from "../../../assets/product1.png";
-import prod2 from "../../../assets/product2.png"
-import prod3 from "../../../assets/product3.png"
+import prod2 from "../../../assets/product2.png";
+import prod3 from "../../../assets/product3.png";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import arrowLeft from "../../../assets/arrow-left.png";
+import arrowRight from "../../../assets/arrow-without-bg-right.png";
+
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "red" }}
-      onClick={onClick}
-    />
+    <div className={className} onClick={onClick}>
+      <img src={arrowRight} />
+    </div>
   );
 }
 
@@ -28,16 +29,38 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style, display: "block", background: "green" }}
+      style={{ ...style,marginRight:"1.5rem", zIndex: "2" }}
       onClick={onClick}
-    />
+    >
+      <img src={arrowLeft} />
+    </div>
   );
 }
+
+// const NextArrow = ({onClick}) => {
+
+//   return (
+//     <div
+//       style={{ ...style, display: "block", background: "#8BC34A" }}
+//       onClick={onClick}
+//     >
+//       <img src={facebook} />
+//       </div>
+//   )
+// }
+
+// const PrevArrow = ({onClick}) => {
+//   return (
+//     <div className="arrow prev" onClick={onClick}>
+//       <img src={facebook} />
+//     </div>
+//   )
+// }
 
 const CardSlider = () => {
   var settings = {
     dots: false,
-    infinite: true,
+    infinite: false,
     speed: 600,
     slidesToShow: 4,
     slidesToScroll: 3,
@@ -49,9 +72,9 @@ const CardSlider = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: true,
-          dots: false
-        }
+          infinite: false,
+          dots: false,
+        },
       },
       {
         breakpoint: 600,
@@ -59,18 +82,18 @@ const CardSlider = () => {
           slidesToShow: 2,
           slidesToScroll: 2,
           initialSlide: 2,
-          dots: false
-        }
+          dots: false,
+        },
       },
       {
         breakpoint: 480,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          dots: false
-        }
-      }
-    ]
+          dots: false,
+        },
+      },
+    ],
   };
   return (
     <Container>
@@ -157,8 +180,8 @@ export default CardSlider;
 const Container = styled.div`
   width: 85vw;
   height: auto;
-  margin-left:auto;
-  margin-right:auto;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom: 5rem;
 `;
 
