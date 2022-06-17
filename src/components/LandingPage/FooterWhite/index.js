@@ -86,10 +86,11 @@ const Footer = () => {
 export default Footer;
 
 const Container = styled.div`
-  width: 100vw;
+  max-width: 100vw;
   height: auto;
   text-align: left;
   margin-bottom: 1em;
+  overflow: hidden;
 `;
 
 const StyledRow = styled(Row)`
