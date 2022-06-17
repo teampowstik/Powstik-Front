@@ -6,10 +6,9 @@ import Slider from 'react-slick';
 import logo from './logo.svg';
 import './App.css';
 
-import LandingPage from './components/LandingPage';
 import Login from './components/Login/login';
 import Signup from './components/Signup/signup';
-import HomePage from './components/HomePage';
+import LandingPage from './components/LandingPage';
 
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -26,7 +25,7 @@ function App() {
 					<Route path="/login" element={<Login />} />
 					<Route path="/register" element={<Signup />} /> */}
 				</Routes>
-				<HomePage/>
+				<LandingPage/>
 			</div>
 		</Router>
 	);

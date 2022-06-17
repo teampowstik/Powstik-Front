@@ -29,6 +29,7 @@ export default ProductCard;
 const StyledCard = styled(Card)`
   background-color:#E8F3DB;
   width: 16em;
+  margin-left: 1.5rem;
 `;
 
 const DiscountTag = styled.div`
@@ -65,7 +66,7 @@ const ProductPrice = styled.div`
 
 const StyledBtn = styled.button`
   background: #FFFFFF;
-  border-radius: 4px;
+  border-radius: 0px;
 
   font-weight: 600;
   font-size: 17.0549px;
