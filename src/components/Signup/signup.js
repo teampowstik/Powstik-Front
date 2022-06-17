@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 // import BuyNowButton from '../../../util/ShopNowButton/index';
-import { H1, H2, P1, P2 } from './../../util/StyledComponent/premadeComponent';
+import { H1, P1 } from './../../util/StyledComponent/premadeComponent';
 //images
 import loginImg from '../../assets/login.png';
 import { Input } from './../../util/StyledComponent/input';
-import LSButton from './../../util/LoginButton/loginbutton';
-import GoognleButton from './../../util/googleLoginButton/googlebutton';
+import LSButton from './../../util/buttons/LoginButton/loginbutton';
+import GoognleButton from './../../util/buttons/googleLoginButton/googlebutton';
 
 const Signup = () => {
 	return (

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import BuyNowButton from '../../../util/ShopNowButton/index';
+import BuyNowButton from '../../../util/buttons/ShopNowButton/index';
 import { H1, H2 } from '../../../util/StyledComponent/premadeComponent';
 import Div from './eachDiv';
 //images

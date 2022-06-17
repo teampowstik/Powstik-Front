@@ -2,39 +2,35 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Button } from 'react-bootstrap';
-import googleIcon from '../../assets/googleIcon.svg';
+import buttonCart from '../../../assets/buttonCart.svg';
 import { Link } from 'react-router-dom';
-const GoogleButton = () => {
+const BookButton = () => {
 	return (
 		<React.Fragment>
 			<Wrapper>
 				<Button className="mybutton" variant="primary" size="lg" block>
-					<img src={googleIcon} alt="fb" />
-					Sign in with google
+					<img src={buttonCart} alt="fb" />
+					Shop Now
 				</Button>
 			</Wrapper>
 		</React.Fragment>
 	);
 };
 
-export default GoogleButton;
+export default BookButton;
 const Wrapper = styled.div`
 	.mybutton {
-		background-color: rgba(139, 195, 74, 0.2);
-
-		width: 274.33px;
+		background-color: #8bc34a;
+		border-radius: 5px;
+		width: 174.33px;
 		height: 47.33px;
 		border: none;
 		text-align: center;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-
+		max-width: 170px;
 		font-size: 20px;
-		color: black;
-	}
-	:hover {
-		cursor: pointer;
-		background-color: rgba(139, 195, 74, 0.3);
+		color: white;
 	}
 `;

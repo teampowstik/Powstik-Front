@@ -2,35 +2,40 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { Button } from 'react-bootstrap';
-import buttonCart from '../../assets/buttonCart.svg';
+import buttonCart from '../../../assets/buttonCart.svg';
 import { Link } from 'react-router-dom';
-const BookButton = () => {
+const GButton = (props) => {
 	return (
 		<React.Fragment>
 			<Wrapper>
 				<Button className="mybutton" variant="primary" size="lg" block>
-					<img src={buttonCart} alt="fb" />
-					Shop Now
+					{props.title}
 				</Button>
 			</Wrapper>
 		</React.Fragment>
 	);
 };
 
-export default BookButton;
+export default GButton;
 const Wrapper = styled.div`
-	.mybutton {
-		background-color: #8bc34a;
-		border-radius: 5px;
-		width: 174.33px;
-		height: 47.33px;
+	${'' /* background-color: ; */} .mybutton {
+		background-color: ${(props) => props.bg || '#111111'};
+
+		height: 34px;
+		min-width: 110px;
 		border: none;
 		text-align: center;
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
 		max-width: 170px;
-		font-size: 20px;
+		font-size: 15px;
 		color: white;
+		padding: 15px;
+	}
+	.mybutton:hover {
+		cursor: pointer;
+		scale: 1.5;
+		background-color: rgba(139, 195, 74, 0.2);
 	}
 `;

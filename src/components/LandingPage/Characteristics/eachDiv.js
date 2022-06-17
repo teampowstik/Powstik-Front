@@ -8,17 +8,22 @@ import fb2 from '../../../assets/fb2.svg';
 import fb3 from '../../../assets/fb3.svg';
 import fb4 from '../../../assets/fb4.svg';
 import fb5 from '../../../assets/fb5.svg';
+import GButton from '../../../util/buttons/reusableButton/button';
 const Div = (props) => {
 	console.log(props);
 
 	return (
 		<Cd>
-			<div>
-				<img src={props.item.icon} height="20" alt="icon" />
+			<div className="up">
+				<H1 size="25" className="p1">
+					{' '}
+					{props.item.title}{' '}
+				</H1>
+				<P1 className="p1"> {props.item.desc} </P1>
 			</div>
-			<div className="right">
-				<P1 className="p1"> {props.item.txt1} </P1>
-				<P1 className="p1"> {props.item.txt2} </P1>
+			<div className="down">
+				<GButton title="SHOP NOW" />
+				<img className="cedimg" src={props.item.pic} height="90" alt="icon" />
 			</div>
 		</Cd>
 	);
@@ -26,19 +31,26 @@ const Div = (props) => {
 export default Div;
 
 const Cd = styled.div`
+	background-color: #e8f3db;
+
 	display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	background-color: #ffff;
+
 	padding: 20px;
-	width: 250px;
-	height: 78px;
+	width: 270px;
+
 	margin: 20px;
-	.p1 {
-		color: black;
+
+	.down {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: row;
+		margin-top: 20px;
 	}
-	.right {
-		margin-left: 20px;
+	.cedimg {
+		margin-left: 10px;
 	}
 `;
