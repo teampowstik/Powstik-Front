@@ -23,11 +23,13 @@ const Container = styled.div`
 `;
 
 const MainHeader = styled.div`
-  font-size: 24px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 54px;
   letter-spacing: 0em;
   text-align: left;
+  font-family: 'Merriweather';
+  font-style: normal;
 `;
 
 const SubHeader = styled.div`
@@ -37,4 +39,6 @@ const SubHeader = styled.div`
   letter-spacing: 0em;
   text-align: left;
   color: rgba(51, 51, 51, 0.75);
+  font-family: 'Merriweather';
+  font-style: normal;
 `;

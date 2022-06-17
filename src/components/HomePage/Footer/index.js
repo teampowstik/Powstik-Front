@@ -5,11 +5,15 @@ import { Row, Col } from "react-bootstrap";
 
 import appstore from "../../../assets/app-store-2.png";
 import playstore from "../../../assets/play-store-2.png";
-import facebook from "../../../assets/Vector.png"
-import twitter from "../../../assets/Vector2.png"
-import pinterest from "../../../assets/Vector3.png"
-import instagram from "../../../assets/Vector4.png"
-import linkedin from "../../../assets/Vector5.png"
+import facebook from "../../../assets/fb.png"
+import twitter from "../../../assets/twt.png"
+import pinterest from "../../../assets/pint.png"
+import instagram from "../../../assets/insta.png"
+import linkedin from "../../../assets/linked.png"
+import truck from "../../../assets/truck.png"
+import contact from "../../../assets/contact.png"
+import money from "../../../assets/money.png"
+import recycle from "../../../assets/return.png"
 
 const Footer = () => {
   return (
@@ -50,27 +54,29 @@ const Footer = () => {
           </Header>
           <ImageContainer>
             <Logos2 src={facebook} />
-            {/* <Logos src={twitter} />
-            <Logos src={pinterest} />
-            <Logos src={instagram} />
-            <Logos src={linkedin} /> */}
+            <Logos2 src={twitter} />
+            <Logos2 src={pinterest} />
+            <Logos2 src={instagram} />
+            <Logos2 src={linkedin} />
           </ImageContainer>
         </StyledColumn>
         <StyledColumn className="col-md-2 col-lg-3 col-xl-3 mx-auto mt-3">
-          <Header className="text-uppercase mb-4 font-weight-bold">
-            Free Shipping
+          <Header className="text-uppercase mb-2 font-weight-bold">
+            <Logos2 src={truck} />Free Shipping
           </Header>
-          <Item>Above Rs500</Item>
-          <Header className="text-uppercase mb-4 font-weight-bold">
-            Food Tech Grade
+          <Item2>Above Rs500</Item2>
+          <Header className="text-uppercase mt-4 mb-2 font-weight-bold">
+          <Logos2 src={contact} />Food Tech Grade
           </Header>
-          <Item>100% Guarantee</Item>
-          <Header className="text-uppercase mb-4 font-weight-bold">
-            Huge Shipping
+          <Item2>100% Guarantee</Item2>
+          <Header className="text-uppercase mb-2 font-weight-bold">
+          <Logos2 src={money} />Huge Shipping
           </Header>
-          <Item>At Lowest Price</Item>
-          <Header className="text-uppercase mb-4 font-weight-bold">Easy Returns</Header>
-          <Item>No Questions Asked</Item>
+          <Item2>At Lowest Price</Item2>
+          <Header className="text-uppercase mb-2 font-weight-bold">
+          <Logos2 src={recycle} />  Easy Returns
+          </Header>
+          <Item2>No Questions Asked</Item2>
         </StyledColumn>
       </StyledRow>
     </Container>
@@ -94,8 +100,8 @@ const StyledRow = styled(Row)`
 
 const StyledColumn = styled(Col)`
   width: fit-content;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+  padding-right: min(2.5rem);
+  padding-right: min(2.5rem);
 `;
 
 const Header = styled.div`
@@ -122,7 +128,7 @@ const Logos = styled.img`
     max-width: 40%;
     min-width: 25%;
     height: auto;
-    margin-right: 0.3rem;
+    margin-right: 0.7rem;
 
     &:hover{
         cursor: pointer;
@@ -130,11 +136,18 @@ const Logos = styled.img`
 `;
 
 const Logos2 = styled.img`
-    width: 100%;
+    width: auto;
     height: auto;
-    margin-right: 0.3rem;
+    margin-right: 1.5rem;
 
     &:hover{
         cursor: pointer;
     }
+`;
+
+const Item2 = styled.p`
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    margin-left: 3.2rem;
 `;
