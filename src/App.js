@@ -16,11 +16,9 @@ function App() {
 			<div className="App">
 				<Routes>
 					<Route path="/" element={<LandingPage />} />
-
 					<Route path="/login" element={<Login />} />
 					<Route path="/register" element={<Signup />} />
 				</Routes>
-
 			</div>
 		</Router>
 	);
