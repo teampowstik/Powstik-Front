@@ -67,8 +67,9 @@ const Footer = () => {
 
 const Container = styled.div`
   background-color: #333333;
-  min-width: 100vw;
+  max-width: 100vw;
   height: auto;
+  overflow: hidden;
   `;
 
 const Container1 = styled.div`
@@ -202,7 +203,7 @@ const Container2 = styled.div`
   overflow: hidden;
   display: flex;
   justify-content: space-between;
-  
+  flex-wrap: wrap;
 `;
 
 const Column4 = styled.div`
@@ -229,10 +230,10 @@ const Column5 = styled.div`
   width: auto;
   border-radius: 0px;
   margin-top: 0.2%;
-  margin-right: 15.5%;
+  margin-right: 20%;
+  margin-left: 4rem;
   display: flex;
-  padding-left: 5%
-  
+  padding-left: 5%;
 `;
 
 const Image2 = styled.div`
