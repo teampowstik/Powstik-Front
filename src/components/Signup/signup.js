@@ -7,10 +7,13 @@ import loginImg from '../../assets/login.png';
 import { Input } from './../../util/StyledComponent/input';
 import LSButton from './../../util/buttons/LoginButton/loginbutton';
 import GoognleButton from './../../util/buttons/googleLoginButton/googlebutton';
+import Header2 from '../../util/components/Header2/Header2.component';
+import Footer from '../../util/components/FooterWhite';
 
 const Signup = () => {
 	return (
 		<React.Fragment>
+			<Header2 />
 			<Wrapper>
 				<Wrapper2>
 					<div className="header">
@@ -23,9 +26,9 @@ const Signup = () => {
 							<img className="img" src={loginImg} alt="Login" />
 						</div>
 						<div className="right">
-							<H1 color="#000" size="45" className="wb">
+							{/* <H1 color="#000" size="45" className="wb">
 								Welcome Back !
-							</H1>
+							</H1> */}
 
 							<form>
 								<div className="fdiv">
@@ -57,6 +60,7 @@ const Signup = () => {
 					</div>
 				</Wrapper2>
 			</Wrapper>
+			<Footer />
 		</React.Fragment>
 	);
 };
@@ -113,6 +117,7 @@ const Wrapper2 = styled.div`
 	.wb {
 		margin-bottom: 50px !important;
 	}
+
 	.cbox {
 		width: 350px;
 		display: flex;

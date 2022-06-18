@@ -36,6 +36,6 @@ const Wrapper = styled.div`
 	.mybutton:hover {
 		cursor: pointer;
 		scale: 1.5;
-		background-color: rgba(139, 195, 74, 0.2);
+		background-color: #e8f3db;
 	}
 `;

@@ -35,6 +35,6 @@ const Wrapper = styled.div`
 	}
 	:hover {
 		cursor: pointer;
-		background-color: rgba(139, 195, 74, 0.3);
+		background-color: #e8f3db;
 	}
 `;
