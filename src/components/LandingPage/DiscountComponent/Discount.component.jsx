@@ -2,7 +2,7 @@ import React from 'react'
 import { DiscountContainer, DiscountDescription, DiscountDownload, Text1, TicketContainer } from './Discount.styles'
 import TicketImage from '../../../assets/Group 364.svg'
 import { H1, P1 } from '../../../util/StyledComponent/premadeComponent.js';
-import DownloadButton from '../../../util/DownloadButton/DownloadButton.component';
+import DownloadButton from '../../../util/buttons/DownloadButton/DownloadButton.component';
 const DiscountBar = () => {
     return (
         <DiscountContainer>
