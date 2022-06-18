@@ -8,10 +8,12 @@ import { Input } from './../../util/StyledComponent/input';
 import LSButton from './../../util/buttons/LoginButton/loginbutton';
 import GoognleButton from './../../util/buttons/googleLoginButton/googlebutton';
 import Footer from '../../util/components/Footer';
+import Header2 from '../../util/components/Header2/Header2.component';
 
 const Login = () => {
 	return (
 		<React.Fragment>
+			<Header2 />
 			<Wrapper>
 				<Wrapper2>
 					<div className="header">
@@ -115,7 +117,8 @@ const Wrapper2 = styled.div`
 	}
 	.wb {
 		margin-bottom: 50px !important;
-	}
+	}import Header2 from './../../util/components/Header2/Header2.component';
+
 	.cbox {
 		width: 350px;
 		display: flex;
