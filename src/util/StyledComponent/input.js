@@ -9,3 +9,12 @@ export const Input = styled.input`
 		width: 260px;
 	}
 `;
+
+export const Checkbox = styled.input`
+	width: 20px;
+	height: ${(props) => props.height || '20px'};
+	accent-color: #8bc34a;
+	font-color: "#ffff";
+	background-color: #ffff;
+	color: #ffff;
+`;

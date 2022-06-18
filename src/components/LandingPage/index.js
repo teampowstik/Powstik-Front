@@ -12,10 +12,6 @@ import DiscountBar from './DiscountComponent/Discount.component';
 import FooterWhite from './FooterWhite';
 import ProductBox from './ProductBox';
 import Mobile from './Mobile/Mobile.component';
-// import Header2 from './Header2/Header2.component';
-// import Header from './Header/Header.component';
-// import Varieties from './ProductsVarieties';
-// import WebsiteDescription from './WebsiteDescription/WebsiteDescription.components';
 
 const LandingPage = () => {
 	return (
