@@ -37,6 +37,10 @@ const Wrapper = styled.div`
 
 	background-color: #ffff;
 	padding: 50px;
+	@media (max-width: 900px) {
+		flex-direction: column;
+		padding: 0px;
+	}
 `;
 
 const Wrapper2 = styled.div`
@@ -44,6 +48,11 @@ const Wrapper2 = styled.div`
 	flex-direction: column;
 	padding: 50px;
 	background-color: #e8f3db;
+
+	@media (max-width: 500px) {
+		padding: 3px;
+		width: 100vw;
+	}
 `;
 
 const Wrapper3 = styled.div`

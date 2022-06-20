@@ -38,16 +38,12 @@ const Wrapper = styled.div`
 	align-items: center;
 	@media (max-width: 768px) {
 		flex-direction: column;
+		width: 80%;
+		margin: 20px;
+		width: auto;
+		height: auto;
 	}
 
-	.title {
-		font-family: 'Merriweather';
-		font-style: normal;
-		font-weight: 700;
-		font-size: 34px;
-		line-height: 43px;
-		margin-right: 40px;
-	}
 	.left {
 		text-align: center;
 		margin: 10px 30px;

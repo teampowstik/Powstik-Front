@@ -55,6 +55,9 @@ const Wrapper = styled.div`
 	width: 573.12px;
 	padding: 5px;
 	margin: 10px;
+	@media (max-width: 500px) {
+		width: auto;
+	}
 
 	.down {
 		display: flex;

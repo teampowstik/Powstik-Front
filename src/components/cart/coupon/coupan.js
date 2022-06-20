@@ -14,7 +14,7 @@ const Coupon = (props) => {
 					COUPONS
 				</H1>
 				<div className="cpnin">
-					<Input type="text" height="20" width="90" background="#ffff" />
+					<Input className="cpninp" type="text" height="20" width="90" background="#ffff" />
 					<GButton title="Apply" bg="#8BC34A" />
 				</div>
 
@@ -44,7 +44,7 @@ const Coupon = (props) => {
 					</H1>
 				</div>
 				<div>
-					<GButton className="mt-5" title="Place Order" bg="#8BC34A" width="400px" />
+					<GButton title="Place Order" bg="#8BC34A" width="90%" />
 				</div>
 			</Wrapper>
 		</React.Fragment>
@@ -65,5 +65,17 @@ const Wrapper = styled.div`
 		background-color: #e8f3db;
 		width: 390px;
 		padding: 20px;
+	}
+
+	@media (max-width: 790px) {
+		height: 600px;
+		justify-content: center;
+		.cpnin {
+			width: auto;
+		}
+		.cpninp {
+			width: 150px;
+			margin-right: 20px;
+		}
 	}
 `;

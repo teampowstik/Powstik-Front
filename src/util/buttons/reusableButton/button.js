@@ -21,7 +21,7 @@ export default GButton;
 const Wrapper = styled.div`
 	.mybutton {
 		background-color: ${(props) => props.bg || '#111111'};
-		width: ${(props) => props.width || '130px'} !important;
+		width: ${(props) => props.width || '110px'};
 		height: 34px;
 		min-width: 110px;
 		border: none;

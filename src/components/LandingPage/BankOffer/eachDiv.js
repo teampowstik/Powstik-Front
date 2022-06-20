@@ -27,14 +27,14 @@ const Div = (props) => {
 			</div>
 			<div className="down">
 				<div>
-					<P1 weight="600" size="12">
+					<P1 weight="600" size="16">
 						Code:
 					</P1>
-					<P1 weight="600" size="12">
+					<P1 weight="600" size="16">
 						{props.item.code}
 					</P1>
 				</div>
-				<Button className="btn btn-primary mybtn121">copy code</Button>
+				<Button className="mybtn121">copy code</Button>
 			</div>
 		</Cd>
 	);
@@ -68,6 +68,14 @@ const Cd = styled.div`
 		border: none;
 		background: #8bc34a;
 		border-radius: 5px;
+		text-align: center;
+		width: 70px;
+		height: 20px;
+		font-size: 10px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 	.up {
 		display: flex;

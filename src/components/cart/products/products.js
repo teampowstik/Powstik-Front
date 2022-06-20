@@ -23,7 +23,7 @@ const Product = (props) => {
 				<div className="sel">
 					<div className="isel">
 						<Checkbox type="checkbox" />
-						<H1>n/n ITEM SELECTED</H1>
+						<H1 className="selh1">n/n ITEM SELECTED</H1>
 					</div>
 					<GButton title="Remove All" bg="#8BC34A" />
 				</div>
@@ -50,5 +50,14 @@ const Wrapper = styled.div`
 		justify-content: space-between;
 		align-items: center;
 		width: 200px;
+	}
+	@media (max-width: 500px) {
+		flex-direction: column;
+		.sel {
+			width: 270px;
+		}
+		.selh1 {
+			margin-left: 15px !important;
+		}
 	}
 `;
