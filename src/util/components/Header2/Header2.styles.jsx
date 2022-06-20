@@ -15,7 +15,7 @@ height:80px ;
 
 export const CompanyHeaderName = styled.div`
 background-color:#FFFFFF;
-width:30%;
+width:60%;
 height: 100%;
 margin: 0.8rem 0;
 display:flex ;
@@ -36,7 +36,7 @@ export const HeaderLink = styled.div`
 display:flex ;
 justify-content:space-between ;
 align-items:center ;
-width: 70%;
+width: 40%;
 @media (max-width: 900px) {
     display: none ;
     width: 30% ;

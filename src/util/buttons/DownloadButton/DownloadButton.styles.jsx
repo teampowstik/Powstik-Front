@@ -14,4 +14,5 @@ export const Wrapper = styled.div`
 		max-width: 170px;
 		font-size: 20px;
 		color: white;
+        cursor: pointer;
 `;
