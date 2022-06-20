@@ -9,6 +9,7 @@ import './App.css';
 import Login from './components/Login/login';
 import Signup from './components/Signup/signup';
 import LandingPage from './components/LandingPage';
+import ProductPage from './components/ProductPage';
 
 function App() {
 	return (
@@ -18,6 +19,7 @@ function App() {
 					<Route path="/" element={<LandingPage />} />
 					<Route path="/login" element={<Login />} />
 					<Route path="/register" element={<Signup />} />
+					<Route path="/product" element={<ProductPage />} />
 				</Routes>
 			</div>
 		</Router>
