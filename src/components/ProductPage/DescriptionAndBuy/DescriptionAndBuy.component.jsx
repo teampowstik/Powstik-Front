@@ -10,7 +10,7 @@ const DescriptionAndBuy = ({ heading, disease, type, price, description1, descri
                 <PageInfoButton>{type}</PageInfoButton>
             </PageInfo>
             <PageInfo>
-                <H1 >Description</H1>
+                <H1 style={{ marginRight: 10 }}>Description</H1>
                 <P1 color='#616161'>Vender info</P1>
             </PageInfo>
             <hr style={{ color: "rgba(139, 195, 74, 0.65)", height: 2, marginTop: -12 }} />
