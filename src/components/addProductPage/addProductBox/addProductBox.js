@@ -14,33 +14,33 @@ const addProductInput = () => {
             <PageTitle> Add a New Product </PageTitle>
             <StyledForm>
                 <StyledRow className="mt-5">
-                    <Col>
+                    <Col md={6} >
                     <P1 weight="600" size="19.1339px" lineHeight="27px"> Enter Product name </P1>
-                    <Input className="mt-2" placeholder="xyz name" />
+                    <Input className="mt-2" placeholder="xyz name" width="100%" height="2.5rem"/>
                     </Col>
-                    <StyledCol className="">
+                    <Col md={6}>
                     <P1 weight="600" size="19.1339px" lineHeight="27px"> Vendor ID </P1>
-                    <Input className="mt-2" placeholder="Vendor ID" />
-                    </StyledCol>
+                    <Input className="mt-2" placeholder="Vendor ID" width="100%" height="2.5rem" />
+                    </Col>
                 </StyledRow>
                 <StyledRow className="mt-3">
-                    <Col>
+                    <Col md={6}>
                     <P1 weight="600" size="19.1339px" lineHeight="27px"> Enter Expected Price </P1>
-                    <Input className="mt-2" placeholder="xyz name" />
+                    <Input className="mt-2" placeholder="Price" width="100%" height="2.5rem" />
                     </Col>
-                    <StyledCol className="">
+                    <Col md={6}>
                     <P1 weight="600" size="19.1339px" lineHeight="27px"> Enter Discount </P1>
-                    <Input className="mt-2" placeholder="Discount%" />
-                    </StyledCol>
-                </StyledRow>
-                <StyledRow className="mt-3">
-                    <Col>
-                        <P1 weight="600" size="19.1339px" lineHeight="27px"> Enter Product Description </P1>
-                        <StyledTextArea className="mt-2" placeholder="xyz name" />
+                    <Input className="mt-2" placeholder="Discount%" width="100%" height="2.5rem" />
                     </Col>
                 </StyledRow>
                 <StyledRow className="mt-3">
-                    <Col>
+                    <Col md={12}>
+                        <P1 weight="600" size="19.1339px" lineHeight="27px"> Enter Product Description </P1>
+                        <StyledTextArea  className="mt-2" placeholder="xyz name" />
+                    </Col>
+                </StyledRow>
+                <StyledRow className="mt-3">
+                    <Col md={12}>
                         <P1 weight="600" size="19.1339px" lineHeight="27px"> Add vendor information (optional) </P1>
                         <StyledTextArea className="mt-2" placeholder="xyz name" />
                     </Col>
@@ -108,7 +108,7 @@ const StyledCol = styled(Col)`
 `;
 
 const StyledTextArea = styled.textarea`
-    width: 93%;
+    width: 100%;
     margin-right: 10%;
     background-color: #8BC34A33;
     border: 0px;
