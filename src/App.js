@@ -11,7 +11,7 @@ import Signup from './components/Signup/signup';
 import LandingPage from './components/LandingPage';
 
 import ProductResults from './components/productResults';
-import AddProduct from './components/addProduct/addProduct';
+import AddProduct from './components/addProductPage/addProduct';
 
 function App() {
 	return (
