@@ -20,6 +20,12 @@ padding: 20px 20px ;
 
 export const BuyContainer = styled.div`
 display:flex ;
+margin-bottom: 50px ;
+@media(max-width:1170px){
+    flex-direction:column ;
+    align-items:center ;
+
+}
 `;
 
 export const ImagePreview = styled.div`
@@ -32,4 +38,9 @@ export const ImageShow = styled.div`
 display:flex ;
 background: rgba(139, 195, 74, 0.2);
 margin-right: 40px ;
+`;
+
+export const ImageContainer = styled.div`
+display:flex ;
+height: 410px ;
 `;
