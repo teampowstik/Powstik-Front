@@ -11,6 +11,7 @@ import Signup from './components/Signup/signup';
 import LandingPage from './components/LandingPage';
 import Cart from './components/cart/cart';
 import EditAccount from './components/editAccount/editAccount';
+import AccountDetails from './components/accountDetails/account';
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 					<Route path="/register" element={<Signup />} />
 					<Route path="/cart" element={<Cart />} />
 					<Route path="/edit-account" element={<EditAccount />} />
+					<Route path="/account-details" element={<AccountDetails />} />
 				</Routes>
 			</div>
 		</Router>
