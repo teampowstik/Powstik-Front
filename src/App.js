@@ -10,6 +10,7 @@ import Login from './components/Login/login';
 import Signup from './components/Signup/signup';
 import LandingPage from './components/LandingPage';
 import ProductPage from './components/ProductPage';
+import ServicePage from './components/servicePage';
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 					<Route path="/login" element={<Login />} />
 					<Route path="/register" element={<Signup />} />
 					<Route path="/product" element={<ProductPage />} />
+					<Route path="/service" element={<ServicePage />} />
 				</Routes>
 			</div>
 		</Router>

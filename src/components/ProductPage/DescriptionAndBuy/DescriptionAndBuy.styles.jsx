@@ -26,10 +26,10 @@ align-items: center ;
 justify-content:center ;
 background-color:rgba(139, 195, 74, 0.2) ;
 border-radius: 50px ;
-width:150px ;
+width:200px ;
 height:35px ;
 margin-right: 20px ;
-color: #616161
+color: #616161;
 `;
 
 export const Itemcounter = styled.div`

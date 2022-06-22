@@ -38,9 +38,40 @@ export const ImageShow = styled.div`
 display:flex ;
 background: rgba(139, 195, 74, 0.2);
 margin-right: 40px ;
+position:relative ;
 `;
 
 export const ImageContainer = styled.div`
 display:flex ;
 height: 410px ;
+`;
+
+
+export const Cards = styled.div`
+  margin: 0.2rem;
+`;
+
+export const CardsContainer = styled.div`
+display:flex ;
+flex-wrap:wrap ;
+margin:20px auto ;
+`;
+
+export const DiscountContainer = styled.div`
+display:flex ;
+justify-content:flex-start ;
+width:120px ;
+height:40px ;
+clip-path: polygon(80% 0, 100% 50%, 80% 100%, 0 100%, 0 0);
+background: rgba(139, 195, 74, 1);
+position:absolute ;
+top: 25px;
+font-size:22px ;
+color: #ffffff;
+align-items:center ;
+font-weight: 600 ;
+`;
+
+export const DiscountContent = styled.span`
+margin-left:15px ;
 `;

@@ -1,10 +1,14 @@
 import React from 'react'
 import DescriptionAndBuy from './DescriptionAndBuy/DescriptionAndBuy.component'
-import { ProductContainer, Container, BuyContainer, ImagePreview, ImageShow, ImageContainer } from './product.styles';
+import { ProductContainer, Container, BuyContainer, ImagePreview, ImageShow, ImageContainer, Cards, CardsContainer, DiscountContainer, DiscountContent } from './product.styles';
 import image from '../../assets/Rectangle_154-removebg-preview.png';
 import image2 from '../../assets/Rectangle_153__1_-removebg-preview.png';
 import { H1, P1 } from '../../util/StyledComponent/premadeComponent';
-
+import ProductCard from "../../util/cardSlider/card";
+import prod1 from '../../assets/prod1.png';
+import prod2 from '../../assets/Rectangle 153 (2).svg';
+import prod3 from '../../assets/Rectangle 157.svg';
+import prod4 from '../../assets/Cookies-1-300x300 1.svg';
 const ProductPage = () => {
     return (
         <Container>
@@ -21,6 +25,7 @@ const ProductPage = () => {
                             <img src={image} alt='Preview' style={{ background: "rgba(139, 195, 74, 0.2)" }} />
                         </ImagePreview>
                         <ImageShow>
+                            <DiscountContainer ><DiscountContent>35% off</DiscountContent></DiscountContainer>
                             <img src={image2} alt="BigPreview" />
                         </ImageShow>
                     </ImageContainer>
@@ -28,8 +33,46 @@ const ProductPage = () => {
                         description2="Taste profile: A little savoury, a little sweet. A little crunchy a little chewy. A hint of pepper a tinge of chilly. Good health & great taste in every bite." />
                 </BuyContainer>
                 <H1 size={34} lineHeight={42} >Similar Products</H1>
+                <CardsContainer >
+                    <Cards>
+                        <ProductCard
+                            discount="20"
+                            image={prod1}
+                            subtitle="Diabetes"
+                            description="Befach Rice for Diabetics"
+                            price="504"
+                        />
+                    </Cards>
+                    <Cards>
+                        <ProductCard
+                            discount="20"
+                            image={prod2}
+                            subtitle="Diabetes"
+                            description="Befach Rice for Diabetics"
+                            price="504"
+                        />
+                    </Cards>
+                    <Cards>
+                        <ProductCard
+                            discount="20"
+                            image={prod3}
+                            subtitle="Diabetes"
+                            description="Befach Rice for Diabetics"
+                            price="504"
+                        />
+                    </Cards>
+                    <Cards>
+                        <ProductCard
+                            discount="20"
+                            image={prod4}
+                            subtitle="Diabetes"
+                            description="Befach Rice for Diabetics"
+                            price="504"
+                        />
+                    </Cards>
+                </CardsContainer>
             </ProductContainer>
-        </Container>
+        </Container >
     )
 }
 
