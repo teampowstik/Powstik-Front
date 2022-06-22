@@ -18,6 +18,7 @@ import AddProduct from './components/addProductPage/addProduct';
 import UpdateProduct from './components/updateProductPage/updateProductPage';
 import AddService from './components/addServicePage/addServicePage';
 import UpdateService from './components/updateServicePage/updateServicePage';
+import ProductPage from './components/ProductPage';
 
 function App() {
 	return (
@@ -35,6 +36,7 @@ function App() {
 					<Route path="/updateproduct" element={<UpdateProduct />} />
 					<Route path="/addservice" element={<AddService />} />
 					<Route path="/updateservice" element={<UpdateService />} />
+					<Route path="/product" element={<ProductPage />} />
 				</Routes>
 			</div>
 		</Router>
