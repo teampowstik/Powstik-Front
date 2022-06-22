@@ -17,6 +17,7 @@ const Login = () => {
 			<Wrapper>
 				<Wrapper2>
 					<div className="header">
+						<P1 color="grey">Home/Account</P1>
 						<H1 color="#000" size="30">
 							Log into your account
 						</H1>

@@ -34,3 +34,19 @@ export const P1 = styled.p`
 		line-height: 20px;
 	}
 `;
+export const P2 = styled.p`
+	font-style: normal;
+	font-weight: ${(props) => props.weight || '600'};
+	font-size: ${(props) => (props.size ? props.size + 'px' : '17px')};
+
+	line-height: ${(props) => (props.lineHeight ? props.lineHeight + 'px' : '26px')};
+	/* or 162% */
+
+	/* primary */
+	margin: 0px !important;
+	color: ${(props) => props.color || '#111111'};
+	@media (max-width: 500px) {
+		font-size: ${(props) => (props.size ? props.size / 2 + 5 + 'px' : '12px')};
+		line-height: 20px;
+	}
+`;

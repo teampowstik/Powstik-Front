@@ -10,6 +10,7 @@ import Login from './components/Login/login';
 import Signup from './components/Signup/signup';
 import LandingPage from './components/LandingPage';
 import Cart from './components/cart/cart';
+import EditAccount from './components/editAccount/editAccount';
 
 function App() {
 	return (
@@ -20,6 +21,7 @@ function App() {
 					<Route path="/login" element={<Login />} />
 					<Route path="/register" element={<Signup />} />
 					<Route path="/cart" element={<Cart />} />
+					<Route path="/edit-account" element={<EditAccount />} />
 				</Routes>
 			</div>
 		</Router>

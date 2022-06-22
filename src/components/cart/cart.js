@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Header from './../LandingPage/Header/Header.component';
 
 import Header2 from './../../util/components/Header2/Header2.component';
-import { H1 } from './../../util/StyledComponent/premadeComponent';
+import { H1, P1 } from './../../util/StyledComponent/premadeComponent';
 
 const Cart = () => {
 	return (
@@ -15,6 +15,7 @@ const Cart = () => {
 
 			<Wrapper2>
 				<Wrapper3>
+					<P1 color="grey">Home/account</P1>
 					<H1 size="30" weight="700">
 						{' '}
 						Your Cart

@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { Button } from 'react-bootstrap';
 import buttonCart from '../../../assets/buttonCart.svg';
 import { Link } from 'react-router-dom';
+
 const GButton = (props) => {
 	return (
 		<React.Fragment>
