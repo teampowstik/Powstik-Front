@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 
-const Headers = (props) => {
+const CardHeaders = (props) => {
   return (
     <Container>
       <MainHeader>{props.main}</MainHeader>
@@ -11,15 +11,14 @@ const Headers = (props) => {
   );
 };
 
-export default Headers;
+export default CardHeaders;
 
 const Container = styled.div`
-  width: 85vw;
+  max-width: 100vw;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
   margin-bottom: 1rem;
   margin-top: 1rem;
+  margin-left: 4rem;
 `;
 
 const MainHeader = styled.div`
