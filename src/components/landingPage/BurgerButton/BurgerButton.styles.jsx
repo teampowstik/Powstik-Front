@@ -7,7 +7,7 @@ align-items:center ;
 justify-content:center ;
 margin-bottom:10px;
 transition: transform 0.7s cubic-bezier(0.075, 0.82, 0.165, 1) ;
-@media (min-width: 719px){
+@media (min-width: 900px){
     display:none ;
 }
 `;

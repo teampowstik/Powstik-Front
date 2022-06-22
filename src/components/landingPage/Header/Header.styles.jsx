@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import myImage from '../../../assets/Vector (8).png'
+import { Link } from 'react-router-dom'
 
 export const HeaderBox = styled.div`
 background-color:#FFFFFF;
@@ -44,11 +45,15 @@ width: 70%;
 }
 `;
 
-export const HeaderLinks = styled.div`
+export const HeaderLinks = styled(Link)`
 display:flex ;
 justify-content:space-evenly ;
 align-items:center ;
 cursor: pointer;
+font-size: 18px ;
+text-decoration:none ;
+text-transform:uppercase;
+color: black;
 `;
 
 export const HamburgerMenu = styled.div`

@@ -18,8 +18,8 @@ const Header = () => {
                     <CompanyNameImage></CompanyNameImage>
                 </CompanyHeaderName>
                 <HeaderLink>
-                    <HeaderLinks>Products</HeaderLinks>
-                    <HeaderLinks>Services</HeaderLinks>
+                    <HeaderLinks to='/product'>Products</HeaderLinks>
+                    <HeaderLinks to='/service'>Services</HeaderLinks>
                     <InputField />
                     <ShoppingCartIcon />
                     <img src={AccountImage} alt='Account' style={{ width: 30, height: 30 }} />
