@@ -12,6 +12,9 @@ import LandingPage from './components/LandingPage';
 
 import ProductResults from './components/productResults';
 import AddProduct from './components/addProductPage/addProduct';
+import UpdateProduct from './components/updateProductPage/updateProductPage';
+import AddService from './components/addServicePage/addServicePage';
+import UpdateService from './components/updateServicePage/updateServicePage';
 
 function App() {
 	return (
@@ -23,6 +26,9 @@ function App() {
 					<Route path="/register" element={<Signup />} />
 					<Route path="/products" element={<ProductResults />} />
 					<Route path="/addproduct" element={<AddProduct />} />
+					<Route path="/updateproduct" element={<UpdateProduct />} />
+					<Route path="/addservice" element={<AddService />} />
+					<Route path="/updateservice" element={<UpdateService />} />
 				</Routes>
 			</div>
 		</Router>
