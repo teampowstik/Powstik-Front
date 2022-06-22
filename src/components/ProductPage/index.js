@@ -5,7 +5,7 @@ import image from '../../assets/Rectangle_154-removebg-preview.png';
 import image2 from '../../assets/Rectangle_153__1_-removebg-preview.png';
 import { H1, P1 } from '../../util/StyledComponent/premadeComponent';
 import ProductCard from "../../util/cardSlider/card";
-import prod1 from '../../assets/prod1.png';
+import prod1 from '../../assets/Rectangle 153 (1).svg';
 import prod2 from '../../assets/Rectangle 153 (2).svg';
 import prod3 from '../../assets/Rectangle 157.svg';
 import prod4 from '../../assets/Cookies-1-300x300 1.svg';
