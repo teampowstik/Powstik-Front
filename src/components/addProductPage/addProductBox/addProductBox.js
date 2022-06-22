@@ -1,9 +1,9 @@
 import React from 'react'
 
 
-import { Col, Form, FormLabel, Row } from 'react-bootstrap';
+import { Col, Form, Row } from 'react-bootstrap';
 import styled from 'styled-components';
-import { H1, P1 } from '../../../util/StyledComponent/premadeComponent';
+import { P1 } from '../../../util/StyledComponent/premadeComponent';
 import { Input } from '../../../util/StyledComponent/input';
 
 const addProductInput = () => {
@@ -45,6 +45,28 @@ const addProductInput = () => {
                         <StyledTextArea className="mt-2" placeholder="xyz name" />
                     </Col>
                 </StyledRow>
+                <StyledRow className="mt-3">
+                    <Col md={3}>
+                        <P1 weight="600" size="19.1339px" lineHeight="27px"> Upload Product Images </P1>
+                        <StyledButton className="mt-2"> CHOOSE FILE </StyledButton>
+                    </Col>
+                    <Col md={3}>
+                            <UploadInfo> 1 Image Uploaded </UploadInfo>
+                    </Col>
+                </StyledRow>
+                <StyledRow className="mt-3">
+                    <Col md={12}>
+                        <StyledTextArea className="mt-2" placeholder="upload image here" />
+                    </Col>
+                </StyledRow>
+                <StyledRow className="mt-3 justify-content-md-center">
+                    <Col md={3}>
+                        <StyledButtonWhite className="mt-2 outline"> DISCARD CHANGES </StyledButtonWhite>
+                    </Col>
+                    <Col md={3}>
+                        <StyledButton className="mt-2"> SAVE CHANGES </StyledButton>
+                    </Col>
+                </StyledRow>
             </StyledForm>
         </FormBox>
     </Container>
@@ -67,9 +89,9 @@ const FormBox = styled.div`
     height: auto;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-    padding-bottom: 5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding-bottom: 3rem;
     background-color: #FFFFFF;
     overflow: auto;
 `;
@@ -104,9 +126,6 @@ const StyledRow = styled(Row)`
     margin-right: 10rem;
 `;
 
-const StyledCol = styled(Col)`
-`;
-
 const StyledTextArea = styled.textarea`
     width: 100%;
     margin-right: 10%;
@@ -114,4 +133,40 @@ const StyledTextArea = styled.textarea`
     border: 0px;
     resize: none;
     height: 8rem;
+`;
+
+const StyledButton = styled.button`
+    background-color: #8BC34A;
+    border-radius: 4px;
+    border: 1px;
+    width: 100%;
+    height: 2.4rem;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 17.6175px;
+    line-height: 21px;
+`;
+
+const UploadInfo = styled.div`
+    font-style: normal;
+    font-weight: 600;
+    font-size: 19.1339px;
+    line-height: 27px;
+    color: #616161;
+    margin-top: 2.3rem;
+`;
+
+const StyledButtonWhite = styled.button`
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    border-color: #8BC34A;
+    border: 2px solid;
+    width: 100%;
+    height: 2.4rem;
+    color: #8BC34A;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 17.6175px;
+    line-height: 21px;
 `;
