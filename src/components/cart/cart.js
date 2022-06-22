@@ -4,14 +4,12 @@ import Coupon from './coupon/coupan';
 import Product from './products/products';
 import styled from 'styled-components';
 import Header from './../LandingPage/Header/Header.component';
-
-import Header2 from './../../util/components/Header2/Header2.component';
 import { H1, P1 } from './../../util/StyledComponent/premadeComponent';
 
 const Cart = () => {
 	return (
 		<React.Fragment>
-			<Header2 />
+			<Header />
 
 			<Wrapper2>
 				<Wrapper3>

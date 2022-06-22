@@ -2,8 +2,6 @@ import React from 'react';
 
 import styled from 'styled-components';
 import Header from '../LandingPage/Header/Header.component';
-
-import Header2 from '../../util/components/Header2/Header2.component';
 import { H1, P1 } from '../../util/StyledComponent/premadeComponent';
 import Comp from './comp';
 import Footer from '../LandingPage/FooterWhite/index';
@@ -11,7 +9,7 @@ import Footer from '../LandingPage/FooterWhite/index';
 const AccountDetails = () => {
 	return (
 		<React.Fragment>
-			<Header2 />
+			<Header />
 
 			<Wrapper2>
 				<Wrapper3>
