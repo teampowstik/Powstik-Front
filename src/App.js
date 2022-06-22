@@ -13,6 +13,12 @@ import Cart from './components/cart/cart';
 import EditAccount from './components/editAccount/editAccount';
 import AccountDetails from './components/accountDetails/account';
 
+import ProductResults from './components/productResults';
+import AddProduct from './components/addProductPage/addProduct';
+import UpdateProduct from './components/updateProductPage/updateProductPage';
+import AddService from './components/addServicePage/addServicePage';
+import UpdateService from './components/updateServicePage/updateServicePage';
+
 function App() {
 	return (
 		<Router>
@@ -24,6 +30,11 @@ function App() {
 					<Route path="/cart" element={<Cart />} />
 					<Route path="/edit-account" element={<EditAccount />} />
 					<Route path="/account-details" element={<AccountDetails />} />
+					<Route path="/products" element={<ProductResults />} />
+					<Route path="/addproduct" element={<AddProduct />} />
+					<Route path="/updateproduct" element={<UpdateProduct />} />
+					<Route path="/addservice" element={<AddService />} />
+					<Route path="/updateservice" element={<UpdateService />} />
 				</Routes>
 			</div>
 		</Router>

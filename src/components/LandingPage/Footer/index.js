@@ -75,7 +75,7 @@ const Footer = () => {
 
 const Container = styled.div`
 	background-color: #333333;
-	man-width: 100vw;
+	max-width: 100vw;
 	height: auto;
 `;
 
