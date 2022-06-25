@@ -1,10 +1,9 @@
 import React from 'react'
 import { CompanyHeaderName, CompanyNameImage, HamburgerMenu, HeaderBox, HeaderLink, HeaderLinks } from './Header.styles'
-import cart from '../../../assets/Vector.svg'
-
+import cart from '../../../assets/Vector.svg';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
-import BurgerButton from '../BurgerButton/BurgerButton.component';
+import BurgerButton from '../../../util/components/BurgerButton/BurgerButton.component';
 import AccountImage from '../../../assets/Group.svg';
 import InputField from '../InputField/InputField.components';
 import { Link } from 'react-router-dom';
@@ -38,4 +37,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default Header;
