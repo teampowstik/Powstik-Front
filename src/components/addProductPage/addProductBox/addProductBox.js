@@ -1,12 +1,15 @@
-import React from 'react'
-
+import React, {useRef} from 'react'
 
 import { Col, Form, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import { P1 } from '../../../util/StyledComponent/premadeComponent';
 import { Input } from '../../../util/StyledComponent/input';
+import { NoEncryption } from '@mui/icons-material';
 
 const addProductInput = () => {
+    const handleFileUpload = event => {
+        console.log(event.target.files[0].name);
+      };
   return (
     <Container>
         <FormBox>
@@ -48,7 +51,8 @@ const addProductInput = () => {
                 <StyledRow className="mt-3">
                     <Col md={3}>
                         <P1 weight="600" size="19.1339px" lineHeight="27px"> Upload Product Images </P1>
-                        <StyledButton className="mt-2"> CHOOSE FILE </StyledButton>
+                        <StyledInput type="file" accept="image/*"/>
+                            <StyledButton className="mt-2"> CHOOSE FILE </StyledButton>
                     </Col>
                     <Col md={3}>
                             <UploadInfo> 1 Image Uploaded </UploadInfo>
@@ -81,7 +85,7 @@ const Container = styled.div`
     background-color: #8BC34A33;
     padding: 0px;
     margin: 0px;
-    overflow: auto;
+    overflow: hidden;
 `;
 
 const FormBox = styled.div`
@@ -93,7 +97,7 @@ const FormBox = styled.div`
     margin-bottom: 2rem;
     padding-bottom: 3rem;
     background-color: #FFFFFF;
-    overflow: auto;
+    overflow: hidden;
 `;
 
 const PageName = styled.div`
@@ -124,6 +128,7 @@ const StyledForm = styled(Form)`
 const StyledRow = styled(Row)`
     margin-left: 2.3rem;
     margin-right: 10rem;
+    overflow: hidden;
 `;
 
 const StyledTextArea = styled.textarea`
@@ -133,6 +138,14 @@ const StyledTextArea = styled.textarea`
     border: 0px;
     resize: none;
     height: 8rem;
+    overflow: hidden;
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+`;
+
+const StyledInput = styled.input`
+    display: none;
 `;
 
 const StyledButton = styled.button`

@@ -6,6 +6,7 @@ import styled from "styled-components";
 import ProductCard from "../Card";
 
 import prod1 from "../../../assets/product1.png";
+import prod2 from "../../../assets/product2.png";
 import prod3 from "../../../assets/product3.png";
 
 import "slick-carousel/slick/slick.css";
@@ -20,7 +21,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <img src={arrowRight} />
+      <img src={arrowRight} style={{ ...style,marginLeft:"1.5rem", zIndex: "2" }}/>
     </div>
   );
 }
@@ -33,7 +34,7 @@ function SamplePrevArrow(props) {
       style={{ ...style,marginRight:"1.5rem", zIndex: "2" }}
       onClick={onClick}
     >
-      <img src={arrowLeft} />
+      <img src={arrowLeft} style={{ ...style,marginLeft:"-1.5rem", zIndex: "2" }} />
     </div>
   );
 }
@@ -41,7 +42,7 @@ function SamplePrevArrow(props) {
 const CardSlider = () => {
   var settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 600,
     slidesToShow: 4,
     slidesToScroll: 3,
@@ -53,7 +54,7 @@ const CardSlider = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: false,
+          infinite: true,
           dots: false,
         },
       },
@@ -167,5 +168,6 @@ const Container = styled.div`
 `;
 
 const Cards = styled(Slider)`
-  margin: 0.2rem;
+  margin-left: 1rem;
+  padding-left: 0.1rem;
 `;
