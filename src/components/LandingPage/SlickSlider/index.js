@@ -118,7 +118,7 @@ const CardSlider = () => {
         </Cards>
         <Cards>
           <ProductCard
-            discount="45"
+            discount="150"
             image={prod1}
             subtitle="Diabetes"
             description="Befach Rice for Diabetics"
