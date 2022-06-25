@@ -27,11 +27,16 @@ color: #8BC34A;
 }
 `;
 
-export const CompanyNameImage = styled.div`
+export const CompanyNameImage = styled(Link)`
 background-image: url(${myImage}) ;
 background-repeat: no-repeat;
 width:100%;
 height:100% ;
+text-decoration:none ;
+
+		&:hover{
+			color: ${(props) => props.color || 'white'};
+		}
 `;
 
 export const HeaderLink = styled.div`
@@ -54,6 +59,11 @@ font-size: 18px ;
 text-decoration:none ;
 text-transform:uppercase;
 color: black;
+text-decoration:none ;
+
+		&:hover{
+			color: ${(props) => props.color || 'black'};
+		}
 `;
 
 export const HamburgerMenu = styled.div`

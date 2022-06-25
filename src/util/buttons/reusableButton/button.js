@@ -4,10 +4,11 @@ import styled from 'styled-components';
 import { Button } from 'react-bootstrap';
 import buttonCart from '../../../assets/buttonCart.svg';
 import { Link } from 'react-router-dom';
+
 const GButton = (props) => {
 	return (
 		<React.Fragment>
-			<Wrapper>
+			<Wrapper bg={props.bg} width={props.width}>
 				<Button className="mybutton" variant="primary" size="lg" block>
 					{props.title}
 				</Button>
@@ -17,10 +18,11 @@ const GButton = (props) => {
 };
 
 export default GButton;
-const Wrapper = styled.div`
-	${'' /* background-color: ; */} .mybutton {
-		background-color: ${(props) => props.bg || '#111111'};
 
+const Wrapper = styled.div`
+	.mybutton {
+		background-color: ${(props) => props.bg || '#111111'};
+		width: ${(props) => props.width || '110px'};
 		height: 34px;
 		min-width: 110px;
 		border: none;
@@ -28,14 +30,14 @@ const Wrapper = styled.div`
 		display: flex;
 		justify-content: space-around;
 		align-items: center;
-		max-width: 170px;
+
 		font-size: 15px;
 		color: white;
 		padding: 15px;
 	}
 	.mybutton:hover {
 		cursor: pointer;
-		scale: 1.5;
-		background-color: rgba(139, 195, 74, 0.2);
+
+		background-color: #e8f3db;
 	}
 `;

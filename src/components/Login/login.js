@@ -1,19 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-// import BuyNowButton from '../../../util/ShopNowButton/index';
 import { H1, P1 } from './../../util/StyledComponent/premadeComponent';
-//images
 import loginImg from '../../assets/login.png';
 import { Input } from './../../util/StyledComponent/input';
 import LSButton from './../../util/buttons/LoginButton/loginbutton';
 import GoognleButton from './../../util/buttons/googleLoginButton/googlebutton';
+import Footer from '../../util/components/FooterWhite';
+import { Link } from 'react-router-dom';
+import Header from '../LandingPage/Header/Header.component';
 
 const Login = () => {
 	return (
 		<React.Fragment>
+			<Header />
 			<Wrapper>
 				<Wrapper2>
 					<div className="header">
+						<P1 color="grey">Home/Account</P1>
 						<H1 color="#000" size="30">
 							Log into your account
 						</H1>
@@ -38,7 +41,7 @@ const Login = () => {
 											<input type="checkbox" name="cbox" />
 											<span>Remember Me</span>
 										</div>
-										<a href="#">forget password</a>
+										<Link to='/' className='link'>Forgot Password</Link>
 									</div>
 
 									<LSButton title="Login" />
@@ -49,8 +52,8 @@ const Login = () => {
 									</div>
 									<div className="gdiv">
 										<GoognleButton />
-										<span>
-											didnt have account <a href="/register"> signup</a>
+										<span className='registerlink'>
+											Dont have account <Link to='/register' className='link'>signup</Link>
 										</span>
 									</div>
 								</div>
@@ -59,6 +62,7 @@ const Login = () => {
 					</div>
 				</Wrapper2>
 			</Wrapper>
+			<Footer />
 		</React.Fragment>
 	);
 };
@@ -114,12 +118,14 @@ const Wrapper2 = styled.div`
 	.wb {
 		margin-bottom: 50px !important;
 	}
+
 	.cbox {
 		width: 350px;
 		display: flex;
 		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
+		accent-color: rgba(139, 195, 74, 0.8);
 	}
 
 	.hrr {
@@ -140,6 +146,16 @@ const Wrapper2 = styled.div`
 		justify-content: space-around;
 		align-items: center;
 		text-align: center;
+	}
+	.link{
+		text-decoration:none ;
+
+		&:hover{
+			color:black;
+		}
+	}
+	.registerlink{
+		margin-top: 5px ;
 	}
 	@media (max-width: 500px) {
 		.img {
