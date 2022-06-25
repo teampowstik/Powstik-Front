@@ -6,10 +6,9 @@ import SearchIcon from '@mui/icons-material/Search';
 const BurgerButton = ({ open }) => {
     return (
         <AllLinks open={open}>
-            <Links>Home</Links>
-            <Links>Product</Links>
-            <Links>Account</Links>
-            <Links><ShoppingCartIcon /></Links>
+            <Links to='/product'>Product</Links>
+            <Links to='/account-details'>Account</Links>
+            <Links to='/cart'><ShoppingCartIcon /></Links>
             <Links><SearchIcon /></Links>
         </AllLinks>
     )
