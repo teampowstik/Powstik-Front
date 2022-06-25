@@ -34,7 +34,7 @@ const Wrapper = styled.div`
 	}
 	.mybutton:hover {
 		cursor: pointer;
-		scale: 1.5;
+		scale: 1.1;
 		background-color: #e8f3db;
 	}
 `;

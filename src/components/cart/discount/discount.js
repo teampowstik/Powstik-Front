@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-//import BuyNowButton from '../../../util/ShopNowButton/index';
 import { H1, P1 } from '../../../util/StyledComponent/premadeComponent';
-import GButton from '../../../util/buttons/reusableButton/button';
 import cartDis from '../../../assets/cartDis.png';
 const Discount = () => {
 	return (

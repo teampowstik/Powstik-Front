@@ -8,11 +8,12 @@ import GoognleButton from './../../util/buttons/googleLoginButton/googlebutton';
 import Footer from '../../util/components/FooterWhite';
 import { Link } from 'react-router-dom';
 import Header from '../LandingPage/Header/Header.component';
-
+import { createGlobalStyle } from 'styled-components';
 const Login = () => {
 	return (
 		<React.Fragment>
 			<Header />
+			<GlobalStyles />
 			<Wrapper>
 				<Wrapper2>
 					<div className="header">
@@ -53,7 +54,7 @@ const Login = () => {
 									<div className="gdiv">
 										<GoognleButton />
 										<span className='registerlink'>
-											Dont have account <Link to='/register' className='link'>signup</Link>
+											Dont have account <Link to='/register' className='link'>Signup</Link>
 										</span>
 									</div>
 								</div>
@@ -68,6 +69,16 @@ const Login = () => {
 };
 export default Login;
 
+export const GlobalStyles = createGlobalStyle`
+	a{
+		text-decoration: none;
+		color:  rgba(139, 195, 74, 1);
+
+		&:hover{
+			color:  rgba(139, 195, 74, 0.8);
+		}
+	}
+`
 const Wrapper = styled.div`
 	background: rgba(139, 195, 74, 0.2);
 	padding: 2rem;
