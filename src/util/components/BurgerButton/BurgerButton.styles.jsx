@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const AllLinks = styled.div`
@@ -13,7 +14,7 @@ transition: transform 0.7s cubic-bezier(0.075, 0.82, 0.165, 1) ;
 `;
 
 
-export const Links = styled.div`
+export const Links = styled(Link)`
 font-family: 'Open Sans';
 font-style: normal;
 font-weight: 400;
