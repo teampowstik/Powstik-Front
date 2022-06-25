@@ -5,6 +5,9 @@ export const Input = styled.input`
 	background: ${(props) => props.background || 'rgba(139, 195, 74, 0.2)'};
 	border: None;
 	padding: 10px;
+	&:focus{
+		outline:none ;
+	}
 	@media (max-width: 500px) {
 		width: 260px;
 	}

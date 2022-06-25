@@ -1,7 +1,8 @@
 
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-export const Wrapper = styled.div`
+export const Wrapper = styled(Link)`
 		background-color: ${(props) => props.background || '#8bc34a'};
 		border-radius: 0px;
 		width: 174.33px;
@@ -15,4 +16,9 @@ export const Wrapper = styled.div`
 		font-size: 20px;
 		color: ${(props) => props.color || 'white'};
         cursor: pointer;
+		text-decoration:none ;
+
+		&:hover{
+			color: ${(props) => props.color || 'white'};
+		}
 `;
