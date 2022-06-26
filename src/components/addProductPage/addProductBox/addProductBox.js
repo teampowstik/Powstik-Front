@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { P1 } from '../../../util/StyledComponent/premadeComponent';
 import { Input } from '../../../util/StyledComponent/input';
 
+
 const addProductInput = () => {
   return (
     <Container>
@@ -66,7 +67,7 @@ const addProductInput = () => {
                         <StyledButtonWhite className="mt-2 outline" type="button"> DISCARD CHANGES </StyledButtonWhite>
                     </Col>
                     <Col md={3}>
-                        <StyledButton className="mt-2" type="button"> SAVE CHANGES </StyledButton>
+                        <StyledButton className="mt-2" type="button">  UPLOAD PRODUCT </StyledButton>
                     </Col>
                 </StyledRow>
             </StyledForm>

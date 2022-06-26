@@ -2,8 +2,6 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import prod1 from "../../../assets/product1.png";
-
 const ProductResults = (props) => {
   return (
     <Container>

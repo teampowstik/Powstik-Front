@@ -64,7 +64,7 @@ const AddServiceBox = () => {
                         <StyledButtonWhite className="mt-2 outline"> DISCARD CHANGES </StyledButtonWhite>
                     </Col>
                     <Col md={3}>
-                        <StyledButton className="mt-2"> SAVE CHANGES </StyledButton>
+                        <StyledButton className="mt-2"> UPLOAD SERVICE </StyledButton>
                     </Col>
                 </StyledRow>
             </StyledForm>

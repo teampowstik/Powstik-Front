@@ -5,9 +5,9 @@ import styled from "styled-components";
 
 import ProductCard from "../Card";
 
-import prod1 from "../../../assets/product1.png";
-import prod2 from "../../../assets/product2.png";
-import prod3 from "../../../assets/product3.png";
+import prod1 from "../../assets/product1.png";
+import prod2 from "../../assets/product2.png";
+import prod3 from "../../assets/product3.png";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
