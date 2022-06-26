@@ -25,7 +25,7 @@ const array = [
 		title: 'Mother & Child'
 	},
 	{
-		pic: lettuce,
+		pic: lemon,
 		desc: 'Research led Low carb substitutes, Proteins etc to tackle Diabetes & obesity. ',
 		title: 'Metabolics'
 	},
@@ -35,7 +35,7 @@ const array = [
 		title: 'Metabolics'
 	},
 	{
-		pic: lettuce,
+		pic: peas,
 		desc: 'Research led Low carb substitutes, Proteins etc to tackle Diabetes & obesity. ',
 		title: 'Metabolics'
 	}

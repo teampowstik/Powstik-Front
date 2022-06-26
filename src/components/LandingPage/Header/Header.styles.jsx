@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import myImage from '../../../assets/Vector (8).png'
+import { Link } from 'react-router-dom'
 
 export const HeaderBox = styled.div`
 background-color:#FFFFFF;
@@ -26,11 +27,16 @@ color: #8BC34A;
 }
 `;
 
-export const CompanyNameImage = styled.div`
+export const CompanyNameImage = styled(Link)`
 background-image: url(${myImage}) ;
 background-repeat: no-repeat;
 width:100%;
 height:100% ;
+text-decoration:none ;
+
+		&:hover{
+			color: ${(props) => props.color || 'white'};
+		}
 `;
 
 export const HeaderLink = styled.div`
@@ -44,11 +50,20 @@ width: 70%;
 }
 `;
 
-export const HeaderLinks = styled.div`
+export const HeaderLinks = styled(Link)`
 display:flex ;
 justify-content:space-evenly ;
 align-items:center ;
 cursor: pointer;
+font-size: 18px ;
+text-decoration:none ;
+text-transform:uppercase;
+color: black;
+text-decoration:none ;
+
+		&:hover{
+			color: ${(props) => props.color || 'black'};
+		}
 `;
 
 export const HamburgerMenu = styled.div`
