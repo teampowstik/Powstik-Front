@@ -7,6 +7,7 @@ import BurgerButton from '../../../util/components/BurgerButton/BurgerButton.com
 import AccountImage from '../../../assets/Group.svg';
 import InputField from '../InputField/InputField.components';
 import { Link } from 'react-router-dom';
+import NavLinks from '../../../util/components/NavLinks/NavLinks.component';
 
 const Header = () => {
 

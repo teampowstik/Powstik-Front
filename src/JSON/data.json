@@ -1,0 +1,202 @@
+[
+  {
+    "Diabetes": [
+      {
+        "userId": 1,
+        "title": "Low carb atta"
+      },
+      {
+        "userId": 2,
+        "title": "Low carb snacks"
+      },
+      {
+        "userId": 3,
+        "title": "Dried fruits/vegetables"
+      },
+      {
+        "userId": 4,
+        "title": "Low GI food"
+      },
+      {
+        "userId": 5,
+        "title": "Diabetic Rice or substitutes"
+      },
+      {
+        "userId": 6,
+        "title": "Sugar substitutes"
+      },
+      {
+        "userId": 7,
+        "title": "Nutrition products with Multivitamins"
+      },
+      {
+        "userId": 8,
+        "title": "Protien Powders"
+      },
+      {
+        "userId": 9,
+        "title": "Herbs/Spices"
+      },
+      {
+        "userId": 10,
+        "title": "Ayurvedic Revitalizers and medicines"
+      },
+      {
+        "userId": 11,
+        "title": "Beverages"
+      }
+    ]
+  },
+  {
+    "Geriatrics": [
+      {
+        "userId": 1,
+        "title": "Vitamins and Protein deficiency"
+      },
+      {
+        "userId": 2,
+        "title": "Indigesion"
+      },
+      {
+        "userId": 3,
+        "title": "Hypertension"
+      },
+      {
+        "userId": 4,
+        "title": "Senile Debility"
+      },
+      {
+        "userId": 5,
+        "title": "Depression"
+      },
+      {
+        "userId": 6,
+        "title": "Dementia"
+      }
+    ]
+  },
+  {
+    "Mother and Child": [
+      {
+        "userId": 1,
+        "title": "Infertility"
+      },
+      {
+        "userId": 2,
+        "title": "Planning to concieve"
+      },
+      {
+        "userId": 3,
+        "title": "Early Pregnancy"
+      },
+      {
+        "userId": 4,
+        "title": "Pregnancy"
+      },
+      {
+        "userId": 5,
+        "title": "Depression"
+      },
+      {
+        "userId": 6,
+        "title": "NewBorns"
+      },
+      {
+        "userId": 7,
+        "title": "Infants"
+      },
+      {
+        "userId": 8,
+        "title": "Toddlers"
+      },
+      {
+        "userId": 9,
+        "title": "Preschoolers"
+      },
+      {
+        "userId": 10,
+        "title": "Grade schoolers"
+      },
+      {
+        "userId": 11,
+        "title": "Pre-teens"
+      },
+      {
+        "userId": 12,
+        "title": "Teens/Adolescents"
+      }
+    ]
+  },
+  {
+    "Organic": [
+      {
+        "userId": 1,
+        "title": "Low carb atta"
+      },
+      {
+        "userId": 2,
+        "title": "Low carb snacks"
+      },
+      {
+        "userId": 3,
+        "title": "Dried fruits/vegetables"
+      },
+      {
+        "userId": 4,
+        "title": "Low GI food"
+      },
+      {
+        "userId": 5,
+        "title": "Cold pressed oil"
+      }
+    ]
+  },
+  {
+    "Nutraceuticals": [
+      {
+        "userId": 1,
+        "title": "Vitamins and Protein deficiency"
+      },
+      {
+        "userId": 2,
+        "title": "Indigestion"
+      },
+      {
+        "userId": 3,
+        "title": "Ayurvedic Revitalizers and Medicines"
+      },
+      {
+        "userId": 4,
+        "title": "Beverages"
+      }
+    ]
+  },
+  {
+    "Plant Based Food": [
+      {
+        "userId": 1,
+        "title": "Vitamins and Proteins Deficiancy"
+      },
+      {
+        "userId": 2,
+        "title": "Indigestion"
+      },
+      {
+        "userId": 3,
+        "title": "Hypertenstion"
+      },
+      {
+        "userId": 4,
+        "title": "Senile Debility"
+      },
+      {
+        "userId": 5,
+        "title": "Depression"
+      },
+      {
+        "userId": 6,
+        "title": "Dementia"
+      }
+    ]
+  }
+]
