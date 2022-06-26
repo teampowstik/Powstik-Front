@@ -4,12 +4,8 @@ import { Col, Form, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import { P1 } from '../../../util/StyledComponent/premadeComponent';
 import { Input } from '../../../util/StyledComponent/input';
-import { NoEncryption } from '@mui/icons-material';
 
 const addProductInput = () => {
-    const handleFileUpload = event => {
-        console.log(event.target.files[0].name);
-      };
   return (
     <Container>
         <FormBox>
@@ -51,8 +47,10 @@ const addProductInput = () => {
                 <StyledRow className="mt-3">
                     <Col md={3}>
                         <P1 weight="600" size="19.1339px" lineHeight="27px"> Upload Product Images </P1>
-                        <StyledInput type="file" accept="image/*"/>
-                            <StyledButton className="mt-2"> CHOOSE FILE </StyledButton>
+                        <StyledLabel for="files" className="mt-2"> 
+                            CHOOSE FILE 
+                        </StyledLabel>
+                        <StyledInput id="files" type="file" accept="image/*" multiple/>
                     </Col>
                     <Col md={3}>
                             <UploadInfo> 1 Image Uploaded </UploadInfo>
@@ -65,10 +63,10 @@ const addProductInput = () => {
                 </StyledRow>
                 <StyledRow className="mt-3 justify-content-md-center">
                     <Col md={3}>
-                        <StyledButtonWhite className="mt-2 outline"> DISCARD CHANGES </StyledButtonWhite>
+                        <StyledButtonWhite className="mt-2 outline" type="button"> DISCARD CHANGES </StyledButtonWhite>
                     </Col>
                     <Col md={3}>
-                        <StyledButton className="mt-2"> SAVE CHANGES </StyledButton>
+                        <StyledButton className="mt-2" type="button"> SAVE CHANGES </StyledButton>
                     </Col>
                 </StyledRow>
             </StyledForm>
@@ -159,6 +157,21 @@ const StyledButton = styled.button`
     font-weight: 550;
     font-size: 17.6175px;
     line-height: 21px;
+`;
+
+const StyledLabel= styled.label`
+    background-color: #8BC34A;
+    border-radius: 4px;
+    border: 1px;
+    width: 100%;
+    height: 2.4rem;
+    color: #FFFFFF;
+    font-style: normal;
+    font-weight: 550;
+    font-size: 17.6175px;
+    line-height: 21px;
+    padding-top: 0.5rem;
+    text-align: center;
 `;
 
 const UploadInfo = styled.div`
