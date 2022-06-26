@@ -6,5 +6,4 @@ width:50% ;
 background:#F5F5F6 ;
 align-items:center ;
 padding: 10px 10px ;
-
 `;

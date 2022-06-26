@@ -7,18 +7,21 @@ import loginImg from '../../assets/login.png';
 import { Input } from './../../util/StyledComponent/input';
 import LSButton from './../../util/buttons/LoginButton/loginbutton';
 import GoognleButton from './../../util/buttons/googleLoginButton/googlebutton';
-import Header2 from '../../util/components/Header2/Header2.component';
 import Footer from '../../util/components/FooterWhite';
-
+import Header from '../LandingPage/Header/Header.component';
+import { Link } from 'react-router-dom';
+import { GlobalStyles } from '../Login/login';
 const Signup = () => {
 	return (
 		<React.Fragment>
-			<Header2 />
+			<Header />
 			<Wrapper>
+				<GlobalStyles />
 				<Wrapper2>
 					<div className="header">
+						<P1 color="grey">Home/Account</P1>
 						<H1 color="#000" size="30">
-							Singnin into your account
+							Register / Sign Up Now
 						</H1>
 					</div>
 					<div className="bodyy">
@@ -30,7 +33,7 @@ const Signup = () => {
 								Welcome Back !
 							</H1> */}
 
-							<form>
+							<form method='POST'>
 								<div className="fdiv">
 									<P1 color="#000"> UserName or Email Address *</P1>
 									<Input placeholder="username" />
@@ -43,14 +46,12 @@ const Signup = () => {
 										<input type="radio" name="r1" /> <span>i am a customer</span>
 									</div>
 									<div>
-										<input type="radio" name="r1" /> <span>i am a vendor</span>
+										<input type="radio" name="r1" /> <span>I am a vendor</span>
 									</div>
 
 									<div>
-										<input type="checkbox" name="cbox" />
-										<span>
-											<a href="#">Accept term and condition</a>
-										</span>
+										<input type="checkbox" name="cbox" style={{ accentColor: "rgba(139, 195, 74, 0.8)" }} />
+										<Link to='/'> Accept Terms and condition</Link>
 									</div>
 
 									<LSButton title="Register" />
