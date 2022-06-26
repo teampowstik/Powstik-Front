@@ -128,7 +128,6 @@ const StyledRow = styled(Row)`
 
 const StyledTextArea = styled.textarea`
     width: 100%;
-    margin-right: 10%;
     background-color: #8BC34A33;
     border: 0px;
     resize: none;
@@ -138,14 +137,16 @@ const StyledTextArea = styled.textarea`
 const StyledButton = styled.button`
     background-color: #8BC34A;
     border-radius: 4px;
-    border: 1px;
+    border-color: #8BC34A;
+    border: 0px;
     width: 100%;
-    height: 2.4rem;
+    height: auto;
     color: #FFFFFF;
     font-style: normal;
     font-weight: 550;
     font-size: 17.6175px;
     line-height: 21px;
+    padding : 0.6rem;
 `;
 
 const UploadInfo = styled.div`
@@ -163,10 +164,11 @@ const StyledButtonWhite = styled.button`
     border-color: #8BC34A;
     border: 2px solid;
     width: 100%;
-    height: 2.4rem;
+    height: auto;
     color: #8BC34A;
     font-style: normal;
     font-weight: 550;
     font-size: 17.6175px;
     line-height: 21px;
+    padding : 0.5rem;
 `;
