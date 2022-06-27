@@ -34,6 +34,7 @@ const Header = () => {
                 </HamburgerMenu>
             </HeaderBox>
             <BurgerButton open={open} />
+            <NavLinks />
         </>
     )
 }

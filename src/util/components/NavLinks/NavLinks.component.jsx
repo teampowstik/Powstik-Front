@@ -3,11 +3,10 @@ import { NavContainer } from './NavLinks.styles'
 import Navdata from '../../../JSON/data.json';
 import NavTitle from '../../NavTitle/NavTitle.component';
 const NavLinks = () => {
-    console.log(Navdata.map(items => items))
     return (
         <NavContainer>
             {
-                Navdata.map(items => <NavTitle items={items} />)
+                Navdata.map(items => <NavTitle key={items.Category.categoryId} items={items.Category} />)
             }
         </NavContainer>
     )
