@@ -104,7 +104,7 @@ const StyledBtn = styled.button`
   background: #FFFFFF;
   border-radius: 1px;
   border: 0px;
-
+  margin-top:5px ;
   font-style: normal;
   font-weight: 600;
   font-size: 17.0549px;
