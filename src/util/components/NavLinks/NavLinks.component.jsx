@@ -2,9 +2,9 @@ import React from 'react'
 import { NavContainer } from './NavLinks.styles'
 import Navdata from '../../../JSON/data.json';
 import NavTitle from '../../NavTitle/NavTitle.component';
-const NavLinks = () => {
+const NavLinks = ({ onMouseEnter, onMouseLeave }) => {
     return (
-        <NavContainer>
+        <NavContainer onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
             {
                 Navdata.map(items => <NavTitle key={items.Category.categoryId} items={items.Category} />)
             }

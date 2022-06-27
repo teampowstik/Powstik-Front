@@ -50,12 +50,25 @@ width: 70%;
 }
 `;
 
+export const LinkContainer = styled.div`
+display:none ;
+height:470px ;
+width: 90vw ;
+background-color:#fff ;
+z-index:10 ;
+margin:0 auto ;
+@media(max-width:900px){
+    width:96vw ;
+}
+`;
+
 export const HeaderLinks = styled(Link)`
 display:flex ;
 justify-content:space-evenly ;
 align-items:center ;
 cursor: pointer;
 font-size: 18px ;
+padding: 14px 0 ;
 text-decoration:none ;
 text-transform:uppercase;
 color: black;
@@ -63,7 +76,13 @@ text-decoration:none ;
 
 		&:hover{
 			color: ${(props) => props.color || 'black'};
-		}
+            
+            &:nth-child(1){
+                ${LinkContainer} {
+                display:flex ;
+            }
+            }
+        }
 `;
 
 export const HamburgerMenu = styled.div`

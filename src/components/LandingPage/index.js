@@ -11,7 +11,6 @@ import WebsiteDescription from './WebsiteDescription/WebsiteDescription.componen
 import DiscountBar from './DiscountComponent/Discount.component';
 import FooterWhite from './FooterWhite';
 import ProductBox from './ProductBox';
-import Mobile from './Mobile/Mobile.component';
 
 const LandingPage = () => {
 	return (

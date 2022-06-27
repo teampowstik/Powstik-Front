@@ -6,7 +6,10 @@ flex-direction:column ;
 flex-wrap:wrap ;
 
 width:90vw ;
-height:450px ;
+height:470px ;
 padding-bottom:60px ;
+@media(max-width:900px){
+    width:96vw ;
+}
 `;
 
