@@ -27,8 +27,3 @@ flex-grow: 0;
 margin-bottom:7px;
 cursor: pointer;
 `;
-
-export const Line = styled.hr`
-height:2px ;
-color:black;
-`;

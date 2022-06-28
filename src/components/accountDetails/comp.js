@@ -189,4 +189,5 @@ const Wrapper = styled.div`
     .pdiv{
         width:300px;
     }
-`;
+	}
+	`;

@@ -10,9 +10,6 @@ margin: 20px 10px;
 
 export const Container = styled.div`
 display:flex ;
-width:15vw ;
+width:14vw ;
 flex-wrap:wrap ;
-@media(max-width:900px){
-    width:16vw ;
-}
 `;

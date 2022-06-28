@@ -10,7 +10,4 @@ position:fixed ;
 top: 55%;
 left: 50%;
 transform: translate(-50%, -50%);
-@media(max-width:900px){
-    width:96vw ;
-}
 `;
