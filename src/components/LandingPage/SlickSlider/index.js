@@ -21,7 +21,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <img src={arrowRight} style={{ ...style,marginLeft:"1.5rem", zIndex: "2" }}/>
+      <img src={arrowRight} style={{ ...style, marginLeft: "1.5rem", zIndex: "2" }} />
     </div>
   );
 }
@@ -31,10 +31,10 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style,marginRight:"1.5rem", zIndex: "2" }}
+      style={{ ...style, marginRight: "1.5rem", zIndex: "2" }}
       onClick={onClick}
     >
-      <img src={arrowLeft} style={{ ...style,marginLeft:"-1.5rem", zIndex: "2" }} />
+      <img src={arrowLeft} style={{ ...style, marginLeft: "-1.5rem", zIndex: "2" }} />
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import { CompanyHeaderName, CompanyNameImage, HamburgerMenu, HeaderBox, HeaderLink, HeaderLinks, LinkContainer } from './Header.styles'
+import { CompanyHeaderName, CompanyNameImage, HamburgerMenu, HeaderBox, HeaderLink, HeaderLinks } from './Header.styles'
 import cart from '../../../assets/Vector.svg';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
