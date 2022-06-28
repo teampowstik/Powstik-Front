@@ -7,7 +7,7 @@ background-color:#FFFFFF;
 display:flex;
 flex-direction: row;
 align-items: center;
-margin: 0 2rem;
+padding: 0 2rem;
 padding-top: 5px;
 height:80px ;
 @media (max-width: 900px) {
@@ -33,21 +33,6 @@ background-repeat: no-repeat;
 width:100%;
 height:100% ;
 text-decoration:none ;
-
-		&:hover{
-			color: ${(props) => props.color || 'white'};
-		}
-`;
-
-export const HeaderLink = styled.div`
-display:flex ;
-justify-content:space-between ;
-align-items:center ;
-width: 70%;
-@media (max-width: 900px) {
-    display: none ;
-    width: 30% ;
-}
 `;
 
 export const LinkContainer = styled.div`
@@ -62,27 +47,36 @@ margin:0 auto ;
 }
 `;
 
+export const HeaderLink = styled.div`
+display:flex ;
+justify-content:space-between ;
+align-items:center ;
+width: 70%;
+@media (max-width: 900px) {
+    display: none ;
+    width: 30% ;
+}
+`;
+
+
+
 export const HeaderLinks = styled(Link)`
 display:flex ;
 justify-content:space-evenly ;
 align-items:center ;
 cursor: pointer;
 font-size: 18px ;
-padding: 14px 0 ;
+padding: 21px 0 ;
 text-decoration:none ;
 text-transform:uppercase;
 color: black;
 text-decoration:none ;
 
 		&:hover{
-			color: ${(props) => props.color || 'black'};
-            
-            &:nth-child(1){
-                ${LinkContainer} {
-                display:flex ;
+			color: #8BC34A;
+            border-bottom: 2px solid #8BC34A;
             }
-            }
-        }
+        
 `;
 
 export const HamburgerMenu = styled.div`

@@ -20,7 +20,7 @@ const Header = () => {
                     <CompanyNameImage to='/'></CompanyNameImage>
                 </CompanyHeaderName>
                 <HeaderLink>
-                    <HeaderLinks onMouseEnter={setIsOpen.bind(null, true)} to='/product'>Products</HeaderLinks>
+                    <HeaderLinks onMouseEnter={setIsOpen.bind(null, true)} onMouseLeave={setIsOpen.bind(null, false)} to='/product'>Products</HeaderLinks>
                     <HeaderLinks to='/service'>Services</HeaderLinks>
                     <InputField />
                     <Link to='/cart'>
