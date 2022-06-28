@@ -66,7 +66,7 @@ justify-content:space-evenly ;
 align-items:center ;
 cursor: pointer;
 font-size: 18px ;
-padding: 21px 0 ;
+padding: 21px 10px ;
 text-decoration:none ;
 text-transform:uppercase;
 color: black;
