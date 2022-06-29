@@ -4,21 +4,21 @@ import styled from 'styled-components';
 import axios from "axios";
 
 const ProductResultBox = () => {
-    const getItem= () => {
-        axios.get('')
-        .then(res => {
-            console.log(res);
-        }).catch(err => {
-            console.log(err);
-        })
-    }
+    // const getItem= () => {
+    //     axios.get('')
+    //     .then(res => {
+    //         console.log(res);
+    //     }).catch(err => {
+    //         console.log(err);
+    //     })
+    // }
 
   return (
     <Container>
         <Box>
             <PageName> Home / Products </PageName>
             <PageTitle> Products </PageTitle>
-            <button onClick={getItem}> Get Item </button>
+            <button> Get Item </button>
         </Box>
     </Container>
   )
