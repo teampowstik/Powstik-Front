@@ -2,6 +2,7 @@ import React from "react";
 
 import styled from "styled-components";
 import { Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 import appstore from "../../../assets/app-store-2.png";
 import playstore from "../../../assets/play-store-2.png";
@@ -34,12 +35,12 @@ const Footer = () => {
           <Header className="text-uppercase mb-4 font-weight-bold">
             Useful Links
           </Header>
-          <Item>Contact Us</Item>
-          <Item>About</Item>
-          <Item>Terms of Service</Item>
-          <Item>Refund Policy</Item>
-          <Item>Privacy Policy</Item>
-          <Item>Credits</Item>
+          <Item> <Link to="/contact-us" style={{color: 'black'}}> Contact Us </Link></Item>
+          <Item> <Link to="/about" style={{color: 'black'}}> About </Link></Item>
+          <Item> <Link to="/tos" style={{color: 'black'}}> Terms of Service </Link></Item>
+          <Item> <Link to="/refund-policy" style={{color: 'black'}}> Refund Policy </Link></Item>
+          <Item> <Link to="/privacy-policy" style={{color: 'black'}}> Privacy Policy </Link></Item>
+          <Item> <Link to="/credits" style={{color: 'black'}}> Credits </Link></Item>
         </StyledColumn>
         <StyledColumn className="col-md-2 col-lg-3 col-xl-3 mx-auto mt-3">
           <Header className="text-uppercase mb-4 font-weight-bold">
@@ -116,9 +117,11 @@ const Item = styled.p`
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
+    width: fit-content;
     &:hover{
         cursor: pointer;
     }
+    color: black;
 `;
 
 const ImageContainer = styled.div`
