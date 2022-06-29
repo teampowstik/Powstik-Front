@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios'
 import CardHeaders from '../cardHeaders';
 import CardSlider from '../SlickSlider';
 
@@ -9,16 +8,10 @@ const ProductBox = () => {
 	const [motherAndBaby, setMotherAndBaby] = useState([]);
 	const [metabolics, setMetabolics] = useState([]);
 
-	const fetchData = async () => {
+	const fetchData = () => {
 
-		const { data } = await axios(`http://powstik-backend-test-v1.azurewebsites.net/consultation/bycategory/Diabetes`, {
-			"method": "GET",
-			"mode": "cors",
-			headers: {
-				'Access-Control-Allow-Origin': "*"
-			}
-		})
-			.then((data) => console.log(data))
+		fetch('https://davidwalsh.name/demo/arsenal.json', { mode: "no-cors", header: { 'Content-type': "application/json", 'Access-Control-Allow-Origin': '*' } })
+			.then(response => response.json())
 	};
 
 	useEffect(() => {
