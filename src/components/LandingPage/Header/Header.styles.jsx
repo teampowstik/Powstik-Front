@@ -5,10 +5,13 @@ import { Link } from 'react-router-dom'
 export const HeaderBox = styled.div`
 background-color:#FFFFFF;
 display:flex;
+position:fixed ;
 flex-direction: row;
 align-items: center;
 padding: 0 2rem;
 padding-top: 5px;
+width:100% ;
+z-index:10 ;
 height:80px ;
 @media (max-width: 900px) {
     margin: 0.8rem 3rem;
