@@ -11,7 +11,8 @@ align-items: center;
 padding: 0 2rem;
 padding-top: 5px;
 width:100% ;
-z-index:10 ;
+z-index:1 ;
+top:0;
 height:80px ;
 @media (max-width: 900px) {
     margin: 0.8rem 3rem;

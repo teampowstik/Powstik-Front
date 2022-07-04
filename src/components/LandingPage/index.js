@@ -13,7 +13,7 @@ import ProductBox from './ProductBox';
 const LandingPage = () => {
 	return (
 		<React.Fragment>
-			<Header />
+
 			<DiscountBar />
 			<WebsiteDescription />
 			<Characteristics />

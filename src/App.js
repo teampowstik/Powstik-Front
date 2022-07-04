@@ -16,11 +16,13 @@ import AddService from './components/addServicePage/addServicePage';
 import UpdateService from './components/updateServicePage/updateServicePage';
 import ProductPage from './components/ProductPage';
 import ServicePage from './components/servicePage';
+import Header from './components/LandingPage/Header/Header.component';
 
 function App() {
 	return (
 		<Router>
 			<div className="App">
+				<Header />
 				<Routes>
 					<Route path="/" element={<LandingPage />} />
 					<Route path="/login" element={<Login />} />
