@@ -9,7 +9,8 @@ import WebsiteDescription from './WebsiteDescription/WebsiteDescription.componen
 import DiscountBar from './DiscountComponent/Discount.component';
 import FooterWhite from './FooterWhite';
 import ProductBox from './ProductBox';
-
+//import { add, addMany } from '../../Store/MessageSlice';
+import { useSelector, useDispatch } from 'react-redux';
 const LandingPage = () => {
 	return (
 		<React.Fragment>

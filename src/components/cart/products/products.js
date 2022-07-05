@@ -14,7 +14,7 @@ const data = [
 	{ name: 'Befach Rice for Diabetics', desc: 'Diabetes', pic: sampleProduct }
 ];
 const Product = (props) => {
-	console.log(props);
+	// console.log(props);
 
 	return (
 		<React.Fragment>

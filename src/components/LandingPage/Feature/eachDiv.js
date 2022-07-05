@@ -9,7 +9,7 @@ import fb3 from '../../../assets/fb3.svg';
 import fb4 from '../../../assets/fb4.svg';
 import fb5 from '../../../assets/fb5.svg';
 const Div = (props) => {
-	console.log(props);
+	// console.log(props);
 
 	return (
 		<Cd>

@@ -5,7 +5,7 @@ import { H1, P1 } from '../../../util/StyledComponent/premadeComponent';
 
 import GButton from '../../../util/buttons/reusableButton/button';
 const Div = (props) => {
-	console.log(props);
+	// console.log(props);
 
 	return (
 		<Cd>

@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
+import axios from 'axios';
+
 import { H1, P1 } from './../../util/StyledComponent/premadeComponent';
 import loginImg from '../../assets/login.png';
 import { Input } from './../../util/StyledComponent/input';
@@ -10,6 +13,21 @@ import { Link } from 'react-router-dom';
 import Header from '../LandingPage/Header/Header.component';
 import { createGlobalStyle } from 'styled-components';
 const Login = () => {
+	const { register, handleSubmit, watch, formState: { errors } } = useForm();
+	const onSubmit = async (data) => {
+		console.log(data);
+		try {
+			const response = await axios.request({
+				baseUrl: 'https://powstik-back-v1.azurewebsites.net',
+				url: '/user/login',
+				method: 'POST',
+				data: data
+			});
+			console.log(response);
+		} catch (err) {
+			console.log(err);
+		}
+	};
 	return (
 		<React.Fragment>
 			<Header />
@@ -31,21 +49,25 @@ const Login = () => {
 								Welcome Back !
 							</H1>
 
-							<form>
+							<form onSubmit={handleSubmit(onSubmit)}>
 								<div className="fdiv">
 									<P1 color="#000"> UserName or Email Address *</P1>
-									<Input placeholder="something@gmail" />
+									<Input {...register('email', { required: true })} placeholder="something@gmail" />
+									{errors.email && <span className="fontcolor">This field is required</span>}
 									<P1 color="#000"> Password*</P1>
-									<Input placeholder="*******" />
+									<Input {...register('password', { required: true })} placeholder="*******" />
+									{errors.password && <span className="fontcolor">This field is required</span>}
 									<div className="cbox ">
 										<div>
 											<input type="checkbox" name="cbox" />
 											<span>Remember Me</span>
 										</div>
-										<Link to='/' className='link'>Forgot Password</Link>
+										<Link to="/" className="link">
+											Forgot Password
+										</Link>
 									</div>
 
-									<LSButton title="Login" />
+									<LSButton title="Login" type="submit" />
 									<div className="or">
 										<hr className="hrr" />
 										<P1 color="rgba(139, 195, 74, 1)">or</P1>
@@ -53,8 +75,11 @@ const Login = () => {
 									</div>
 									<div className="gdiv">
 										<GoognleButton />
-										<span className='registerlink'>
-											Dont have account <Link to='/register' className='link'>Signup</Link>
+										<span className="registerlink">
+											Dont have account{' '}
+											<Link to="/register" className="link">
+												Signup
+											</Link>
 										</span>
 									</div>
 								</div>
@@ -78,7 +103,7 @@ export const GlobalStyles = createGlobalStyle`
 			color:  rgba(139, 195, 74, 0.8);
 		}
 	}
-`
+`;
 const Wrapper = styled.div`
 	background: rgba(139, 195, 74, 0.2);
 	padding: 2rem;
@@ -94,6 +119,10 @@ const Wrapper2 = styled.div`
 	padding: 2rem;
 
 	min-height: 200px;
+
+	.fontcolor {
+		color: red;
+	}
 	.header {
 		margin-top: 20px;
 		margin-left: 20px;
@@ -158,15 +187,15 @@ const Wrapper2 = styled.div`
 		align-items: center;
 		text-align: center;
 	}
-	.link{
-		text-decoration:none ;
+	.link {
+		text-decoration: none;
 
-		&:hover{
-			color:black;
+		&:hover {
+			color: black;
 		}
 	}
-	.registerlink{
-		margin-top: 5px ;
+	.registerlink {
+		margin-top: 5px;
 	}
 	@media (max-width: 500px) {
 		.img {
