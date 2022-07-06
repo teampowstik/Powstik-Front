@@ -15,16 +15,17 @@ import Header from '../LandingPage/Header/Header.component';
 import { Link } from 'react-router-dom';
 import { GlobalStyles } from '../Login/login';
 import { baseURL } from '../../configApi/config';
+import { Submit } from '../../configApi/function';
 const Signup = () => {
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
 	const [ user, setUser ] = useState(true);
 
 	const onSubmit = async (data) => {
 		data['is_seller'] = !user;
-		console.log(data);
+		//console.log(data);
 
 		//const baseURL = 'https://powstik-back-test.azurewebsites.net';
-		const url = baseURL + '/user/register';
+		//const url = baseURL + '/user/register';
 
 		if (data.terms == false) {
 			NotifyDanger('Please accept the terms and conditions');
@@ -39,21 +40,9 @@ const Signup = () => {
 		const data2 = JSON.parse(JSON.stringify(data));
 		console.log(data2);
 
-		const config = {
-			headers: {
-				'Content-Type': 'application/JSON',
-				'Access-Control-Allow-Origin': '*',
-				'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
-			}
-		};
-		try {
-			const response = await axios.post(url, data2, config);
-			console.log(response);
-			NotifySuccess('success ' + response.message);
-		} catch (err) {
-			console.log(err);
-			NotifyDanger(err.message);
-		}
+		const res = await Submit(data2, '/user/register', 'post');
+
+		//console.log('res....', res);
 	};
 	return (
 		<React.Fragment>
@@ -133,7 +122,7 @@ const Signup = () => {
 											style={{ accentColor: 'rgba(139, 195, 74, 0.8)' }}
 											{...register('terms')}
 										/>
-										<Link to="/"> Accept Terms and condition</Link>
+										<Link to="#"> Accept Terms and condition</Link>
 									</div>
 
 									<LSButton title="Register" />
@@ -205,7 +194,8 @@ const Wrapper2 = styled.div`
 	}
 	.wb {
 		margin-bottom: 50px !important;
-	}
+	}import { Submit } from './../../configApi/function';
+
 
 	.cbox {
 		width: 350px;

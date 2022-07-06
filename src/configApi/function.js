@@ -22,20 +22,24 @@ export const Submit = async (data, gurl, method) => {
 	if (method == 'post') {
 		try {
 			const response = await axios.post(url, data2, config);
-			console.log(response);
-			NotifySuccess('success ' + response.message);
+			console.log('response = ', response);
+			NotifySuccess('success! ' + response.data.message);
+			return response;
 		} catch (err) {
 			console.log(err);
 			NotifyDanger(err.message);
+			return err;
 		}
 	} else if (method == 'get') {
 		try {
 			const response = await axios.get(url, config);
-			console.log(response);
-			NotifySuccess('success ' + response.message);
+			//console.log(response);
+			NotifySuccess('success ' + response.data.message);
+			return response;
 		} catch (err) {
 			console.log(err);
 			NotifyDanger(err.message);
+			return err;
 		}
 	}
 };

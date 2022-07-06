@@ -13,7 +13,7 @@ export const userSlice = createSlice({
 			// doesn't actually mutate the state because it uses the Immer library,
 			// which detects changes to a "draft state" and produces a brand new
 			// immutable state based off those changes
-			// console.log('red=', action.payload);
+			console.log('red=  ', action.payload);
 			// console.log('user', state, action);
 			state.user = action.payload;
 			// if (state.messageArray[action.payload.roomId]) {user

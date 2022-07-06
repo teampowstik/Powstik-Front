@@ -12,13 +12,23 @@ import Footer from '../../util/components/FooterWhite';
 import { Link } from 'react-router-dom';
 import Header from '../LandingPage/Header/Header.component';
 import { createGlobalStyle } from 'styled-components';
-import { baseURL } from '../../configApi/config';
+import { add_access_token, baseURL } from '../../configApi/config';
 import { NotifyDanger, NotifySuccess, Toastcontainer } from '../../util/notify';
 import { Submit } from '../../configApi/function';
-
+import { useDispatch, useSelector } from 'react-redux';
+import { addUser } from '../../Store/userSlice/userSlice';
 const Login = () => {
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
-	const onSubmit = (data) => Submit(data, '/user/login', 'post');
+	const dispatch = useDispatch();
+	const onSubmit = async (data) => {
+		const res = await Submit(data, '/user/login', 'post');
+		console.log('res......', res);
+		if (res.status === 200) {
+			localStorage.setItem('access', res.data.access);
+			localStorage.setItem('isLoggedIn', true);
+			console.log('locally saved');
+		}
+	};
 
 	return (
 		<React.Fragment>

@@ -6,9 +6,13 @@ import { Col, Form, Row } from 'react-bootstrap';
 import styled from 'styled-components';
 import { P1 } from '../../../util/StyledComponent/premadeComponent';
 import { Input } from '../../../util/StyledComponent/input';
+import { access_token } from '../../../configApi/config';
+import { useDispatch, useSelector } from 'react-redux';
 
 const AddProductInput = () => {
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
+	const at = useSelector((state) => state.user);
+	console.log('......at...', at);
 
 	return (
 		<Container>
