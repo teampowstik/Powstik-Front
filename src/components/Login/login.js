@@ -12,22 +12,14 @@ import Footer from '../../util/components/FooterWhite';
 import { Link } from 'react-router-dom';
 import Header from '../LandingPage/Header/Header.component';
 import { createGlobalStyle } from 'styled-components';
+import { baseURL } from '../../configApi/config';
+import { NotifyDanger, NotifySuccess, Toastcontainer } from '../../util/notify';
+import { Submit } from '../../configApi/function';
+
 const Login = () => {
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
-	const onSubmit = async (data) => {
-		console.log(data);
-		try {
-			const response = await axios.request({
-				baseUrl: 'https://powstik-back-v1.azurewebsites.net',
-				url: '/user/login',
-				method: 'POST',
-				data: data
-			});
-			console.log(response);
-		} catch (err) {
-			console.log(err);
-		}
-	};
+	const onSubmit = (data) => Submit(data, '/user/login', 'post');
+
 	return (
 		<React.Fragment>
 			<Header />
@@ -88,6 +80,7 @@ const Login = () => {
 					</div>
 				</Wrapper2>
 			</Wrapper>
+			<Toastcontainer />
 			<Footer />
 		</React.Fragment>
 	);
@@ -157,7 +150,11 @@ const Wrapper2 = styled.div`
 	}
 	.wb {
 		margin-bottom: 50px !important;
-	}
+	}import { NotifySuccess } from './../../util/notify';
+import { Submit } from './../../configApi/function';
+import { baseURL } from './../../config/config';
+
+
 
 	.cbox {
 		width: 350px;

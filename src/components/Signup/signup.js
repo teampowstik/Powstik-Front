@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import { NotifySuccess, NotifyDanger, Toastcontainer } from '../../util/notify';
 // import BuyNowButton from '../../../util/ShopNowButton/index';
 import { H1, P1 } from './../../util/StyledComponent/premadeComponent';
 //images
@@ -13,31 +14,51 @@ import Footer from '../../util/components/FooterWhite';
 import Header from '../LandingPage/Header/Header.component';
 import { Link } from 'react-router-dom';
 import { GlobalStyles } from '../Login/login';
+import { baseURL } from '../../configApi/config';
 const Signup = () => {
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
 	const [ user, setUser ] = useState(true);
 
 	const onSubmit = async (data) => {
-		data['user_type'] = user ? 'buyer' : 'seller';
+		data['is_seller'] = !user;
 		console.log(data);
 
-		const baseURL = 'https://powstik-back-test.azurewebsites.net';
+		//const baseURL = 'https://powstik-back-test.azurewebsites.net';
 		const url = baseURL + '/user/register';
+
+		if (data.terms == false) {
+			NotifyDanger('Please accept the terms and conditions');
+			return;
+		}
+		if (data.password !== data.confirmPassword) {
+			NotifyDanger('Password and Confirm Password does not match');
+			return;
+		}
+		delete data.confirmPassword;
+		delete data.term;
+		const data2 = JSON.parse(JSON.stringify(data));
+		console.log(data2);
+
 		const config = {
 			headers: {
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/JSON',
+				'Access-Control-Allow-Origin': '*',
+				'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
 			}
 		};
 		try {
-			const response = await axios.post(url, data, config);
+			const response = await axios.post(url, data2, config);
 			console.log(response);
+			NotifySuccess('success ' + response.message);
 		} catch (err) {
 			console.log(err);
+			NotifyDanger(err.message);
 		}
 	};
 	return (
 		<React.Fragment>
 			<Header />
+
 			<Wrapper>
 				<GlobalStyles />
 				<Wrapper2>
@@ -58,9 +79,21 @@ const Signup = () => {
 
 							<form onSubmit={handleSubmit(onSubmit)}>
 								<div className="fdiv">
+									<P1 color="#000"> First Name* </P1>
+									<Input placeholder="username" {...register('first_name', { required: true })} />
+									{errors.last_name && <span className="fontcolor">This field is required</span>}
+									<P1 color="#000"> Last Name *</P1>
+									<Input placeholder="username" {...register('last_name', { required: true })} />
+									{errors.last_name && <span className="fontcolor">This field is required</span>}
+
 									<P1 color="#000"> UserName or Email Address *</P1>
 									<Input placeholder="username" {...register('email', { required: true })} />
 									{errors.email && <span className="fontcolor">This field is required</span>}
+
+									<P1 color="#000"> Phone Number*</P1>
+									<Input placeholder="password" {...register('phone', { required: true })} />
+									{errors.phone && <span className="fontcolor">This field is required</span>}
+
 									<P1 color="#000"> Password*</P1>
 									<Input placeholder="password" {...register('password', { required: true })} />
 									{errors.password && <span className="fontcolor">This field is required</span>}
@@ -110,6 +143,8 @@ const Signup = () => {
 					</div>
 				</Wrapper2>
 			</Wrapper>
+			<Toastcontainer />
+
 			<Footer />
 		</React.Fragment>
 	);
