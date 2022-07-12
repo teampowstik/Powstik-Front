@@ -1,4 +1,6 @@
-import React, {useRef} from 'react'
+import React, {useRef} from 'react';
+
+import { useForm } from "react-hook-form";
 
 import { Col, Form, Row } from 'react-bootstrap';
 import styled from 'styled-components';
@@ -6,17 +8,29 @@ import { P1 } from '../../../util/StyledComponent/premadeComponent';
 import { Input } from '../../../util/StyledComponent/input';
 
 
-const addProductInput = () => {
+const AddProductInput = () => {
+    const { register, handleSubmit, watch, formState: { errors } } = useForm();
+    const onSubmit = async (data) => {
+		// const res = await Submit(data, '/user/login', 'post');
+		// console.log('res......', res);
+		// if (res.status === 200) {
+		// 	localStorage.setItem('access', res.data.access);
+		// 	localStorage.setItem('isLoggedIn', true);
+		// 	console.log('locally saved');
+		// }
+        console.log(data)
+    }
   return (
     <Container>
         <FormBox>
             <PageName> Home/Product </PageName>
             <PageTitle> Add a New Product </PageTitle>
-            <StyledForm>
+            <StyledForm onSubmit={handleSubmit(onSubmit)}>
                 <StyledRow className="mt-5">
                     <Col md={6} >
                     <P1 weight="600" size="19.1339px" lineHeight="27px"> Enter Product name </P1>
-                    <Input className="mt-2" placeholder="xyz name" width="100%" height="2.5rem"/>
+                    <Input className="mt-2" placeholder="xyz name" width="100%" height="2.5rem" {...register('email', { required: true })}/>
+                    {errors.email && <span className="fontcolor">This field is required</span>}
                     </Col>
                     <Col md={6}>
                     <P1 weight="600" size="19.1339px" lineHeight="27px"> Vendor ID </P1>
@@ -67,7 +81,7 @@ const addProductInput = () => {
                         <StyledButtonWhite className="mt-2 outline" type="button"> DISCARD CHANGES </StyledButtonWhite>
                     </Col>
                     <Col md={3}>
-                        <StyledButton className="mt-2" type="button">  UPLOAD PRODUCT </StyledButton>
+                        <StyledButton className="mt-2" type="submit">  UPLOAD PRODUCT </StyledButton>
                     </Col>
                 </StyledRow>
             </StyledForm>
@@ -76,7 +90,7 @@ const addProductInput = () => {
   )
 }
 
-export default addProductInput;
+export default AddProductInput;
 
 const Container = styled.div`
     width: 100vw;
