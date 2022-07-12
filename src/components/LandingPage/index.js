@@ -6,13 +6,11 @@ import FeatureBrand from './FeatureBrand';
 
 import Header from './Header/Header.component';
 import WebsiteDescription from './WebsiteDescription/WebsiteDescription.components.jsx';
-//import FeatureBrand from './FeatureBrand';
-//import Footer from './Footer';
 import DiscountBar from './DiscountComponent/Discount.component';
 import FooterWhite from './FooterWhite';
 import ProductBox from './ProductBox';
-import Mobile from './Mobile/Mobile.component';
-
+//import { add, addMany } from '../../Store/MessageSlice';
+import { useSelector, useDispatch } from 'react-redux';
 const LandingPage = () => {
 	return (
 		<React.Fragment>

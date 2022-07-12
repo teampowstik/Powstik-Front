@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
+import axios from 'axios';
+import { NotifySuccess, NotifyDanger, Toastcontainer } from '../../util/notify';
 // import BuyNowButton from '../../../util/ShopNowButton/index';
 import { H1, P1 } from './../../util/StyledComponent/premadeComponent';
 //images
@@ -11,10 +14,40 @@ import Footer from '../../util/components/FooterWhite';
 import Header from '../LandingPage/Header/Header.component';
 import { Link } from 'react-router-dom';
 import { GlobalStyles } from '../Login/login';
+import { baseURL } from '../../configApi/config';
+import { Submit } from '../../configApi/function';
 const Signup = () => {
+	const { register, handleSubmit, watch, formState: { errors } } = useForm();
+	const [ user, setUser ] = useState(true);
+
+	const onSubmit = async (data) => {
+		data['is_seller'] = !user;
+		//console.log(data);
+
+		//const baseURL = 'https://powstik-back-test.azurewebsites.net';
+		//const url = baseURL + '/user/register';
+
+		if (data.terms == false) {
+			NotifyDanger('Please accept the terms and conditions');
+			return;
+		}
+		if (data.password !== data.confirmPassword) {
+			NotifyDanger('Password and Confirm Password does not match');
+			return;
+		}
+		delete data.confirmPassword;
+		delete data.term;
+		const data2 = JSON.parse(JSON.stringify(data));
+		console.log(data2);
+
+		const res = await Submit(data2, '/user/register', 'post');
+
+		//console.log('res....', res);
+	};
 	return (
 		<React.Fragment>
 			<Header />
+
 			<Wrapper>
 				<GlobalStyles />
 				<Wrapper2>
@@ -33,25 +66,63 @@ const Signup = () => {
 								Welcome Back !
 							</H1> */}
 
-							<form method='POST'>
+							<form onSubmit={handleSubmit(onSubmit)}>
 								<div className="fdiv">
+									<P1 color="#000"> First Name* </P1>
+									<Input placeholder="username" {...register('first_name', { required: true })} />
+									{errors.last_name && <span className="fontcolor">This field is required</span>}
+									<P1 color="#000"> Last Name *</P1>
+									<Input placeholder="username" {...register('last_name', { required: true })} />
+									{errors.last_name && <span className="fontcolor">This field is required</span>}
+
 									<P1 color="#000"> UserName or Email Address *</P1>
-									<Input placeholder="username" />
+									<Input placeholder="username" {...register('email', { required: true })} />
+									{errors.email && <span className="fontcolor">This field is required</span>}
+
+									<P1 color="#000"> Phone Number*</P1>
+									<Input placeholder="password" {...register('phone', { required: true })} />
+									{errors.phone && <span className="fontcolor">This field is required</span>}
+
 									<P1 color="#000"> Password*</P1>
-									<Input placeholder="password" />
+									<Input placeholder="password" {...register('password', { required: true })} />
+									{errors.password && <span className="fontcolor">This field is required</span>}
+
 									<P1 color="#000"> Confirm Password*</P1>
-									<Input placeholder="password" />
+									<Input
+										placeholder="password"
+										{...register('confirmPassword', { required: true })}
+									/>
+									{errors.confirmPassword && (
+										<span className="fontcolor">This field is required</span>
+									)}
 
 									<div>
-										<input type="radio" name="r1" /> <span>i am a customer</span>
+										<input
+											type="radio"
+											name="customer"
+											checked={user}
+											onChange={() => setUser(!user)}
+										/>{' '}
+										<span>i am a customer</span>
 									</div>
 									<div>
-										<input type="radio" name="r1" /> <span>I am a vendor</span>
+										<input
+											type="radio"
+											name="r1"
+											checked={!user}
+											onChange={() => setUser(!user)}
+										/>{' '}
+										<span>I am a vendor</span>
 									</div>
 
 									<div>
-										<input type="checkbox" name="cbox" style={{ accentColor: "rgba(139, 195, 74, 0.8)" }} />
-										<Link to='/'> Accept Terms and condition</Link>
+										<input
+											type="checkbox"
+											name="cbox"
+											style={{ accentColor: 'rgba(139, 195, 74, 0.8)' }}
+											{...register('terms')}
+										/>
+										<Link to="#"> Accept Terms and condition</Link>
 									</div>
 
 									<LSButton title="Register" />
@@ -61,6 +132,8 @@ const Signup = () => {
 					</div>
 				</Wrapper2>
 			</Wrapper>
+			<Toastcontainer />
+
 			<Footer />
 		</React.Fragment>
 	);
@@ -83,6 +156,10 @@ const Wrapper2 = styled.div`
 	padding: 20px;
 
 	min-height: 300px;
+
+	.fontcolor {
+		color: red;
+	}
 	.header {
 		margin-top: 20px;
 		margin-left: 20px;
@@ -117,7 +194,8 @@ const Wrapper2 = styled.div`
 	}
 	.wb {
 		margin-bottom: 50px !important;
-	}
+	}import { Submit } from './../../configApi/function';
+
 
 	.cbox {
 		width: 350px;

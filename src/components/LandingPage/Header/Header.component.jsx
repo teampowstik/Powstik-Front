@@ -7,10 +7,12 @@ import BurgerButton from '../../../util/components/BurgerButton/BurgerButton.com
 import AccountImage from '../../../assets/Group.svg';
 import InputField from '../InputField/InputField.components';
 import { Link } from 'react-router-dom';
+import NavLinks from '../../../util/components/NavLinks/NavLinks.component';
 
 const Header = () => {
 
     const [open, setOpen] = useState(false);
+    const [isOpen, setIsOpen] = useState(false);
     return (
         <>
             <HeaderBox >
@@ -18,7 +20,7 @@ const Header = () => {
                     <CompanyNameImage to='/'></CompanyNameImage>
                 </CompanyHeaderName>
                 <HeaderLink>
-                    <HeaderLinks to='/product'>Products</HeaderLinks>
+                    <HeaderLinks onMouseEnter={setIsOpen.bind(null, true)} onMouseLeave={setIsOpen.bind(null, false)} to='/product'>Products</HeaderLinks>
                     <HeaderLinks to='/service'>Services</HeaderLinks>
                     <InputField />
                     <Link to='/cart'>
@@ -33,6 +35,7 @@ const Header = () => {
                 </HamburgerMenu>
             </HeaderBox>
             <BurgerButton open={open} />
+            {isOpen && <NavLinks onMouseEnter={setIsOpen.bind(null, true)} onMouseLeave={setIsOpen.bind(null, false)} Open={isOpen} />}
         </>
     )
 }

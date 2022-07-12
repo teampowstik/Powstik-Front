@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useForm } from 'react-hook-form';
+import axios from 'axios';
+
 import { H1, P1 } from './../../util/StyledComponent/premadeComponent';
 import loginImg from '../../assets/login.png';
 import { Input } from './../../util/StyledComponent/input';
@@ -9,7 +12,24 @@ import Footer from '../../util/components/FooterWhite';
 import { Link } from 'react-router-dom';
 import Header from '../LandingPage/Header/Header.component';
 import { createGlobalStyle } from 'styled-components';
+import { add_access_token, baseURL } from '../../configApi/config';
+import { NotifyDanger, NotifySuccess, Toastcontainer } from '../../util/notify';
+import { Submit } from '../../configApi/function';
+import { useDispatch, useSelector } from 'react-redux';
+import { addUser } from '../../Store/userSlice/userSlice';
 const Login = () => {
+	const { register, handleSubmit, watch, formState: { errors } } = useForm();
+	const dispatch = useDispatch();
+	const onSubmit = async (data) => {
+		const res = await Submit(data, '/user/login', 'post');
+		console.log('res......', res);
+		if (res.status === 200) {
+			localStorage.setItem('access', res.data.access);
+			localStorage.setItem('isLoggedIn', true);
+			console.log('locally saved');
+		}
+	};
+
 	return (
 		<React.Fragment>
 			<Header />
@@ -31,21 +51,25 @@ const Login = () => {
 								Welcome Back !
 							</H1>
 
-							<form>
+							<form onSubmit={handleSubmit(onSubmit)}>
 								<div className="fdiv">
 									<P1 color="#000"> UserName or Email Address *</P1>
-									<Input placeholder="something@gmail" />
+									<Input {...register('email', { required: true })} placeholder="something@gmail" />
+									{errors.email && <span className="fontcolor">This field is required</span>}
 									<P1 color="#000"> Password*</P1>
-									<Input placeholder="*******" />
+									<Input {...register('password', { required: true })} placeholder="*******" />
+									{errors.password && <span className="fontcolor">This field is required</span>}
 									<div className="cbox ">
 										<div>
 											<input type="checkbox" name="cbox" />
 											<span>Remember Me</span>
 										</div>
-										<Link to='/' className='link'>Forgot Password</Link>
+										<Link to="/" className="link">
+											Forgot Password
+										</Link>
 									</div>
 
-									<LSButton title="Login" />
+									<LSButton title="Login" type="submit" />
 									<div className="or">
 										<hr className="hrr" />
 										<P1 color="rgba(139, 195, 74, 1)">or</P1>
@@ -53,8 +77,11 @@ const Login = () => {
 									</div>
 									<div className="gdiv">
 										<GoognleButton />
-										<span className='registerlink'>
-											Dont have account <Link to='/register' className='link'>Signup</Link>
+										<span className="registerlink">
+											Dont have account{' '}
+											<Link to="/register" className="link">
+												Signup
+											</Link>
 										</span>
 									</div>
 								</div>
@@ -63,6 +90,7 @@ const Login = () => {
 					</div>
 				</Wrapper2>
 			</Wrapper>
+			<Toastcontainer />
 			<Footer />
 		</React.Fragment>
 	);
@@ -78,7 +106,7 @@ export const GlobalStyles = createGlobalStyle`
 			color:  rgba(139, 195, 74, 0.8);
 		}
 	}
-`
+`;
 const Wrapper = styled.div`
 	background: rgba(139, 195, 74, 0.2);
 	padding: 2rem;
@@ -94,6 +122,10 @@ const Wrapper2 = styled.div`
 	padding: 2rem;
 
 	min-height: 200px;
+
+	.fontcolor {
+		color: red;
+	}
 	.header {
 		margin-top: 20px;
 		margin-left: 20px;
@@ -128,7 +160,11 @@ const Wrapper2 = styled.div`
 	}
 	.wb {
 		margin-bottom: 50px !important;
-	}
+	}import { NotifySuccess } from './../../util/notify';
+import { Submit } from './../../configApi/function';
+import { baseURL } from './../../config/config';
+
+
 
 	.cbox {
 		width: 350px;
@@ -158,15 +194,15 @@ const Wrapper2 = styled.div`
 		align-items: center;
 		text-align: center;
 	}
-	.link{
-		text-decoration:none ;
+	.link {
+		text-decoration: none;
 
-		&:hover{
-			color:black;
+		&:hover {
+			color: black;
 		}
 	}
-	.registerlink{
-		margin-top: 5px ;
+	.registerlink {
+		margin-top: 5px;
 	}
 	@media (max-width: 500px) {
 		.img {

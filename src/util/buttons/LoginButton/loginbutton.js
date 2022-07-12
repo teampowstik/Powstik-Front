@@ -8,7 +8,7 @@ const LSButton = (props) => {
 	return (
 		<React.Fragment>
 			<Wrapper>
-				<Button className="mybutton" variant="primary" size="lg" block>
+				<Button type="submit" className="mybutton" variant="primary" size="lg" block>
 					{props.title}
 				</Button>
 			</Wrapper>
@@ -35,6 +35,5 @@ const Wrapper = styled.div`
 	.mybutton:hover {
 		cursor: pointer;
 		scale: 1.1;
-		background-color: #e8f3db;
 	}
 `;

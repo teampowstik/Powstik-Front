@@ -34,7 +34,7 @@ function SamplePrevArrow(props) {
       style={{ ...style,marginRight:"1.5rem", zIndex: "2",marginLeft: "0.5rem" }}
       onClick={onClick}
     >
-      <img src={arrowLeft} style={{ ...style,marginLeft:"-1.5rem", zIndex: "2" }} />
+      <img src={arrowLeft} style={{ ...style, marginLeft: "-1rem", zIndex: "2" }} />
     </div>
   );
 }

@@ -11,7 +11,7 @@ import x from '../../../assets/x.png';
 import { Checkbox } from '../../../util/StyledComponent/input';
 
 const SingleProduct = (props) => {
-	console.log(props);
+	// console.log(props);
 	const { name, pic, desc } = props.item;
 
 	return (

@@ -27,7 +27,7 @@ const ServicePage = () => {
                                 <img src={image2} alt="BigPreview" style={{ marginRight: 20, marginLeft: 20, paddingTop: 80, paddingBottom: 20 }} />
                             </ImageShow>
                         </ImageContainer>
-                        <DescriptionAndBuy heading="Service Tags" disease="Diabetes" type="Mother and child" price={3000} count={1} description1="Therapeutic Nutrition Counseling by Anusha Santhanakrishnan"
+                        <DescriptionAndBuy heading="Service Tags" disease="Diabetes" type="Mother and child" price={3000} count={1} description1="Therapeutic Nutrition Counseling by Anusha Santhanakrishnan "
                             description2="" />
                     </BuyContainer>
                     <H1 size={34} lineHeight={42} >Similar Products</H1>
