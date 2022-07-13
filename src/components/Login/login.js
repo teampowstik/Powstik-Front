@@ -21,7 +21,7 @@ const Login = () => {
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
 	const dispatch = useDispatch();
 	const onSubmit = async (data) => {
-		const res = await Submit(data, '/user/login', 'post');
+		const res = await Submit(data, '/login', 'post');
 		console.log('res......', res);
 		if (res.status === 200) {
 			localStorage.setItem('access', res.data.access);

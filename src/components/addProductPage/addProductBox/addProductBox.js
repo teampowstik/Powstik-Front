@@ -11,29 +11,40 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const AddProductInput = () => {
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
-	const at = useSelector((state) => state.user);
-	console.log('......at...', at);
 
 	return (
 		<Container>
 			<FormBox>
 				<PageName> Home/Product </PageName>
 				<PageTitle> Add a New Product </PageTitle>
-				<StyledForm>
+				<form>
 					<StyledRow className="mt-5">
 						<Col md={6}>
 							<P1 weight="600" size="19.1339px" lineHeight="27px">
 								{' '}
 								Enter Product name{' '}
 							</P1>
-							<Input className="mt-2" placeholder="xyz name" width="100%" height="2.5rem" />
+							<Input
+								{...register('name', { required: true })}
+								className="mt-2"
+								placeholder="xyz name"
+								width="100%"
+								height="2.5rem"
+							/>
+							{errors.name && <span className="fontcolor">This field is required</span>}
 						</Col>
 						<Col md={6}>
 							<P1 weight="600" size="19.1339px" lineHeight="27px">
 								{' '}
 								Vendor ID{' '}
 							</P1>
-							<Input className="mt-2" placeholder="Vendor ID" width="100%" height="2.5rem" />
+							<Input
+								{...register('vendor_id', { required: true })}
+								className="mt-2"
+								placeholder="Vendor ID"
+								width="100%"
+								height="2.5rem"
+							/>
 						</Col>
 					</StyledRow>
 					<StyledRow className="mt-3">
@@ -42,14 +53,26 @@ const AddProductInput = () => {
 								{' '}
 								Enter Expected Price{' '}
 							</P1>
-							<Input className="mt-2" placeholder="Price" width="100%" height="2.5rem" />
+							<Input
+								{...register('price', { required: true })}
+								className="mt-2"
+								placeholder="Price"
+								width="100%"
+								height="2.5rem"
+							/>
 						</Col>
 						<Col md={6}>
 							<P1 weight="600" size="19.1339px" lineHeight="27px">
 								{' '}
 								Enter Discount{' '}
 							</P1>
-							<Input className="mt-2" placeholder="Discount%" width="100%" height="2.5rem" />
+							<Input
+								{...register('discount', { required: true })}
+								className="mt-2"
+								placeholder="Discount%"
+								width="100%"
+								height="2.5rem"
+							/>
 						</Col>
 					</StyledRow>
 					<StyledRow className="mt-3">
@@ -58,7 +81,11 @@ const AddProductInput = () => {
 								{' '}
 								Enter Product Description{' '}
 							</P1>
-							<StyledTextArea className="mt-2" placeholder="xyz name" />
+							<StyledTextArea
+								{...register('description', { required: true })}
+								className="mt-2"
+								placeholder="xyz name"
+							/>
 						</Col>
 					</StyledRow>
 					<StyledRow className="mt-3">
@@ -67,7 +94,11 @@ const AddProductInput = () => {
 								{' '}
 								Add vendor information (optional){' '}
 							</P1>
-							<StyledTextArea className="mt-2" placeholder="xyz name" />
+							<StyledTextArea
+								{...register('vendor_information')}
+								className="mt-2"
+								placeholder="xyz name"
+							/>
 						</Col>
 					</StyledRow>
 					<StyledRow className="mt-3">
@@ -79,7 +110,13 @@ const AddProductInput = () => {
 							<StyledLabel for="files" className="mt-2">
 								CHOOSE FILE
 							</StyledLabel>
-							<StyledInput id="files" type="file" accept="image/*" multiple />
+							<StyledInput
+								{...register('images', { required: true })}
+								id="files"
+								type="file"
+								accept="image/*"
+								multiple
+							/>
 						</Col>
 						<Col md={3}>
 							<UploadInfo> 1 Image Uploaded </UploadInfo>
@@ -104,7 +141,7 @@ const AddProductInput = () => {
 							</StyledButton>
 						</Col>
 					</StyledRow>
-				</StyledForm>
+				</form>
 			</FormBox>
 		</Container>
 	);

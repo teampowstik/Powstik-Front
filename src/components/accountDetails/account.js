@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import styled from 'styled-components';
 import Header from '../LandingPage/Header/Header.component';
 import { H1, P1 } from '../../util/StyledComponent/premadeComponent';
 import Comp from './comp';
 import Footer from '../LandingPage/FooterWhite/index';
+import { Submit } from './../../configApi/function';
 
 const AccountDetails = () => {
+	const fetchData = async () => {
+		const res = await Submit({}, '/user/', 'get');
+		console.log('res=', res);
+	};
+	useEffect(() => {
+		fetchData();
+	}, []);
 	return (
 		<React.Fragment>
 			<Header />

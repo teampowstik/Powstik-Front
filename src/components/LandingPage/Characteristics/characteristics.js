@@ -7,6 +7,7 @@ import Div from './eachDiv';
 import lemon from '../../../assets/lemon.png';
 import lettuce from '../../../assets/lettuce.png';
 import peas from '../../../assets/peas.png';
+import { useSelector } from 'react-redux';
 
 const array = [
 	{
@@ -41,12 +42,18 @@ const array = [
 	}
 ];
 const Characteristics = () => {
+	const categories = useSelector((state) => state.category.categories);
+	console.log('categories =', categories, typeof categories);
 	return (
 		<React.Fragment>
 			<Wrapper>
-				{array.map((item, index) => {
-					return <Div item={item} key={index} />;
-				})}
+				{categories.length > 0 ? (
+					categories.map((item, index) => {
+						return <Div item={item} key={index} />;
+					})
+				) : (
+					'no categories'
+				)}
 			</Wrapper>
 		</React.Fragment>
 	);

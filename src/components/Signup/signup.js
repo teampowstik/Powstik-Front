@@ -40,7 +40,7 @@ const Signup = () => {
 		const data2 = JSON.parse(JSON.stringify(data));
 		console.log(data2);
 
-		const res = await Submit(data2, '/user/register', 'post');
+		const res = await Submit(data2, '/register', 'post');
 
 		//console.log('res....', res);
 	};

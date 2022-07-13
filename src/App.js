@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
@@ -16,6 +16,7 @@ import AddService from './components/addServicePage/addServicePage';
 import UpdateService from './components/updateServicePage/updateServicePage';
 import ProductPage from './components/ProductPage';
 import ServicePage from './components/servicePage';
+import { getCategory } from './configApi/utilFunction';
 
 function App() {
 	return (

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import BankOffer from './BankOffer/bankoffer';
 import Characteristics from './Characteristics/characteristics';
 
@@ -11,7 +11,11 @@ import FooterWhite from './FooterWhite';
 import ProductBox from './ProductBox';
 //import { add, addMany } from '../../Store/MessageSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import { getCategory } from './../../configApi/utilFunction';
 const LandingPage = () => {
+	useEffect(() => {
+		getCategory();
+	}, []);
 	return (
 		<React.Fragment>
 			<Header />

@@ -14,6 +14,7 @@ export const Submit = async (data, gurl, method) => {
 
 	const config = {
 		headers: {
+			Authorization: 'Bearer ' + localStorage.access,
 			'Content-Type': 'application/JSON',
 			'Access-Control-Allow-Origin': '*',
 			'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS'
@@ -24,6 +25,7 @@ export const Submit = async (data, gurl, method) => {
 			const response = await axios.post(url, data2, config);
 			console.log('response = ', response);
 			NotifySuccess('success! ' + response.data.message);
+			// NotifySuccess('success!');
 			return response;
 		} catch (err) {
 			console.log(err);

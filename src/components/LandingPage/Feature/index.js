@@ -8,6 +8,7 @@ import fi1 from '../../../assets/fi1.svg';
 import fi2 from '../../../assets/fi2.svg';
 import fi3 from '../../../assets/fi3.svg';
 import fi4 from '../../../assets/fi4.svg';
+import { useSelector } from 'react-redux';
 
 const array = [
 	{ icon: fi1, txt1: 'Free Shipping', txt2: 'Above ₹500' },

@@ -8,7 +8,7 @@ import bank from '../../../assets/bank.png';
 import GButton from '../../../util/buttons/reusableButton/button';
 import { Button } from 'react-bootstrap';
 const Div = (props) => {
-	console.log(props);
+	//console.log(props);
 
 	return (
 		<Cd>
