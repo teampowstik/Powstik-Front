@@ -4,13 +4,13 @@ import { baseURL } from '../configApi/config';
 import axios from 'axios';
 
 export const Submit = async (data, gurl, method) => {
-	console.log(data);
+	// console.log('submit caleed');
 
 	//const baseURL = 'https://powstik-back-test.azurewebsites.net';
 	const url = baseURL + gurl;
 
 	const data2 = JSON.parse(JSON.stringify(data));
-	console.log(data2);
+	console.log('data sending to server= ', data2);
 
 	const config = {
 		headers: {

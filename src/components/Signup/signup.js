@@ -36,9 +36,9 @@ const Signup = () => {
 			return;
 		}
 		delete data.confirmPassword;
-		delete data.term;
+		delete data.terms;
 		const data2 = JSON.parse(JSON.stringify(data));
-		console.log(data2);
+		//console.log(data2);
 
 		const res = await Submit(data2, '/register', 'post');
 
