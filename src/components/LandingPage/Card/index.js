@@ -117,6 +117,7 @@ const StyledBtn = styled.button`
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   margin-right: 1rem;
+  margin-top: 1rem;
   
   float: right;
 `;

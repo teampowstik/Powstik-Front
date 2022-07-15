@@ -194,8 +194,7 @@ const Wrapper2 = styled.div`
 	}
 	.wb {
 		margin-bottom: 50px !important;
-	}import { Submit } from './../../configApi/function';
-
+	}
 
 	.cbox {
 		width: 350px;

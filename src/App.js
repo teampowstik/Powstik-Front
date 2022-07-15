@@ -18,6 +18,13 @@ import ProductPage from './components/ProductPage';
 import ServicePage from './components/servicePage';
 import { getCategory } from './configApi/utilFunction';
 
+import ContactUs from './components/dummyPages/contactUs';
+import Tos from './components/dummyPages/termsOfService';
+import About from './components/dummyPages/about';
+import RefundPolicy from './components/dummyPages/refundPolicy';
+import PrivacyPolicy from './components/dummyPages/privacyPolicy';
+import Credits from './components/dummyPages/credits';
+
 function App() {
 	return (
 		<Router>
@@ -36,6 +43,13 @@ function App() {
 					<Route path="/updateservice" element={<UpdateService />} />
 					<Route path="/product" element={<ProductPage />} />
 					<Route path="/service" element={<ServicePage />} />
+
+					<Route path="/contact-us" element={<ContactUs />} />
+					<Route path="/tos" element={<Tos />} />
+					<Route path="/about" element={<About />} />
+					<Route path="/refund-policy" element={<RefundPolicy />} />
+					<Route path="/privacy-policy" element={<PrivacyPolicy />} />
+					<Route path="/credits" element={<Credits />} />
 				</Routes>
 			</div>
 		</Router>

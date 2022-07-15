@@ -4,23 +4,27 @@ import GButton from '../../util/buttons/reusableButton/button';
 
 import { Input } from '../../util/StyledComponent/input';
 import { P2, H1, P1 } from './../../util/StyledComponent/premadeComponent';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const Comp = (props) => {
-	const data = {
-		firstname: 'firstname',
-		lastname: 'lastname',
-		gender: 'gender',
-		phone: 'phone',
-		'Email Address': 'email',
-		'Country / Region': 'dolor sit',
-		'Town / City': 'town',
-		'Street Address': 'kjldfasklsadlkjasd dladaslk',
-		'Door.no/Plot.no': 'xxx',
-		state: 'state',
-		pin: 'xxx',
-		type: 'vendor'
-	};
+	// const data = {
+	// 	firstname: 'firstname',
+	// 	lastname: 'lastname',
+	// 	gender: 'gender',
+	// 	phone: 'phone',
+	// 	'Email Address': 'email',
+	// 	'Country / Region': 'dolor sit',
+	// 	'Town / City': 'town',
+	// 	'Street Address': 'kjldfasklsadlkjasd dladaslk',
+	// 	'Door.no/Plot.no': 'xxx',
+	// 	state: 'state',
+	// 	pin: 'xxx',
+	// 	type: 'vendor'
+	// };
+	const data = useSelector((state) => state.user.user);
+	console.log(data);
+
 	return (
 		<Wrapper>
 			<div className="onedivimg">
@@ -29,14 +33,14 @@ const Comp = (props) => {
 				</div>
 				<div>
 					<H1 size="18" weight="600">
-						{data.firstname + ' '}
+						{data.first_name + ' '}
 
-						{data.lastname}
+						{data.last_name}
 					</H1>
-					<P1 size="14">8756272</P1>
+					<P1 size="14">{data.user_id}</P1>
 					<P1 size="14" weight="600" color="#8BC34A">
 						{' '}
-						{data.type}{' '}
+						{data.is_seller ? 'vendor' : 'customer'}
 					</P1>
 				</div>
 			</div>
@@ -61,7 +65,7 @@ const Comp = (props) => {
 					<div className="insidediv">
 						{' '}
 						<P2 color="#000">Email Address</P2>
-						<P2 color="#616161">{data['Email Address']}</P2>
+						<P2 color="#616161">{data['email']}</P2>
 					</div>
 				</div>
 				<div className="ocdiv">
@@ -185,7 +189,8 @@ const Wrapper = styled.div`
     }
     .insidediv{
         width:200px !important;
-    }
+    }import { useSelector } from 'react-redux';
+
     .pdiv{
         width:300px;
     }

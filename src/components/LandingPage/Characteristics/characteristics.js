@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useEffect, useCallback, useState } from 'react';
+
 import styled from 'styled-components';
+import { client } from '../../../util/api';
+
 import BuyNowButton from '../../../util/buttons/ShopNowButton/index';
 import { H1, P1 } from '../../../util/StyledComponent/premadeComponent';
 import Div from './eachDiv';

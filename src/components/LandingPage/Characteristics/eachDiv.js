@@ -14,11 +14,11 @@ const Div = (props) => {
 					{' '}
 					{props.item.category_name}{' '}
 				</H1>
-				<P1 className="p1"> {props.item.desc} </P1>
+				<P1 className="p1"> {props.item.description} </P1>
 			</div>
 			<div className="down">
 				<GButton title="SHOP NOW" />
-				<img className="cedimg" src={props.item.pic} height="90" alt="icon" />
+				<img className="cedimg" src={props.item.image} height="90" alt="icon" />
 			</div>
 		</Cd>
 	);

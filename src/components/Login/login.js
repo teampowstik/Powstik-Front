@@ -160,11 +160,7 @@ const Wrapper2 = styled.div`
 	}
 	.wb {
 		margin-bottom: 50px !important;
-	}import { NotifySuccess } from './../../util/notify';
-import { Submit } from './../../configApi/function';
-import { baseURL } from './../../config/config';
-
-
+	}
 
 	.cbox {
 		width: 350px;

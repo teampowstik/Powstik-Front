@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Submit } from '../../configApi/function';
+import { getUserDetails } from '../../configApi/utilFunction';
 import GButton from '../../util/buttons/reusableButton/button';
 
 import { Input } from '../../util/StyledComponent/input';
@@ -17,13 +18,9 @@ const Comp = (props) => {
 	// 	}
 	// };
 	const [ data, setData ] = useState('');
-	const fetchData = async () => {
-		const res = await Submit({ nothing: 'nothing' }, '/user/1', 'get');
-		console.log(res);
-		setData(res.data);
-	};
+
 	useEffect(() => {
-		fetchData();
+		getUserDetails();
 	}, []);
 
 	return (

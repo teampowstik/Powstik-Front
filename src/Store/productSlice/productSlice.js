@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-	product: '...'
+	product: []
 };
 
 export const productSlice = createSlice({
@@ -15,7 +15,7 @@ export const productSlice = createSlice({
 			// immutable state based off those changes
 			// console.log('red=', action.payload);
 			// console.log('user', state, action);
-			state.user = action.payload;
+			state.product = action.payload;
 			// if (state.messageArray[action.payload.roomId]) {user
 			// 	state.messageArray[action.payload.roomId].push(action.payload);
 			// } else {

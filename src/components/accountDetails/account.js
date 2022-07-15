@@ -6,14 +6,15 @@ import { H1, P1 } from '../../util/StyledComponent/premadeComponent';
 import Comp from './comp';
 import Footer from '../LandingPage/FooterWhite/index';
 import { Submit } from './../../configApi/function';
+import { getUserDetails } from '../../configApi/utilFunction';
 
 const AccountDetails = () => {
-	const fetchData = async () => {
-		const res = await Submit({}, '/user/', 'get');
-		console.log('res=', res);
-	};
+	// const fetchData = async () => {
+	// 	const res = await Submit({}, '/user/', 'get');
+	// 	console.log('res=', res);
+	// };
 	useEffect(() => {
-		fetchData();
+		getUserDetails();
 	}, []);
 	return (
 		<React.Fragment>

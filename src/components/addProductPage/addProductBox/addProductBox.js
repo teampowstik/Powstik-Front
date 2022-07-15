@@ -1,23 +1,72 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+
 import { useForm } from 'react-hook-form';
-import axios from 'axios';
 
 import { Col, Form, Row } from 'react-bootstrap';
 import styled from 'styled-components';
-import { P1 } from '../../../util/StyledComponent/premadeComponent';
+import { H1, P1 } from '../../../util/StyledComponent/premadeComponent';
 import { Input } from '../../../util/StyledComponent/input';
 import { access_token } from '../../../configApi/config';
 import { useDispatch, useSelector } from 'react-redux';
 
-const AddProductInput = () => {
-	const { register, handleSubmit, watch, formState: { errors } } = useForm();
+import { getCategory } from '../../../configApi/utilFunction';
 
+import Select from 'react-select';
+import { NotifyDanger } from '../../../util/notify';
+import MySelect from '../../../util/select/select';
+import { Submit, SubmitWithFile } from '../../../configApi/function';
+
+const AddProductInput = () => {
+	const { register, handleSubmit, watch, control, formState: { errors } } = useForm();
+	const onSubmit = async (data) => {
+		console.log(data);
+
+		// "name": "Food Superior",
+		// "qty_left": 50,
+		// "image": "https://dummyimage.com/915x878",
+		// "description": "Center during business sea spend use court girl. Onto painting civil.\nOver thing age outside anything. Couple arm window actually claim early.\nOk weight top marriage relationship.",
+		// "price": 8,
+		// "discount": 20,
+		// "categories": "diabetes",
+		// "related_products": 34
+		const formData = new FormData();
+		formData.append('name', data.name);
+		formData.append('qty_left', data.qty_left);
+		//formData.append('image', data.image);
+		formData.append('description', data.productDescription);
+		formData.append('price', data.expectedPrice);
+		formData.append('discount', data.discount);
+		for (let i of uploaded_images) {
+			formData.append('uploaded_images', i);
+		}
+
+		const res = await SubmitWithFile(formData, '/product/add', 'post');
+	};
+
+	const [ uploaded_images, set_uploaded_images ] = useState([]);
+	const [ image_url, set_image_url ] = useState([]);
+
+	const setImages = (image) => {
+		set_uploaded_images([ ...uploaded_images, image ]);
+		let imgUrl = URL.createObjectURL(image);
+		set_image_url([ ...image_url, imgUrl ]);
+	};
+	const categories = useSelector((state) => state.category.categories);
+
+	//select things
+	const options = categories.map((category) => {
+		return { value: category.category_name, label: category.category_name };
+	});
+
+	useEffect(() => {
+		getCategory();
+	}, []);
 	return (
 		<Container>
 			<FormBox>
 				<PageName> Home/Product </PageName>
 				<PageTitle> Add a New Product </PageTitle>
-				<form>
+				<StyledForm onSubmit={handleSubmit(onSubmit)}>
 					<StyledRow className="mt-5">
 						<Col md={6}>
 							<P1 weight="600" size="19.1339px" lineHeight="27px">
@@ -25,26 +74,27 @@ const AddProductInput = () => {
 								Enter Product name{' '}
 							</P1>
 							<Input
-								{...register('name', { required: true })}
 								className="mt-2"
-								placeholder="xyz name"
+								placeholder="name"
 								width="100%"
 								height="2.5rem"
+								{...register('name', { required: true })}
 							/>
 							{errors.name && <span className="fontcolor">This field is required</span>}
 						</Col>
 						<Col md={6}>
 							<P1 weight="600" size="19.1339px" lineHeight="27px">
 								{' '}
-								Vendor ID{' '}
+								Category{' '}
 							</P1>
-							<Input
-								{...register('vendor_id', { required: true })}
-								className="mt-2"
-								placeholder="Vendor ID"
-								width="100%"
-								height="2.5rem"
+
+							<MySelect
+								options={options}
+								className="pselect"
+								{...register('category')}
+								control={control}
 							/>
+							{errors.category && <span className="fontcolor">This field is required</span>}
 						</Col>
 					</StyledRow>
 					<StyledRow className="mt-3">
@@ -54,12 +104,13 @@ const AddProductInput = () => {
 								Enter Expected Price{' '}
 							</P1>
 							<Input
-								{...register('price', { required: true })}
 								className="mt-2"
 								placeholder="Price"
 								width="100%"
 								height="2.5rem"
+								{...register('expectedPrice', { required: true })}
 							/>
+							{errors.expectedPrice && <span className="fontcolor">This field is required</span>}
 						</Col>
 						<Col md={6}>
 							<P1 weight="600" size="19.1339px" lineHeight="27px">
@@ -67,12 +118,29 @@ const AddProductInput = () => {
 								Enter Discount{' '}
 							</P1>
 							<Input
-								{...register('discount', { required: true })}
 								className="mt-2"
 								placeholder="Discount%"
 								width="100%"
 								height="2.5rem"
+								{...register('discount', { required: true })}
 							/>
+							{errors.discount && <span className="fontcolor">This field is required</span>}
+						</Col>
+					</StyledRow>
+					<StyledRow className="mt-3">
+						<Col md={6}>
+							<P1 weight="600" size="19.1339px" lineHeight="27px">
+								{' '}
+								Quantity left
+							</P1>
+							<Input
+								className="mt-2"
+								placeholder="qty_left"
+								width="100%"
+								height="2.5rem"
+								{...register('qty_left', { required: true })}
+							/>
+							{errors.qty_left && <span className="fontcolor">This field is required</span>}
 						</Col>
 					</StyledRow>
 					<StyledRow className="mt-3">
@@ -82,10 +150,11 @@ const AddProductInput = () => {
 								Enter Product Description{' '}
 							</P1>
 							<StyledTextArea
-								{...register('description', { required: true })}
 								className="mt-2"
 								placeholder="xyz name"
+								{...register('productDescription', { required: true })}
 							/>
+							{errors.productDescription && <span className="fontcolor">This field is required</span>}
 						</Col>
 					</StyledRow>
 					<StyledRow className="mt-3">
@@ -95,10 +164,11 @@ const AddProductInput = () => {
 								Add vendor information (optional){' '}
 							</P1>
 							<StyledTextArea
-								{...register('vendor_information')}
 								className="mt-2"
 								placeholder="xyz name"
+								{...register('vendorDescription', { required: true })}
 							/>
+							{errors.vendorDescription && <span className="fontcolor">This field is required</span>}
 						</Col>
 					</StyledRow>
 					<StyledRow className="mt-3">
@@ -107,26 +177,28 @@ const AddProductInput = () => {
 								{' '}
 								Upload Product Images{' '}
 							</P1>
-							<StyledLabel for="files" className="mt-2">
+							<StyledLabel htmlFor="files" className="mt-2">
 								CHOOSE FILE
 							</StyledLabel>
 							<StyledInput
-								{...register('images', { required: true })}
 								id="files"
 								type="file"
 								accept="image/*"
 								multiple
+								onChange={(e) => {
+									const file = e.target.files[0];
+									//set_uploaded_images(uploaded_images + file);
+									setImages(file);
+									//console.log('imag3s', file);
+								}}
 							/>
 						</Col>
-						<Col md={3}>
-							<UploadInfo> 1 Image Uploaded </UploadInfo>
-						</Col>
 					</StyledRow>
-					<StyledRow className="mt-3">
-						<Col md={12}>
-							<StyledTextArea className="mt-2" placeholder="upload image here" />
-						</Col>
-					</StyledRow>
+					<div className="pimgdiv">
+						<H1 size="20">Uploaded images</H1>
+						{image_url.map((image, index) => <img key={index} src={image} alt="pi" className="pimg" />)}
+					</div>
+
 					<StyledRow className="mt-3 justify-content-md-center">
 						<Col md={3}>
 							<StyledButtonWhite className="mt-2 outline" type="button">
@@ -135,13 +207,13 @@ const AddProductInput = () => {
 							</StyledButtonWhite>
 						</Col>
 						<Col md={3}>
-							<StyledButton className="mt-2" type="button">
+							<StyledButton className="mt-2" type="submit">
 								{' '}
 								UPLOAD PRODUCT{' '}
 							</StyledButton>
 						</Col>
 					</StyledRow>
-				</form>
+				</StyledForm>
 			</FormBox>
 		</Container>
 	);
@@ -156,6 +228,28 @@ const Container = styled.div`
 	padding: 0px;
 	margin: 0px;
 	overflow: hidden;
+	.fontcolor {
+		color: red;
+	}
+	.pimg {
+		height: 200px;
+		width: 200px;
+		margin: 10px;
+	}
+	@media (max-width: 768px) {
+		.pimg {
+			height: 100px;
+			width: 100px;
+		}
+	}
+	.pimgdiv {
+		margin: 36px;
+	}
+	.pselect {
+		position: absolute;
+		margin-top: 10px;
+		background-color: #8BC34A33;
+	}
 `;
 
 const FormBox = styled.div`
