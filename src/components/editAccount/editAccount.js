@@ -5,6 +5,7 @@ import Header from './../LandingPage/Header/Header.component';
 import { H1, P1 } from './../../util/StyledComponent/premadeComponent';
 import Comp from './comp';
 import Footer from './../LandingPage/FooterWhite/index';
+import { NotifySuccess, NotifyDanger, Toastcontainer } from '../../util/notify';
 
 const EditAccount = () => {
 	return (

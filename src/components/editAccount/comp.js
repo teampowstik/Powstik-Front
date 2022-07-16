@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { Submit } from '../../configApi/function';
 import { getUserDetails } from '../../configApi/utilFunction';
@@ -6,18 +7,17 @@ import GButton from '../../util/buttons/reusableButton/button';
 
 import { Input } from '../../util/StyledComponent/input';
 import { P2 } from './../../util/StyledComponent/premadeComponent';
+import { useForm } from 'react-hook-form';
+import axios from 'axios';
+import { baseURL } from '../../configApi/config';
 
 const Comp = (props) => {
-	// const onSubmit = async (data) => {
-	// 	const res = await Submit(data, '/login', 'post');
-	// 	console.log('res......', res);
-	// 	if (res.status === 200) {
-	// 		localStorage.setItem('access', res.data.access);
-	// 		localStorage.setItem('isLoggedIn', true);
-	// 		console.log('locally saved');
-	// 	}
-	// };
-	const [ data, setData ] = useState('');
+	const { register, handleSubmit, watch, formState: { errors } } = useForm();
+	const data = useSelector((state) => state.user.user);
+	//console.log(data);
+	const onSubmit = async (data) => {
+		console.log(data);
+	};
 
 	useEffect(() => {
 		getUserDetails();
@@ -25,61 +25,63 @@ const Comp = (props) => {
 
 	return (
 		<Wrapper>
-			<div className="onedivimg">
-				<div className="eaimg">
-					<img src={'#'} alt="icon" />
-				</div>
+			<form onSubmit={handleSubmit(onSubmit)}>
+				<div className="onedivimg">
+					<div className="eaimg">
+						<img src={'#'} alt="icon" />
+					</div>
 
-				<Input type="file" height="20" />
-			</div>
-			<div className="onediv">
-				<P2>First Name</P2>
-				<Input placeholder="name" />
-			</div>
-			<div className="onediv">
-				<P2>Last Name </P2>
-				<Input />
-			</div>
-			<div className="onediv">
-				<P2>Gender </P2>
-				<Input />
-			</div>
-			<div className="onediv">
-				<P2>Phone </P2>
-				<Input />
-			</div>
-			<div className="onediv">
-				<P2>Email Addrress </P2>
-				<Input />
-			</div>
-			<div className="onediv">
-				<P2>Country / region </P2>
-				<Input />
-			</div>
-			<div className="onediv">
-				<P2>Town / City </P2>
-				<Input />
-			</div>
-			<div className="onediv">
-				<P2>Street name </P2>
-				<Input />
-			</div>
-			<div className="onediv">
-				<P2>Door no/plot no </P2>
-				<Input />
-			</div>
-			<div className="onediv">
-				<P2>State</P2>
-				<Input />
-			</div>
-			<div className="onediv">
-				<P2>PIN</P2>
-				<Input />
-			</div>
-			<div className="onedivbtn">
-				<button className="Cgbtn">DISCARD CHANGES</button>
-				<GButton title="SAVE CHANGES" width="300px" bg="#8BC34A" />
-			</div>
+					<Input type="file" height="20" {...register('profile_image', { required: true })} />
+				</div>
+				<div className="onediv">
+					<P2>First Name</P2>
+					<Input placeholder="name" {...register('first_name', { required: true })} />
+				</div>
+				<div className="onediv">
+					<P2>Last Name </P2>
+					<Input {...register('last_name', { required: true })} />
+				</div>
+				<div className="onediv">
+					<P2>Gender </P2>
+					<Input {...register('gender', { required: true })} />
+				</div>
+				<div className="onediv">
+					<P2>Phone </P2>
+					<Input {...register('phone', { required: true })} />
+				</div>
+				<div className="onediv">
+					<P2>Email Addrress </P2>
+					<Input {...register('email', { required: true })} />
+				</div>
+				<div className="onediv">
+					<P2>Country / region </P2>
+					<Input {...register('country_region', { required: true })} />
+				</div>
+				<div className="onediv">
+					<P2>Town / City </P2>
+					<Input {...register('town_city', { required: true })} />
+				</div>
+				<div className="onediv">
+					<P2>Street name </P2>
+					<Input {...register('street_name', { required: true })} />
+				</div>
+				<div className="onediv">
+					<P2>Door no/plot no </P2>
+					<Input {...register('doorno', { required: true })} />
+				</div>
+				<div className="onediv">
+					<P2>State</P2>
+					<Input {...register('state', { required: true })} />
+				</div>
+				<div className="onediv">
+					<P2>PIN</P2>
+					<Input {...register('pin', { required: true })} />
+				</div>
+				<div className="onedivbtn">
+					<button className="Cgbtn">DISCARD CHANGES</button>
+					<GButton type="submit" title="SAVE CHANGES" width="300px" bg="#8BC34A" />
+				</div>
+			</form>
 		</Wrapper>
 	);
 };

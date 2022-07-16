@@ -9,7 +9,7 @@ const GButton = (props) => {
 	return (
 		<React.Fragment>
 			<Wrapper bg={props.bg} width={props.width}>
-				<Button className="mybutton" variant="primary" size="lg" block>
+				<Button className="mybutton" variant="primary" type="submit" size="lg" block>
 					{props.title}
 				</Button>
 			</Wrapper>

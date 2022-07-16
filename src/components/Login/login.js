@@ -22,7 +22,7 @@ const Login = () => {
 	const dispatch = useDispatch();
 	const onSubmit = async (data) => {
 		const res = await Submit(data, '/login', 'post');
-		console.log('res......', res);
+		//console.log('res......', res);
 		if (res.status === 200) {
 			localStorage.setItem('access', res.data.access);
 			localStorage.setItem('isLoggedIn', true);

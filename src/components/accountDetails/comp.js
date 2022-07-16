@@ -23,7 +23,7 @@ const Comp = (props) => {
 	// 	type: 'vendor'
 	// };
 	const data = useSelector((state) => state.user.user);
-	console.log(data);
+	//console.log(data);
 
 	return (
 		<Wrapper>

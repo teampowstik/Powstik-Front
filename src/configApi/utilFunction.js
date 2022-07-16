@@ -3,6 +3,7 @@ import { Submit } from './function';
 import { useDispatch } from 'react-redux';
 import { store } from '../Store/Store';
 import { addUser } from '../Store/userSlice/userSlice';
+import { addProduct } from '../Store/productSlice/productSlice';
 
 export const getCategory = async () => {
 	try {
@@ -22,6 +23,18 @@ export const getUserDetails = async () => {
 
 		//const dispatch = useDispatch();
 		if (res) store.dispatch(addUser(res.data));
+	} catch (err) {
+		console.log(err);
+		return err;
+	}
+};
+
+export const getProduct = async () => {
+	try {
+		const res = await Submit({}, '/product/', 'get');
+
+		//const dispatch = useDispatch();
+		store.dispatch(addProduct(res.data.result));
 	} catch (err) {
 		console.log(err);
 		return err;

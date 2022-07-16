@@ -15,6 +15,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import arrowLeft from '../../../assets/arrow-left.png';
 import arrowRight from '../../../assets/arrow-without-bg-right.png';
+import { useSelector } from 'react-redux';
 
 function SampleNextArrow(props) {
 	const { className, style, onClick } = props;
@@ -34,7 +35,14 @@ function SamplePrevArrow(props) {
 	);
 }
 
-const CardSlider = () => {
+const CardSlider = ({ category }) => {
+	//console.log(category, 'products ==? ', products);
+	console.log('slicder category: ', category);
+	let products = useSelector((state) => state.product.product);
+	console.log('products', products);
+	products = products.filter((product) => product.categories.includes(category));
+	//console.log('slider products', products);
+
 	var settings = {
 		dots: false,
 		infinite: true,
@@ -75,7 +83,27 @@ const CardSlider = () => {
 	return (
 		<Container>
 			<Slider {...settings}>
-				<Cards>
+				{products &&
+					products.map((product, index) => {
+						return (
+							<Cards>
+								<ProductCard
+									id={product.id}
+									discount={product.discount}
+									image={product.image}
+									//subtitle={product.subtitle}
+									description={product.description}
+									price={product.price}
+								/>
+							</Cards>
+						);
+					})}
+			</Slider>
+		</Container>
+	);
+};
+{
+	/* <Cards>
 					<ProductCard
 						discount="20"
 						image={prod1}
@@ -146,11 +174,14 @@ const CardSlider = () => {
 						description="Befach Rice for Diabetics"
 						price="504"
 					/>
-				</Cards>
-			</Slider>
+				</Cards> */
+}
+{
+	/* </Slider>
 		</Container>
 	);
-};
+}; */
+}
 
 export default CardSlider;
 
@@ -160,6 +191,9 @@ const Container = styled.div`
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 5rem;
+	@media (max-width: 500px) {
+		width: 70vw;
+	}
 `;
 
 const Cards = styled(Slider)`

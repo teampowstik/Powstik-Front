@@ -24,6 +24,7 @@ import About from './components/dummyPages/about';
 import RefundPolicy from './components/dummyPages/refundPolicy';
 import PrivacyPolicy from './components/dummyPages/privacyPolicy';
 import Credits from './components/dummyPages/credits';
+import NoRoutes from './components/noRoutes/noroutes';
 
 function App() {
 	return (
@@ -41,7 +42,7 @@ function App() {
 					<Route path="/updateproduct" element={<UpdateProduct />} />
 					<Route path="/addservice" element={<AddService />} />
 					<Route path="/updateservice" element={<UpdateService />} />
-					<Route path="/product" element={<ProductPage />} />
+					<Route path="/product/:id" element={<ProductPage />} />
 					<Route path="/service" element={<ServicePage />} />
 
 					<Route path="/contact-us" element={<ContactUs />} />
@@ -50,6 +51,7 @@ function App() {
 					<Route path="/refund-policy" element={<RefundPolicy />} />
 					<Route path="/privacy-policy" element={<PrivacyPolicy />} />
 					<Route path="/credits" element={<Credits />} />
+					<Route path="*" element={<NoRoutes />} />
 				</Routes>
 			</div>
 		</Router>

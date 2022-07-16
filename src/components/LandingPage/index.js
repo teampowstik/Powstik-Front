@@ -11,10 +11,11 @@ import FooterWhite from './FooterWhite';
 import ProductBox from './ProductBox';
 //import { add, addMany } from '../../Store/MessageSlice';
 import { useSelector, useDispatch } from 'react-redux';
-import { getCategory } from './../../configApi/utilFunction';
+import { getCategory, getProduct } from './../../configApi/utilFunction';
 const LandingPage = () => {
 	useEffect(() => {
 		getCategory();
+		getProduct();
 	}, []);
 	return (
 		<React.Fragment>
