@@ -5,7 +5,7 @@ display:flex ;
 height:470px ;
 width: 90vw ;
 background-color:#fff ;
-z-index:2 ;
+z-index:10 ;
 position:fixed ;
 top: 55%;
 left: 50%;

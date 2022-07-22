@@ -1,9 +1,25 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
 import CardHeaders from '../cardHeaders';
 import CardSlider from '../SlickSlider';
-
+import axios from 'axios'
 const ProductBox = () => {
+
+	const [geriatrics, setGeriatrics] = useState([]);
+	const [motherAndBaby, setMotherAndBaby] = useState([]);
+	const [metabolics, setMetabolics] = useState([]);
+
+	const getApiData = async () => {
+		const response = await axios.post(
+			"https://powstik-back-test.azurewebsites.net/user/register", { header: { "Allow-Control-Cross-Origin": '*' } }
+		).then(response => response.data);
+
+		console.log(response)
+	}
+
+	useEffect(() => {
+		getApiData();
+	});
+
 	return (
 		<div>
 			<CardHeaders

@@ -21,7 +21,7 @@ function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
     <div className={className} onClick={onClick}>
-      <img src={arrowRight} />
+      <img src={arrowRight} style={{ ...style, marginLeft: "1rem", zIndex: "2" }} />
     </div>
   );
 }
@@ -31,10 +31,10 @@ function SamplePrevArrow(props) {
   return (
     <div
       className={className}
-      style={{ ...style,marginRight:"1.5rem", zIndex: "2" }}
+      style={{ ...style, marginRight: "1.5rem", zIndex: "2" }}
       onClick={onClick}
     >
-      <img src={arrowLeft} />
+      <img src={arrowLeft} style={{ ...style, marginLeft: "-1rem", zIndex: "2" }} />
     </div>
   );
 }
@@ -42,7 +42,7 @@ function SamplePrevArrow(props) {
 const CardSlider = () => {
   var settings = {
     dots: false,
-    infinite: false,
+    infinite: true,
     speed: 600,
     slidesToShow: 4,
     slidesToScroll: 3,
@@ -54,7 +54,7 @@ const CardSlider = () => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: false,
+          infinite: true,
           dots: false,
         },
       },
@@ -118,7 +118,7 @@ const CardSlider = () => {
         </Cards>
         <Cards>
           <ProductCard
-            discount="45"
+            discount="150"
             image={prod1}
             subtitle="Diabetes"
             description="Befach Rice for Diabetics"
@@ -168,5 +168,6 @@ const Container = styled.div`
 `;
 
 const Cards = styled(Slider)`
-  margin: 0.2rem;
+  margin-left: 1rem;
+  padding-left: 0.1rem;
 `;

@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import GButton from '../../util/buttons/reusableButton/button';
-
-import { Input } from '../../util/StyledComponent/input';
 import { P2, H1, P1 } from './../../util/StyledComponent/premadeComponent';
+import { Link } from "react-router-dom";
 
 const Comp = (props) => {
 	const data = {
@@ -108,7 +107,9 @@ const Comp = (props) => {
 			</div>
 
 			<div className="onedivbtn">
-				<GButton title="Edit Account Details" width="300px" bg="#8BC34A" />
+				<Link to="/edit-account">
+					<GButton title="Edit Account Details" width="300px" bg="#8BC34A" />
+				</Link>
 			</div>
 		</Wrapper>
 	);
