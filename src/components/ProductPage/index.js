@@ -7,19 +7,11 @@ import {
 	ImagePreview,
 	ImageShow,
 	ImageContainer,
-	Cards,
 	CardsContainer,
 	DiscountContainer,
 	DiscountContent
 } from './product.styles';
-import image from '../../assets/Rectangle_154-removebg-preview.png';
-import image2 from '../../assets/Rectangle_153__1_-removebg-preview.png';
 import { H1, P1 } from '../../util/StyledComponent/premadeComponent';
-import ProductCard from '../../util/cardSlider/card';
-import prod1 from '../../assets/Rectangle 153 (1).svg';
-import prod2 from '../../assets/Rectangle 153 (2).svg';
-import prod3 from '../../assets/Rectangle 157.svg';
-import prod4 from '../../assets/Cookies-1-300x300 1.svg';
 import Header from '../LandingPage/Header/Header.component';
 import Footer from '../LandingPage/FooterWhite';
 import { useParams } from 'react-router-dom';
@@ -29,7 +21,7 @@ import CardSlider from '../LandingPage/SlickSlider';
 const ProductPage = () => {
 	let { id } = useParams();
 	//console.log('useparams', id);
-	const [ product, setProducts ] = React.useState(null);
+	const [product, setProducts] = React.useState(null);
 	const getProduct = async () => {
 		const res = await Submit({}, '/product/' + id, 'get');
 
