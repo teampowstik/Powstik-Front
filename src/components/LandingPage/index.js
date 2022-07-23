@@ -19,7 +19,7 @@ const LandingPage = () => {
 	}, []);
 	return (
 		<React.Fragment>
-			<Header />
+
 			<DiscountBar />
 			<WebsiteDescription />
 			<Characteristics />

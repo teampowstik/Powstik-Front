@@ -25,11 +25,13 @@ import RefundPolicy from './components/dummyPages/refundPolicy';
 import PrivacyPolicy from './components/dummyPages/privacyPolicy';
 import Credits from './components/dummyPages/credits';
 import NoRoutes from './components/noRoutes/noroutes';
+import Header from './components/LandingPage/Header/Header.component';
 
 function App() {
 	return (
 		<Router>
 			<div className="App">
+				<Header />
 				<Routes>
 					<Route path="/" element={<LandingPage />} />
 					<Route path="/login" element={<Login />} />
