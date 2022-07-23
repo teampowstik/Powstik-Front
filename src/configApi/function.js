@@ -24,12 +24,17 @@ export const Submit = async (data, gurl, method) => {
 		try {
 			const response = await axios.post(url, data2, config);
 			console.log(url, ' response = ', response);
-			NotifySuccess('success! ' + response.data.message);
-			// NotifySuccess('success!');
+			NotifySuccess('success! ' + response.data.message !== '' ? response.data.message : 'success');
+			NotifySuccess('success!');
 			return response;
 		} catch (err) {
-			console.log(err);
-			NotifyDanger(err.message);
+			console.log('error..................', err);
+			if (err.response.status === 409) {
+				NotifyDanger('conflict user already registered');
+			} else {
+				NotifyDanger(err.message);
+				NotifyDanger('plz try again');
+			}
 			return err;
 		}
 	} else if (method == 'get') {
@@ -37,9 +42,11 @@ export const Submit = async (data, gurl, method) => {
 			const response = await axios.get(url, config);
 			console.log(url, ' response = ', response);
 			NotifySuccess('success ' + response.data.message);
+			NotifySuccess('success!');
 			return response;
 		} catch (err) {
 			console.log(err);
+			NotifyDanger('plz try again');
 			NotifyDanger(err.message);
 			return null;
 		}

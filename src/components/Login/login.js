@@ -21,9 +21,14 @@ const Login = () => {
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
 	const dispatch = useDispatch();
 	const onSubmit = async (data) => {
+		console.log(data);
+		if (data.email.indexOf('@') == -1) {
+			NotifyDanger('not valid email');
+			return;
+		}
 		const res = await Submit(data, '/login', 'post');
 		//console.log('res......', res);
-		if (res.status === 200) {
+		if (res.status === 200 && res.data.status === 'success') {
 			localStorage.setItem('access', res.data.access);
 			localStorage.setItem('isLoggedIn', true);
 			console.log('locally saved');
@@ -53,7 +58,7 @@ const Login = () => {
 
 							<form onSubmit={handleSubmit(onSubmit)}>
 								<div className="fdiv">
-									<P1 color="#000"> UserName or Email Address *</P1>
+									<P1 color="#000"> Email Address *</P1>
 									<Input {...register('email', { required: true })} placeholder="something@gmail" />
 									{errors.email && <span className="fontcolor">This field is required</span>}
 									<P1 color="#000"> Password*</P1>

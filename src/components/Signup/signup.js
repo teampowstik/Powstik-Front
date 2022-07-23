@@ -26,13 +26,25 @@ const Signup = () => {
 
 		//const baseURL = 'https://powstik-back-test.azurewebsites.net';
 		//const url = baseURL + '/user/register';
-
+		if (data.email.indexOf('@') == -1) {
+			NotifyDanger('not valid email');
+			return;
+		}
 		if (data.terms == false) {
 			NotifyDanger('Please accept the terms and conditions');
 			return;
 		}
 		if (data.password !== data.confirmPassword) {
 			NotifyDanger('Password and Confirm Password does not match');
+			return;
+		}
+		if (isNaN(data.phone)) {
+			NotifyDanger('Phone number is not valid');
+			return;
+		}
+
+		if (data.phone.length < 10 || data.phone.length > 13) {
+			NotifyDanger('Phone number is not valid');
 			return;
 		}
 		delete data.confirmPassword;
