@@ -7,6 +7,7 @@ import Discount from '../discount/discount';
 import { Checkbox } from '../../../util/StyledComponent/input';
 import { H1 } from './../../../util/StyledComponent/premadeComponent';
 import GButton from '../../../util/buttons/reusableButton/button';
+import { useSelector } from 'react-redux';
 const data = [
 	{ name: 'Befach Rice for Diabetics', desc: 'Diabetes', pic: sampleProduct },
 	{ name: 'Befach Rice for Diabetics', desc: 'Diabetes', pic: sampleProduct },
@@ -15,19 +16,21 @@ const data = [
 ];
 const Product = (props) => {
 	// console.log(props);
+	const productids = useSelector((state) => state.cart.cart);
+	console.log(productids);
 
 	return (
 		<React.Fragment>
 			<Wrapper>
 				<Discount />
-				<div className="sel">
+				{/* <div className="sel">
 					<div className="isel">
 						<Checkbox type="checkbox" />
 						<H1 className="selh1">n/n ITEM SELECTED</H1>
 					</div>
 					<GButton title="Remove All" bg="#8BC34A" />
-				</div>
-				{data.map((item, index) => <SingleProduct item={item} key={index} />)}
+				</div> */}
+				{productids.map((item, index) => <SingleProduct product_id={item} key={index} />)}
 			</Wrapper>
 		</React.Fragment>
 	);
@@ -58,6 +61,7 @@ const Wrapper = styled.div`
 		}
 		.selh1 {
 			margin-left: 15px !important;
-		}
+		}import { useSelector } from 'react-redux';
+
 	}
 `;

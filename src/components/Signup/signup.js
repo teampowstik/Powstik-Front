@@ -81,29 +81,29 @@ const Signup = () => {
 							<form onSubmit={handleSubmit(onSubmit)}>
 								<div className="fdiv">
 									<P1 color="#000"> First Name* </P1>
-									<Input placeholder="username" {...register('first_name', { required: true })} />
+									<Input placeholder="rajeev" {...register('first_name', { required: true })} />
 									{errors.last_name && <span className="fontcolor">This field is required</span>}
 									<P1 color="#000"> Last Name *</P1>
-									<Input placeholder="username" {...register('last_name', { required: true })} />
+									<Input placeholder="prakash" {...register('last_name', { required: true })} />
 									{errors.last_name && <span className="fontcolor">This field is required</span>}
 
-									<P1 color="#000"> UserName or Email Address *</P1>
-									<Input placeholder="username" {...register('email', { required: true })} />
+									<P1 color="#000">Email Address *</P1>
+									<Input
+										placeholder="something@gmail.com"
+										{...register('email', { required: true })}
+									/>
 									{errors.email && <span className="fontcolor">This field is required</span>}
 
 									<P1 color="#000"> Phone Number*</P1>
-									<Input placeholder="password" {...register('phone', { required: true })} />
+									<Input placeholder="9636282628" {...register('phone', { required: true })} />
 									{errors.phone && <span className="fontcolor">This field is required</span>}
 
 									<P1 color="#000"> Password*</P1>
-									<Input placeholder="password" {...register('password', { required: true })} />
+									<Input placeholder="****" {...register('password', { required: true })} />
 									{errors.password && <span className="fontcolor">This field is required</span>}
 
 									<P1 color="#000"> Confirm Password*</P1>
-									<Input
-										placeholder="password"
-										{...register('confirmPassword', { required: true })}
-									/>
+									<Input placeholder="*****" {...register('confirmPassword', { required: true })} />
 									{errors.confirmPassword && (
 										<span className="fontcolor">This field is required</span>
 									)}
@@ -129,6 +129,7 @@ const Signup = () => {
 
 									<div>
 										<input
+											className="ccbox"
 											type="checkbox"
 											name="cbox"
 											style={{ accentColor: 'rgba(139, 195, 74, 0.8)' }}
@@ -168,6 +169,9 @@ const Wrapper2 = styled.div`
 	padding: 20px;
 
 	min-height: 300px;
+	.ccbox {
+		margin-right: 5px;
+	}
 
 	.fontcolor {
 		color: red;
@@ -180,7 +184,7 @@ const Wrapper2 = styled.div`
 		margin-bottom: 50px;
 	}
 	.fdiv {
-		min-height: 450px;
+		min-height: 650px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;

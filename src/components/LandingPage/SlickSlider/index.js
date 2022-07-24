@@ -88,7 +88,7 @@ const CardSlider = ({ category }) => {
 						return (
 							<Cards>
 								<ProductCard
-									id={product.id}
+									id={product.product_id}
 									discount={product.discount}
 									image={product.image}
 									//subtitle={product.subtitle}

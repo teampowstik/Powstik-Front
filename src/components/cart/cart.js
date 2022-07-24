@@ -1,19 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Coupon from './coupon/coupan';
 
 import Product from './products/products';
 import styled from 'styled-components';
 import Header from './../LandingPage/Header/Header.component';
 import { H1, P1 } from './../../util/StyledComponent/premadeComponent';
+import { getCart } from '../../configApi/utilFunction';
 
 const Cart = () => {
+	useEffect(() => {
+		//getCart();
+	});
 	return (
 		<React.Fragment>
 			<Header />
 
 			<Wrapper2>
 				<Wrapper3>
-					<P1 color="grey">Home/account</P1>
+					<P1 color="grey">Home/cart</P1>
 					<H1 size="30" weight="700">
 						{' '}
 						Your Cart

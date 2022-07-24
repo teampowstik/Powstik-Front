@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import BuyNowButton from './../../../util/buttons/ShopNowButton/index';
 import { H1, P1 } from './../../../util/StyledComponent/premadeComponent';
@@ -9,37 +9,61 @@ import { Button } from 'bootstrap';
 
 import x from '../../../assets/x.png';
 import { Checkbox } from '../../../util/StyledComponent/input';
+import { Submit } from '../../../configApi/function';
+import { addItem, removeItem } from '../../../Store/cartSelectedItemSlice/cartSelectedItemSlice';
 
-const SingleProduct = (props) => {
-	// console.log(props);
-	const { name, pic, desc } = props.item;
+const SingleProduct = ({ product_id }) => {
+	console.log(product_id);
+	const [ data, setData ] = useState('');
+	const [ checked, setChecked ] = useState(true);
+	const [ quantity, setQuantity ] = useState(1);
+	const handleClick = () => {
+		console.log('clicked');
+		setChecked(!checked);
+		if (checked) {
+			addItem({ product_id });
+		} else {
+			removeItem(product_id);
+		}
+	};
+	useEffect(() => {
+		const fetch = async () => {
+			const res = await Submit({}, '/product/' + product_id, 'get');
+			//console.log('product', res);
+			//console.log(res.data);
+			setData(res.data);
+		};
+		fetch();
+	}, []);
 
 	return (
-		<Wrapper>
-			<div className="up">
-				<Checkbox type="checkbox" />
-				<img className="cedimg" src={pic} height="90" alt="icon" />
-			</div>
-			<div className="down">
-				<H1 size="20" lineHeight="20.11px">
-					{name}
-				</H1>
-				<P1 size="13" weight="300">
-					{desc}
-				</P1>
-				<P1 size="18" weight="300">
-					item quantity: <button className="iqbtn">-</button> <div className="qdiv">1</div>
-					<button className="iqbtn">+</button>
-				</P1>
-				<H1 size="18"> ₹504.00</H1>
-			</div>
-			<div>
-				<button className="xbtn">
-					{' '}
-					<img src={x} alt="x" />
-				</button>
-			</div>
-		</Wrapper>
+		data && (
+			<Wrapper>
+				<div className="up">
+					<Checkbox checked={checked} onClick={handleClick} type="checkbox" />
+					<img className="cedimg" src={data.image} height="90" alt="icon" />
+				</div>
+				<div className="down">
+					<H1 size="20" lineHeight="20.11px">
+						{data.name}
+					</H1>
+					<P1 size="13" weight="300">
+						{/* {desc} */}
+					</P1>
+					<P1 size="18" weight="300">
+						item quantity: <button className="iqbtn">-</button> <div className="qdiv">1</div>
+						<button className="iqbtn">+</button>
+					</P1>
+					<H1 size="18"> {data.price}</H1>
+				</div>
+				<div>
+					<button className="xbtn">
+						{' '}
+						<img src={x} alt="x" />
+					</button>
+				</div>
+			</Wrapper>
+		)
 	);
 };
 export default SingleProduct;

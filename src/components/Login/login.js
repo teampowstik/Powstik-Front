@@ -66,7 +66,7 @@ const Login = () => {
 									{errors.password && <span className="fontcolor">This field is required</span>}
 									<div className="cbox ">
 										<div>
-											<input type="checkbox" name="cbox" />
+											<input className="ccbox" type="checkbox" name="cbox" />
 											<span>Remember Me</span>
 										</div>
 										<Link to="/" className="link">
@@ -127,6 +127,9 @@ const Wrapper2 = styled.div`
 	padding: 2rem;
 
 	min-height: 200px;
+	.ccbox {
+		margin-right: 5px;
+	}
 
 	.fontcolor {
 		color: red;
@@ -139,7 +142,7 @@ const Wrapper2 = styled.div`
 		margin-bottom: 50px;
 	}
 	.fdiv {
-		min-height: 450px;
+		min-height: 380px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;

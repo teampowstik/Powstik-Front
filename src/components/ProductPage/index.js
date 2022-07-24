@@ -21,16 +21,19 @@ import CardSlider from '../LandingPage/SlickSlider';
 const ProductPage = () => {
 	let { id } = useParams();
 	//console.log('useparams', id);
-	const [product, setProducts] = React.useState(null);
+	const [ product, setProducts ] = React.useState(null);
 	const getProduct = async () => {
 		const res = await Submit({}, '/product/' + id, 'get');
 
 		setProducts(res.data);
 		console.log('product data', res.data);
 	};
-	useEffect(() => {
-		getProduct();
-	}, []);
+	useEffect(
+		() => {
+			getProduct();
+		},
+		[ id ]
+	);
 
 	return (
 		<React.Fragment>
@@ -87,10 +90,11 @@ const ProductPage = () => {
 								</ImageShow>
 							</ImageContainer>
 							<DescriptionAndBuy
+								id={id}
 								heading="Product Tags"
 								disease="Diabetes"
-								type="Groceries"
-								price={468}
+								type={product.categories[0]}
+								price={product.price}
 								count={1}
 								description1={product.description}
 								description2="Taste profile: A little savoury, a little sweet. A little crunchy a little chewy. A hint of pepper a tinge of chilly. Good health & great taste in every bite."
