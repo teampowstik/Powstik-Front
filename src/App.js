@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import Login from './components/Login/login';
@@ -8,7 +7,6 @@ import LandingPage from './components/LandingPage';
 import Cart from './components/cart/cart';
 import EditAccount from './components/editAccount/editAccount';
 import AccountDetails from './components/accountDetails/account';
-
 import ProductResults from './components/productResults';
 import AddProduct from './components/addProductPage/addProduct';
 import UpdateProduct from './components/updateProductPage/updateProductPage';
