@@ -5,6 +5,7 @@ display:flex ;
 align-items:center ;
 background-color:#E8F3DB ;
 width:90% ;
+margin-top:70px ;
 margin: 0 auto;
 margin-bottom:40px ;
 justify-content: space-evenly ;

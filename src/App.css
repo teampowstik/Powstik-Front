@@ -9,3 +9,7 @@ a:hover {
 #root {
     width: 100vw;
 }
+
+.App {
+    margin-top: 80px;
+}
