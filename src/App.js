@@ -26,6 +26,7 @@ import PrivacyPolicy from './components/dummyPages/privacyPolicy';
 import Credits from './components/dummyPages/credits';
 import NoRoutes from './components/noRoutes/noroutes';
 import Header from './components/LandingPage/Header/Header.component';
+import ProductOverview from './components/Products/ProductOverview/ProductOverview.component';
 
 function App() {
 	return (
@@ -46,7 +47,7 @@ function App() {
 					<Route path="/updateservice" element={<UpdateService />} />
 					<Route path="/product/:id" element={<ProductPage />} />
 					<Route path="/service" element={<ServicePage />} />
-
+					<Route path="/product" element={<ProductOverview />} />
 					<Route path="/contact-us" element={<ContactUs />} />
 					<Route path="/tos" element={<Tos />} />
 					<Route path="/about" element={<About />} />
