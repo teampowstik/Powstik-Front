@@ -196,7 +196,7 @@ const Container = styled.div`
 	}
 `;
 
-const Cards = styled(Slider)`
+export const Cards = styled(Slider)`
   margin-left: 1rem;
   padding-left: 0.1rem;
 `;
