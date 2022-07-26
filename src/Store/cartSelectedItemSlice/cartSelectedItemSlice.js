@@ -16,7 +16,7 @@ export const CartSelectedSlice = createSlice({
 			// immutable state based off those changes
 			// console.log('red=', action.payload);
 			//console.log('cart', state, action);
-			state.selectedItem = [ ...state.selectedItem, action.payload ];
+			state.cartSelectedItem = [ ...state.cartSelectedItem, action.payload ];
 			// if (state.messageArray[action.payload.roomId]) {user
 			// 	state.messageArray[action.payload.roomId].push(action.payload);
 			// } else {
@@ -24,12 +24,16 @@ export const CartSelectedSlice = createSlice({
 			// }
 		},
 		removeItem: (state, action) => {
-			state.selectedItem = state.selectedItem.filter((item) => item.id !== action.payload.id);
+			console.log('cartslice', action);
+			state.cartSelectedItem = state.cartSelectedItem.filter((item) => item.id !== action.payload.id);
+		},
+		clearCart: (state, action) => {
+			state.cartSelectedItem = [];
 		}
 	}
 });
 
 // Action creators are generated for each case reducer function
-export const { addItem, removeItem } = CartSelectedSlice.actions;
+export const { addItem, removeItem, clearCart } = CartSelectedSlice.actions;
 
 export default CartSelectedSlice.reducer;

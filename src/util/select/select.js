@@ -29,7 +29,7 @@ const MySelect = ({ name, control, options }) => {
 				<Controller
 					name={name}
 					control={control}
-					rules={{ required: true }}
+					// rules={{ required: true }}
 					render={({ field }) => (
 						<Select {...field} className="pselect" classNamePrefix="select" options={options} />
 					)}

@@ -22,11 +22,15 @@ export const CartSlice = createSlice({
 			// } else {
 			// 	state.messageArray[action.payload.roomId] = [ action.payload ];
 			// }
+		},
+		removeCart: (state, action) => {
+			// console.log('cartslice', action);
+			state.cart = state.cart.filter((item) => item !== action.payload.id);
 		}
 	}
 });
 
 // Action creators are generated for each case reducer function
-export const { addCart } = CartSlice.actions;
+export const { addCart, removeCart } = CartSlice.actions;
 
 export default CartSlice.reducer;

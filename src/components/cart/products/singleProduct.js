@@ -10,21 +10,30 @@ import { Button } from 'bootstrap';
 import x from '../../../assets/x.png';
 import { Checkbox } from '../../../util/StyledComponent/input';
 import { Submit } from '../../../configApi/function';
-import { addItem, removeItem } from '../../../Store/cartSelectedItemSlice/cartSelectedItemSlice';
+import { addItem, removeItem, clearCart } from '../../../Store/cartSelectedItemSlice/cartSelectedItemSlice';
+import { useDispatch } from 'react-redux';
+import { removeCart } from '../../../Store/cartSlice/cartslice';
 
 const SingleProduct = ({ product_id }) => {
+	const dispatch = useDispatch();
 	console.log(product_id);
 	const [ data, setData ] = useState('');
-	const [ checked, setChecked ] = useState(true);
+	const [ checked, setChecked ] = useState(false);
 	const [ quantity, setQuantity ] = useState(1);
 	const handleClick = () => {
-		console.log('clicked');
-		setChecked(!checked);
-		if (checked) {
-			addItem({ product_id });
+		//console.log('clicked....', checked);
+		setChecked(checked ? false : true);
+		if (!checked) {
+			dispatch(addItem({ id: product_id, price: data.price }));
 		} else {
-			removeItem(product_id);
+			dispatch(removeItem({ id: product_id }));
 		}
+	};
+
+	const handleCrossClick = () => {
+		console.log('clicked....cross');
+		dispatch(removeCart({ id: product_id }));
+		dispatch(removeItem({ id: product_id }));
 	};
 	useEffect(() => {
 		const fetch = async () => {
@@ -32,6 +41,7 @@ const SingleProduct = ({ product_id }) => {
 			//console.log('product', res);
 			//console.log(res.data);
 			setData(res.data);
+			dispatch(clearCart());
 		};
 		fetch();
 	}, []);
@@ -57,7 +67,7 @@ const SingleProduct = ({ product_id }) => {
 					<H1 size="18"> {data.price}</H1>
 				</div>
 				<div>
-					<button className="xbtn">
+					<button className="xbtn" onClick={handleCrossClick}>
 						{' '}
 						<img src={x} alt="x" />
 					</button>
