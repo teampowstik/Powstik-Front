@@ -9,7 +9,7 @@ import { Input } from './../../util/StyledComponent/input';
 import LSButton from './../../util/buttons/LoginButton/loginbutton';
 import GoognleButton from './../../util/buttons/googleLoginButton/googlebutton';
 import Footer from '../../util/components/FooterWhite';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../LandingPage/Header/Header.component';
 import { createGlobalStyle } from 'styled-components';
 import { add_access_token, baseURL } from '../../configApi/config';
@@ -20,18 +20,28 @@ import { addUser } from '../../Store/userSlice/userSlice';
 const Login = () => {
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 	const onSubmit = async (data) => {
-		console.log(data);
+		//console.log(data);
 		if (data.email.indexOf('@') == -1) {
 			NotifyDanger('not valid email');
 			return;
 		}
 		const res = await Submit(data, '/login', 'post');
-		//console.log('res......', res);
-		if (res.status === 200 && res.data.status === 'success') {
+		console.log('res......', res);
+		if (res.status === 200 || res.status === 201) {
+			NotifySuccess('login success');
 			localStorage.setItem('access', res.data.access);
 			localStorage.setItem('isLoggedIn', true);
 			console.log('locally saved');
+			//alert('loged in');
+			// navigate('/account-details');
+			setTimeout(function() {
+				navigate('/account-details');
+			}, 1000);
+		} else {
+			NotifyDanger('login failed ');
+			console.log('login failed');
 		}
 	};
 

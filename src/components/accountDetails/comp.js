@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import GButton from '../../util/buttons/reusableButton/button';
 
 import { Input } from '../../util/StyledComponent/input';
 import { P2, H1, P1 } from './../../util/StyledComponent/premadeComponent';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 const Comp = (props) => {
@@ -22,10 +22,22 @@ const Comp = (props) => {
 	// 	pin: 'xxx',
 	// 	type: 'vendor'
 	// };
+	const navigate = useNavigate();
 	const data = useSelector((state) => state.user.user);
+	const [ loggedIn, setLoggedIn ] = useState(false);
 	//console.log(data);
 
-	return (
+	useEffect(
+		() => {
+			//console.log(data);
+			if (data.first_name !== 'Not logged in') {
+				setLoggedIn(true);
+			}
+		},
+		[ data ]
+	);
+
+	return loggedIn ? (
 		<Wrapper>
 			<div className="onedivimg">
 				<div className="eaimg">
@@ -118,6 +130,8 @@ const Comp = (props) => {
 				</Link>
 			</div>
 		</Wrapper>
+	) : (
+		<Link to="/login"> Plz Login First </Link>
 	);
 };
 export default Comp;

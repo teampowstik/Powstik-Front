@@ -12,13 +12,14 @@ import LSButton from './../../util/buttons/LoginButton/loginbutton';
 import GoognleButton from './../../util/buttons/googleLoginButton/googlebutton';
 import Footer from '../../util/components/FooterWhite';
 import Header from '../LandingPage/Header/Header.component';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { GlobalStyles } from '../Login/login';
 import { baseURL } from '../../configApi/config';
 import { Submit } from '../../configApi/function';
 const Signup = () => {
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
 	const [ user, setUser ] = useState(true);
+	const navigate = useNavigate();
 
 	const onSubmit = async (data) => {
 		data['is_seller'] = !user;
@@ -53,6 +54,15 @@ const Signup = () => {
 		//console.log(data2);
 
 		const res = await Submit(data2, '/register', 'post');
+		if (res.status === 200 || res.status === 201) {
+			NotifySuccess('Successfully registered');
+			//alert('Successfully registered');
+			setTimeout(function() {
+				navigate('/login');
+			}, 1000);
+		} else {
+			NotifyDanger(res.data.message);
+		}
 
 		//console.log('res....', res);
 	};
