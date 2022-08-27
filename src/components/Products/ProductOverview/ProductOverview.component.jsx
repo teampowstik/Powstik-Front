@@ -1,20 +1,46 @@
 import React from 'react'
 import Footer from '../../../util/components/FooterWhite'
-import { Container, ProductContainer } from '../../ProductPage/product.styles';
+import {
+    Container,
+    ProductContainer, 
+    BuyContainer,
+    ImagePreview,
+    ImageShow,
+    ImageContainer,
+    Card,
+    CardsContainer,
+    DiscountContainer,
+    DiscountContent
+} from '../../ProductPage/product.styles';
 import { H1, P1 } from '../../../util/StyledComponent/premadeComponent';
-import { Container1, FilteredContainer, ProductResults } from './Product.styles';
+import {
+    Container1,
+    FilteredContainer,
+    ProductResults,
+    Container2,
+    Filter,
+    FilterContainer,
+    Product,
+    ProductImage, newContainer
+} from './Product.styles';
+import sampleImage from '../../../assets/sampleImage.jpg'
 import Accordian from '../../../util/components/Accordian/Accordian.component';
 import FilterBy from '../../../util/FilterBy/FilterBy.component';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Submit } from '../../../configApi/function';
 
 const ProductOverview = () => {
-    const [product, setProducts] = React.useState(null);
+    const [ product, setProducts ] = React.useState( null );
+    const [filter, setFilter] = useState('default')
     const getProduct = async () => {
         const res = await Submit({}, '/products/', 'get');
 
         setProducts(res.data);
         console.log('product data', res.data);
+    };
+
+    const handleChange = (event) => {
+        setFilter(event.target.value);
     };
 
     const Discountchange = (value, event) => {
@@ -35,7 +61,7 @@ const ProductOverview = () => {
 
     return (
         <React.Fragment>
-
+            
             <Container>
                 <ProductContainer >
                     <P1
@@ -85,13 +111,34 @@ const ProductOverview = () => {
                             <FilterBy checktitle={"4.2 stars"} Ratingchange={Ratingchange.bind(null, 4.2)} />
                             <FilterBy checktitle={"4.1 stars"} Ratingchange={Ratingchange.bind(null, 4.1)} />
                         </FilteredContainer>
+                        <Container2>
+                            <FilterContainer>
+
+                                <Filter name="filter" id="filter" value={filter} onChange={handleChange}>
+                                    <option value="default">Relevance</option>
+                                    <option value="priceHighToLow">Price: High to Low</option>
+                                    <option value="priceLowToHigh">Price: Low to High</option>
+                                </Filter>
+                            </FilterContainer>
+                        </Container2>
                         <ProductResults>
-                            {product && product.map((product, index) => {
+                                
+                            {/* {product && product.map((product, index) => {
                                 return (
-                                    <div></div>
-                                )
-                            })
-                            }
+                                    <Product>
+                                    <ProductImage
+                                    src={sampleImage}
+                                    />
+                                    <H1>{ product }</H1>
+                                    Hello
+                                    </Product>
+                                    )
+                                })
+                            } */}
+                            <ProductContainer>
+
+                            </ProductContainer>
+                            
                         </ProductResults>
                     </Container1>
                 </ProductContainer>
