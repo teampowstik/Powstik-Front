@@ -6,7 +6,7 @@ const FilterBy = ({ checktitle, Discountchange, Pricechange, Ratingchange }) => 
         <FilterByContainer>
             <CheckboxContainer style={{ marginLeft: 15 }}>
                 <input type={"checkbox"} style={{ accentColor: "rgba(139, 195, 74, 1)", marginRight: 5 }} onChange={Discountchange || Ratingchange || Pricechange} />
-                <P1 color="#616161" weight={400} size={16}>{checktitle}</P1>
+                <P1 color="#454545" weight={400} size={16}>{checktitle}</P1>
             </CheckboxContainer>
         </FilterByContainer>
     )

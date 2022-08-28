@@ -5,7 +5,7 @@ import { Accordion, AccordionDetails, Typography, AccordionSummary } from '@mui/
 const Accordian = ({ Title }) => {
     return (
         <div style={{}}>
-            <Accordion style={{ width: 350, borderBottom: "1px solid rgba(139, 195, 74, 0.2)", boxShadow: "none" }}>
+            <Accordion style={{ width: "95%", borderBottom: "1.5px solid rgba(139, 195, 74, 0.2)", boxShadow: "none" }}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel1a-content"
@@ -13,7 +13,7 @@ const Accordian = ({ Title }) => {
                     <Typography
                         style={{
                             fontWeight: 15,
-                            color: "rgba(139, 195, 74, 1)",
+                            color: "#8BC34B",
                         }}
                     >
                         {Title}
