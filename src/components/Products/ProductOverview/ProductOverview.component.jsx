@@ -138,7 +138,7 @@ const ProductOverview = () => {
                                             <P1 color='#000000' size={ 12 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>₹504.00</P1>
                                             <RatingAndAddDiv>
                                                 <RatingDiv>
-                                                    <P1 color='#000000' size={ 14 } weight={ 700 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>4.{ 6 - i }</P1>
+                                                    <P1 color='#000000' size={ 14 } weight={ 700 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>4.{ 6 - (i%6) }</P1>
                                                     <BorderStar>
                                                         <StarBorderIcon />
                                                     </BorderStar>
@@ -173,7 +173,7 @@ const ProductOverview = () => {
                                         <P1 color='#000000' size={ 12 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>₹504.00</P1>
                                         <RatingAndAddDiv>
                                             <RatingDiv>
-                                                <P1 color='#000000' size={ 14 } weight={ 700 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>4.{ 6 - i }</P1>
+                                                <P1 color='#000000' size={ 14 } weight={ 700 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>4.{ 6 - (i%6) }</P1>
                                                 <BorderStar>
                                                     <StarBorderIcon />
                                                 </BorderStar>

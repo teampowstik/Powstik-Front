@@ -70,6 +70,7 @@ justify-content:space-evenly ;
 align-items:center ;
 cursor: pointer;
 font-size: 18px ;
+font-weight: 600;
 padding: 21px 10px ;
 text-decoration:none ;
 text-transform:uppercase;
