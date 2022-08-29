@@ -87,10 +87,11 @@ export const ProductCard = styled.div`
     display:flex;
     flex-direction: column;
     width:230px;
-    height:350px;
+    height:380px;
     background-color: #e8f4dc;
     margin:15px;
     padding-top: 10px;
+    border-radius: 5px;
 `
 
 export const OfferAndLike = styled.div`
@@ -99,7 +100,7 @@ export const OfferAndLike = styled.div`
     height:40px;
     align-items: center;
     margin-right: 10px;
-    color: rgba(139, 195, 74, 1);
+    
 `
 
 export const LikeButton = styled.div`
@@ -107,6 +108,10 @@ export const LikeButton = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    color: rgba(139, 195, 74, 1);
+    &:hover{
+        color: #558124;
+    };
 `
 
 export const DiscountContainer = styled.div`
@@ -131,11 +136,45 @@ export const ProductImageContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 5px;
     margin-top: 20px;
 `
 
 export const ProductImage = styled.img`
     width:150px;
-    
+`
+
+export const RatingAndAddDiv = styled.div`
+    display:flex;
+    align-items: center;
+    padding-left: 25px;
+    padding-right: 25px;
+    justify-content: space-between;
+`
+
+export const RatingDiv = styled.div`
+    display: flex;
+    align-items: center;
+    width:100px;
+    height:40px;
+`
+
+export const AddToCart = styled.div`
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: white;
+    width:70px;
+    height:35px;
+    &:hover{
+        background-color: rgba(139, 195, 74, 1);
+        color:white;
+    }
+`
+
+export const BorderStar = styled.div`
+    &:hover{
+        color: rgba(139, 195, 74, 1);
+    }
 `

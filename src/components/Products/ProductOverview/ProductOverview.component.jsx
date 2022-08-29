@@ -2,12 +2,15 @@ import React from 'react'
 import Footer from '../../../util/components/FooterWhite'
 // import {} from '../../ProductPage/product.styles';
 import { H1, P1 } from '../../../util/StyledComponent/premadeComponent';
-import { Background, SuperCard, FilterDisplay, Filter, FilterDiv, ProductDisplay, SortContainer, SortSelect, AdBanner, ProductCard, DiscountContainer, DiscountContent, ProductContainer, OfferAndLike, LikeButton, ProductImage, ProductImageContainer} from './Product.styles';
+import { Background, SuperCard, FilterDisplay, Filter, FilterDiv, ProductDisplay, SortContainer, SortSelect, AdBanner, ProductCard, DiscountContainer, DiscountContent, ProductContainer, OfferAndLike, LikeButton, ProductImage, ProductImageContainer, RatingAndAddDiv, RatingDiv, AddToCart, BorderStar} from './Product.styles';
 import Advertisment from '../../../assets/product_ad.png'
 import ProductIMG from '../../../assets/product_img.png'
 import Accordian from '../../../util/components/Accordian/Accordian.component';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import StarBorderIcon from '@mui/icons-material/StarBorder';
+import StarIcon from '@mui/icons-material/Star';
+import AddIcon from '@mui/icons-material/Add';
 import FilterBy from '../../../util/FilterBy/FilterBy.component';
 import { useState, useEffect } from 'react';
 import { Submit } from '../../../configApi/function';
@@ -40,7 +43,9 @@ const ProductOverview = () => {
 
     useEffect(() => {
         getProduct();
-    }, []);
+    }, [] );
+    
+    const a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 
     return (
         <React.Fragment>
@@ -110,143 +115,117 @@ const ProductOverview = () => {
                         </SortContainer>
                         <AdBanner src={ Advertisment } alt="advertisement" />
                         <ProductContainer>
-                            <ProductCard>
-                                <OfferAndLike>
-                                    <DiscountContainer>
-                                        <DiscountContent>
-                                            30% off
-                                        </DiscountContent>
-                                    </DiscountContainer>
-                                    <LikeButton>
-                                        <FavoriteBorderOutlinedIcon/>
-                                    </LikeButton>
-                                </OfferAndLike>
-                                <ProductImageContainer>
-                                    <ProductImage src={ ProductIMG } />
-                                </ProductImageContainer>
-                            </ProductCard>
-                            <ProductCard>
-                                <OfferAndLike>
-                                    <DiscountContainer>
-                                        <DiscountContent>
-                                            30% off
-                                        </DiscountContent>
-                                    </DiscountContainer>
-                                    <LikeButton>
-                                        <FavoriteBorderOutlinedIcon/>
-                                    </LikeButton>
-                                </OfferAndLike>
-                                <ProductImageContainer>
-                                    <ProductImage src={ ProductIMG } />
-                                </ProductImageContainer>
-                            </ProductCard>
-                            <ProductCard>
-                                <OfferAndLike>
-                                    <DiscountContainer>
-                                        <DiscountContent>
-                                            30% off
-                                        </DiscountContent>
-                                    </DiscountContainer>
-                                    <LikeButton>
-                                        <FavoriteBorderOutlinedIcon/>
-                                    </LikeButton>
-                                </OfferAndLike>
-                                <ProductImageContainer>
-                                    <ProductImage src={ ProductIMG } />
-                                </ProductImageContainer>
-                            </ProductCard>
-                            <ProductCard>
-                                <OfferAndLike>
-                                    <DiscountContainer>
-                                        <DiscountContent>
-                                            30% off
-                                        </DiscountContent>
-                                    </DiscountContainer>
-                                    <LikeButton>
-                                        <FavoriteBorderOutlinedIcon/>
-                                    </LikeButton>
-                                </OfferAndLike>
-                                <ProductImageContainer>
-                                    <ProductImage src={ ProductIMG } />
-                                </ProductImageContainer>
-                            </ProductCard>
-                            <ProductCard>
-                                <OfferAndLike>
-                                    <DiscountContainer>
-                                        <DiscountContent>
-                                            30% off
-                                        </DiscountContent>
-                                    </DiscountContainer>
-                                    <LikeButton>
-                                        <FavoriteBorderOutlinedIcon/>
-                                    </LikeButton>
-                                </OfferAndLike>
-                                <ProductImageContainer>
-                                    <ProductImage src={ ProductIMG } />
-                                </ProductImageContainer>
-                            </ProductCard>
-                            <ProductCard>
-                                <OfferAndLike>
-                                    <DiscountContainer>
-                                        <DiscountContent>
-                                            30% off
-                                        </DiscountContent>
-                                    </DiscountContainer>
-                                    <LikeButton>
-                                        <FavoriteBorderOutlinedIcon/>
-                                    </LikeButton>
-                                </OfferAndLike>
-                                <ProductImageContainer>
-                                    <ProductImage src={ ProductIMG } />
-                                </ProductImageContainer>
-                            </ProductCard>
+                            { a.map( i => {
+                                if ( i % 6 == 0 ) {
+                                    return (
+                                        <><AdBanner src={ Advertisment } alt="advertisement" />
+                                            <ProductCard>
+                                            <OfferAndLike>
+                                                <DiscountContainer>
+                                                    <DiscountContent>
+                                                        { ( i * 10 ) % 60 }% off
+                                                    </DiscountContent>
+                                                </DiscountContainer>
+                                                <LikeButton>
+                                                    <FavoriteBorderOutlinedIcon />
+                                                </LikeButton>
+                                            </OfferAndLike>
+                                            <ProductImageContainer>
+                                                <ProductImage src={ ProductIMG } />
+                                            </ProductImageContainer>
+                                            <P1 color='#000000' size={ 11 } weight={ 200 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>Diabetes</P1>
+                                            <P1 color='#000000' size={ 15 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>Befach Rice for Diabetics</P1>
+                                            <P1 color='#000000' size={ 12 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>₹504.00</P1>
+                                            <RatingAndAddDiv>
+                                                <RatingDiv>
+                                                    <P1 color='#000000' size={ 14 } weight={ 700 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>4.{ 6 - i }</P1>
+                                                    <BorderStar>
+                                                        <StarBorderIcon />
+                                                    </BorderStar>
+                                                    <P1 color='#000000' size={ 20 } weight={ 200 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>|</P1>
+                                                    <P1 color='#000000' size={ 14 } weight={ 700 } style={ { paddingLeft: 5, paddingBottom: 0, paddingTop: 0 } }>{ 3 * i }K</P1>
+                                                </RatingDiv>
+                                                <AddToCart>
+                                                    <AddIcon />
+                                                    <P1 color='#000000' size={ 15 } weight={ 700 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>ADD</P1>
+                                                </AddToCart>
+                                            </RatingAndAddDiv>
+                                        </ProductCard></>
+                                    )
+                                }
+                                return (
+                                    <ProductCard>
+                                        <OfferAndLike>
+                                            <DiscountContainer>
+                                                <DiscountContent>
+                                                    { (i*10)%60 }% off
+                                                </DiscountContent>
+                                            </DiscountContainer>
+                                            <LikeButton>
+                                                <FavoriteBorderOutlinedIcon/>
+                                            </LikeButton>
+                                        </OfferAndLike>
+                                        <ProductImageContainer>
+                                            <ProductImage src={ ProductIMG } />
+                                        </ProductImageContainer>
+                                        <P1 color='#000000' size={ 11 } weight={ 200 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>Diabetes</P1>
+                                        <P1 color='#000000' size={ 15 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>Befach Rice for Diabetics</P1>
+                                        <P1 color='#000000' size={ 12 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>₹504.00</P1>
+                                        <RatingAndAddDiv>
+                                            <RatingDiv>
+                                                <P1 color='#000000' size={ 14 } weight={ 700 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>4.{ 6 - i }</P1>
+                                                <BorderStar>
+                                                    <StarBorderIcon />
+                                                </BorderStar>
+                                                <P1 color='#000000' size={ 20 } weight={ 200 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>|</P1>
+                                                <P1 color='#000000' size={ 14 } weight={ 700 } style={ { paddingLeft: 5, paddingBottom: 0, paddingTop: 0 } }>{ 3 * i }K</P1>
+                                            </RatingDiv>
+                                            <AddToCart>
+                                                <AddIcon />
+                                                <P1 color='#000000' size={ 15 } weight={ 700 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>ADD</P1>
+                                            </AddToCart>
+                                        </RatingAndAddDiv>
+                                    </ProductCard>
+                                );
+                            })}
+                            {/* <AdBanner src={ Advertisment } alt="advertisement" />
+                            {a.map(i => {
+                                return (
+                                    <ProductCard>
+                                        <OfferAndLike>
+                                            <DiscountContainer>
+                                                <DiscountContent>
+                                                    { i*10 }% off
+                                                </DiscountContent>
+                                            </DiscountContainer>
+                                            <LikeButton>
+                                                <FavoriteBorderOutlinedIcon/>
+                                            </LikeButton>
+                                        </OfferAndLike>
+                                        <ProductImageContainer>
+                                            <ProductImage src={ ProductIMG } />
+                                        </ProductImageContainer>
+                                        <P1 color='#000000' size={ 11 } weight={ 200 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>Diabetes</P1>
+                                        <P1 color='#000000' size={ 15 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>Befach Rice for Diabetics</P1>
+                                        <P1 color='#000000' size={ 12 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>₹504.00</P1>
+                                        <RatingAndAddDiv>
+                                            <RatingDiv>
+                                                <P1 color='#000000' size={ 14 } weight={ 700 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>4.{ 6 - i }</P1>
+                                                <BorderStar>
+                                                    <StarBorderIcon />
+                                                </BorderStar>
+                                                <P1 color='#000000' size={ 20 } weight={ 200 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>|</P1>
+                                                <P1 color='#000000' size={ 14 } weight={ 700 } style={ { paddingLeft: 5, paddingBottom: 0, paddingTop: 0 } }>10K</P1>
+                                            </RatingDiv>
+                                            <AddToCart>
+                                                <AddIcon />
+                                                <P1 color='#000000' size={ 15 } weight={ 700 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>ADD</P1>
+                                            </AddToCart>
+                                        </RatingAndAddDiv>
+                                    </ProductCard>
+                                );
+                            })} */}
 
-                            <AdBanner src={ Advertisment } alt="advertisement" />
-                            <ProductCard>
-                                <OfferAndLike>
-                                    <DiscountContainer>
-                                        <DiscountContent>
-                                            30% off
-                                        </DiscountContent>
-                                    </DiscountContainer>
-                                    <LikeButton>
-                                        <FavoriteBorderOutlinedIcon/>
-                                    </LikeButton>
-                                </OfferAndLike>
-                                <ProductImageContainer>
-                                    <ProductImage src={ ProductIMG } />
-                                </ProductImageContainer>
-                            </ProductCard>
-                            <ProductCard>
-                                <OfferAndLike>
-                                    <DiscountContainer>
-                                        <DiscountContent>
-                                            30% off
-                                        </DiscountContent>
-                                    </DiscountContainer>
-                                    <LikeButton>
-                                        <FavoriteBorderOutlinedIcon/>
-                                    </LikeButton>
-                                </OfferAndLike>
-                                <ProductImageContainer>
-                                    <ProductImage src={ ProductIMG } />
-                                </ProductImageContainer>
-                            </ProductCard>
-                            <ProductCard>
-                                <OfferAndLike>
-                                    <DiscountContainer>
-                                        <DiscountContent>
-                                            30% off
-                                        </DiscountContent>
-                                    </DiscountContainer>
-                                    <LikeButton>
-                                        <FavoriteBorderOutlinedIcon/>
-                                    </LikeButton>
-                                </OfferAndLike>
-                                <ProductImageContainer>
-                                    <ProductImage src={ ProductIMG } />
-                                </ProductImageContainer>
-                            </ProductCard>
                         </ProductContainer>
                     </ProductDisplay>
                 </SuperCard>
