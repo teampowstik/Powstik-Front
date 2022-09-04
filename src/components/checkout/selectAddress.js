@@ -11,18 +11,18 @@ function SelectAddress({ name, phone, address, value, options, onChange }) {
     <React.Fragment>
       {/* <input type="radio" name={name} value={address} /> */}
       <Container>
-        <Box primary>
+        <Head primary>
           <NestedLogin>
             <H1 color="white">2</H1>
             <NestedLogin2>
-              <H1 color="white">Add Address</H1>
+              <H1 color="white">Delivery Address</H1>
             </NestedLogin2>
           </NestedLogin>
-        </Box>
+        </Head>
         {options.map((option) => (
           <Box>
             <NestedLogin>
-              <input
+              <StyledInput
                 type="radio"
                 className="form-check-input"
                 name={option.name}
@@ -30,7 +30,7 @@ function SelectAddress({ name, phone, address, value, options, onChange }) {
                 value={option.value}
                 checked={value === option.value}
                 onChange={() => onChange(option.value)}
-              ></input>
+              ></StyledInput>
 
               <NestedLogin2>
                 <NestedLogin3>
@@ -53,6 +53,7 @@ export default SelectAddress;
 const Container = styled.div`
   margin: 1rem 0;
 `;
+
 const Box = styled.div`
   display: flex;
   flex-direction: row;
@@ -60,11 +61,34 @@ const Box = styled.div`
   width: 100%;
   background-color: ${(props) => (props.primary ? "#8BC34A" : "#e8f3db;")};
   padding: 10px 20px;
+  &:hover {
+    background-color: #d6e9be;
+  }
 `;
+const StyledInput = styled.input`
+  color: #8bc34a;
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0px 2px red;
+  }
+  &:checked {
+    background-color: #8bc34a;
+  }
+`;
+const Head = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  background-color: ${(props) => (props.primary ? "#8BC34A" : "#e8f3db;")};
+  padding: 10px 20px;
+`;
+
 const NestedLogin = styled.div`
   display: flex;
   flex-direction: row;
 `;
+
 const NestedLogin2 = styled.div`
   display: flex;
   flex-direction: column;

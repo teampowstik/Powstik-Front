@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
 
 import { H1, P1 } from "../../util/StyledComponent/premadeComponent";
@@ -20,7 +20,7 @@ function AddAddress() {
   );
 }
 
-export default AddAddress
+export default AddAddress;
 const Box = styled.div`
   margin: 1rem 0;
   display: flex;
@@ -30,7 +30,6 @@ const Box = styled.div`
   width: 100%;
   background-color: #e8f3db;
   padding: 5px 20px;
-  border-radius: 5px;
 `;
 const NestedLogin = styled.div`
   display: flex;

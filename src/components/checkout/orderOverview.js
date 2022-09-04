@@ -34,7 +34,6 @@ const Box = styled.div`
   width: 100%;
   background-color: ${(props) => (props.primary ? "#8BC34A" : "#e8f3db;")};
   padding: 5px 20px;
-  border-radius: 5px;
 `;
 const NestedLogin = styled.div`
   display: flex;

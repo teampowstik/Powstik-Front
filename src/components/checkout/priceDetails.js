@@ -59,7 +59,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding-left: 20%;
+  padding: 0 10%;
   @media (max-width: 790px) {
     justify-content: center;
   }

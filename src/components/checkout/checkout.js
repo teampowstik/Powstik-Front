@@ -77,12 +77,12 @@ const Container = styled.div`
 const Wrapper1 = styled.div`
   display: flex;
   flex-direction: column;
-  width: 100%;
+  width: 65%;
 `;
 const Wrapper2 = styled.div`
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 35%;
 `;
 
 const Login = styled.div`
@@ -93,7 +93,6 @@ const Login = styled.div`
   width: 100%;
   background-color: #e8f3db;
   padding: 20px;
-  border-radius: 5px;
 `;
 const NestedLogin = styled.div`
   display: flex;
