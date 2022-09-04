@@ -9,6 +9,8 @@ import AddAddress from "./addAddress";
 import SelectAddress from "./selectAddress";
 import OrderOverview from "./orderOverview";
 import PaymentOption from "./paymentOption";
+import Footer from "./footer";
+
 const Checkout = () => {
   const [lookingFor, setLookingFor] = React.useState("false");
   const [boolean_options, setBoolean_options] = React.useState([
@@ -63,6 +65,7 @@ const Checkout = () => {
           <PriceDetails />
         </Wrapper2>
       </Container>
+      <Footer />
     </React.Fragment>
   );
 };
@@ -103,3 +106,7 @@ const NestedLogin2 = styled.div`
   flex-direction: column;
   padding-left: 20px;
 `;
+// const StyledNumH1 = styled(H1)`
+//   background-color: #ffffff;
+//   padding: 5px;
+//   `;

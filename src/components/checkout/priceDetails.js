@@ -42,9 +42,14 @@ const PriceDetails = (props) => {
             Conveinence Fee : {"n"}
           </H1>
           <hr />
-          <H1 size="18" weight="500">
-            Total Amount : {"n"}{" "}
-          </H1>
+          <Wrapper2>
+            <H1 size="18" weight="500">
+              Total Amount : {"n"}{" "}
+            </H1>
+            <H1 size="18" weight="500">
+              Amount : {"n"}{" "}
+            </H1>
+          </Wrapper2>
         </div>
         <div>
           <GButton title="Place Order" bg="#8BC34A" width="100%" />
@@ -63,4 +68,9 @@ const Wrapper = styled.div`
   @media (max-width: 790px) {
     justify-content: center;
   }
+`;
+const Wrapper2 = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 `;
