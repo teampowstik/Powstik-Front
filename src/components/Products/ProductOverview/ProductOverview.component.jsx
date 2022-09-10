@@ -2,6 +2,7 @@ import React from 'react'
 import Footer from '../../../util/components/FooterWhite'
 // import {} from '../../ProductPage/product.styles';
 import { H1, P1 } from '../../../util/StyledComponent/premadeComponent';
+import axios from 'axios'
 import { Background, SuperCard, FilterDisplay, Filter, FilterDiv, ProductDisplay, SortContainer, SortSelect, AdBanner, ProductCard, DiscountContainer, DiscountContent, ProductContainer, OfferAndLike, LikeButton, ProductImage, ProductImageContainer, RatingAndAddDiv, RatingDiv, AddToCart, BorderStar} from './Product.styles';
 import Advertisment from '../../../assets/product_ad.png'
 import ProductIMG from '../../../assets/product_img.png'
@@ -16,13 +17,36 @@ import { useState, useEffect } from 'react';
 import { Submit } from '../../../configApi/function';
 
 const ProductOverview = () => {
-    const [ product, setProducts ] = React.useState( null );
-    const [filter, setFilter] = useState('default')
-    const getProduct = async () => {
-        const res = await Submit({}, '/products/', 'get');
+    const [ product, setProducts ] = useState( [] );
+    const [ productById, setProductById ] = useState( [] );
+    const [ productByCategory, setProductByCategory ] = useState( [] );
+    const [ filter, setFilter ] = useState( 'default' )
 
+    const base = "https://powstik-back-test.azurewebsites.net"
+    
+
+    //api not working currently
+    
+    const get_all_products = `${base}/product/`
+    const get_product_by_id = `${base}/product/1`
+    const get_product_under_category = `${base}product/bycategory/Diabetes`
+
+    const getProduct = async () => {
+        const res = await Submit( get_all_products, 'GET' );
         setProducts(res.data);
         console.log('product data', res.data);
+    };
+
+    const getProductById = async () => {
+        const res = await Submit( get_product_by_id, 'GET' );
+        setProductById( res.data );
+        console.log( 'product by id', res.data );
+    };
+
+    const getProductByCategory = async () => {
+        const res = await Submit( get_product_under_category, 'GET' );
+        setProductByCategory( res.data );
+        console.log( 'product by category', res.data );
     };
 
     const handleChange = (event) => {
@@ -44,8 +68,6 @@ const ProductOverview = () => {
     useEffect(() => {
         getProduct();
     }, [] );
-    
-    const a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18];
 
     return (
         <React.Fragment>
@@ -115,7 +137,7 @@ const ProductOverview = () => {
                         </SortContainer>
                         {/* <AdBanner src={ Advertisment } alt="advertisement" /> */}
                         <ProductContainer>
-                            { a.map( i => {
+                            { product.map( i => {
                                 if ( i % 7 == 0 || i == 1 ) {
                                     return (
                                         <><AdBanner src={ Advertisment } alt="advertisement" />
@@ -123,7 +145,7 @@ const ProductOverview = () => {
                                             <OfferAndLike>
                                                 <DiscountContainer>
                                                     <DiscountContent>
-                                                        { ( i * 10 ) % 60 }% off
+                                                        {i.discount}%
                                                     </DiscountContent>
                                                 </DiscountContainer>
                                                 <LikeButton>
@@ -133,9 +155,9 @@ const ProductOverview = () => {
                                             <ProductImageContainer>
                                                 <ProductImage src={ ProductIMG } />
                                             </ProductImageContainer>
-                                            <P1 color='#000000' size={ 11 } weight={ 200 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>Diabetes</P1>
-                                            <P1 color='#000000' size={ 15 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>Befach Rice for Diabetics</P1>
-                                            <P1 color='#000000' size={ 12 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>₹504.00</P1>
+                                                <P1 color='#000000' size={ 11 } weight={ 200 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>{ i.categories }</P1>
+                                                <P1 color='#000000' size={ 15 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>{ i.name }</P1>
+                                            <P1 color='#000000' size={ 12 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>Rs.{i.price}</P1>
                                             <RatingAndAddDiv>
                                                 <RatingDiv>
                                                     <P1 color='#000000' size={ 14 } weight={ 700 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>4.{ 6 - (i%6) }</P1>
@@ -155,37 +177,37 @@ const ProductOverview = () => {
                                 }
                                 return (
                                     <ProductCard>
-                                        <OfferAndLike>
-                                            <DiscountContainer>
-                                                <DiscountContent>
-                                                    { (i*10)%60 }% off
-                                                </DiscountContent>
-                                            </DiscountContainer>
-                                            <LikeButton>
-                                                <FavoriteBorderOutlinedIcon/>
-                                            </LikeButton>
-                                        </OfferAndLike>
-                                        <ProductImageContainer>
-                                            <ProductImage src={ ProductIMG } />
-                                        </ProductImageContainer>
-                                        <P1 color='#000000' size={ 11 } weight={ 200 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>Diabetes</P1>
-                                        <P1 color='#000000' size={ 15 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>Befach Rice for Diabetics</P1>
-                                        <P1 color='#000000' size={ 12 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>₹504.00</P1>
-                                        <RatingAndAddDiv>
-                                            <RatingDiv>
-                                                <P1 color='#000000' size={ 14 } weight={ 700 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>4.{ 6 - (i%6) }</P1>
-                                                <BorderStar>
-                                                    <StarBorderIcon />
-                                                </BorderStar>
-                                                <P1 color='#000000' size={ 20 } weight={ 200 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>|</P1>
-                                                <P1 color='#000000' size={ 14 } weight={ 700 } style={ { paddingLeft: 5, paddingBottom: 0, paddingTop: 0 } }>{ 3 * i }K</P1>
-                                            </RatingDiv>
-                                            <AddToCart>
-                                                <AddIcon />
-                                                <P1 color='#000000' size={ 15 } weight={ 700 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>ADD</P1>
-                                            </AddToCart>
-                                        </RatingAndAddDiv>
-                                    </ProductCard>
+                                            <OfferAndLike>
+                                                <DiscountContainer>
+                                                    <DiscountContent>
+                                                        {i.discount}%
+                                                    </DiscountContent>
+                                                </DiscountContainer>
+                                                <LikeButton>
+                                                    <FavoriteBorderOutlinedIcon />
+                                                </LikeButton>
+                                            </OfferAndLike>
+                                            <ProductImageContainer>
+                                                <ProductImage src={ ProductIMG } />
+                                            </ProductImageContainer>
+                                                <P1 color='#000000' size={ 11 } weight={ 200 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>{ i.categories }</P1>
+                                                <P1 color='#000000' size={ 15 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>{ i.name }</P1>
+                                            <P1 color='#000000' size={ 12 } weight={ 700 } style={ { paddingLeft: 25, paddingBottom: 0, paddingTop: 0 } }>Rs.{i.price}</P1>
+                                            <RatingAndAddDiv>
+                                                <RatingDiv>
+                                                    <P1 color='#000000' size={ 14 } weight={ 700 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>4.{ 6 - (i%6) }</P1>
+                                                    <BorderStar>
+                                                        <StarBorderIcon />
+                                                    </BorderStar>
+                                                    <P1 color='#000000' size={ 20 } weight={ 200 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>|</P1>
+                                                    <P1 color='#000000' size={ 14 } weight={ 700 } style={ { paddingLeft: 5, paddingBottom: 0, paddingTop: 0 } }>{ 3 * i }K</P1>
+                                                </RatingDiv>
+                                                <AddToCart>
+                                                    <AddIcon />
+                                                    <P1 color='#000000' size={ 15 } weight={ 700 } style={ { paddingLeft: 0, paddingBottom: 0, paddingTop: 0 } }>ADD</P1>
+                                                </AddToCart>
+                                            </RatingAndAddDiv>
+                                        </ProductCard>
                                 );
                             })}
                         </ProductContainer>
