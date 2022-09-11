@@ -15,7 +15,7 @@ z-index:1 ;
 top:0;
 height:80px ;
 @media (max-width: 900px) {
-    margin: 0.8rem 3rem;
+    /* margin: 0.8rem 3rem; */
   }
 `;
 
@@ -27,7 +27,7 @@ margin: 0.8rem 0;
 display:flex ;
 color: #8BC34A;
 @media (max-width: 900px) {
-    width:100% ;
+    width:80% ;
 }
 `;
 
