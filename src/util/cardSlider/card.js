@@ -2,7 +2,21 @@ import React from "react";
 
 import styled from "styled-components";
 import wishlistcard from "../../assets/wishlistcard.svg";
+import { Submit } from "../../configApi/function";
 const ProductResults = (props) => {
+  const { id, type } = props;
+  const [greenWishlist, setGreenWishlist] = React.useState(false);
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    console.log("id", id);
+    const res = await Submit({ id, type }, "/wishlist", "post");
+    console.log(res);
+    if (res.status === 200 || res.status === 201) {
+      setGreenWishlist(true);
+    } else {
+      setGreenWishlist(false);
+    }
+  };
   return (
     <Container>
       <Card>
@@ -11,7 +25,8 @@ const ProductResults = (props) => {
           <img
             src={wishlistcard}
             alt="wishlist"
-            style={{ width: 35, height: 35, marginTop: '1rem', marginRight: 10, cursor: 'pointer' }}
+            style={{ width: 35, height: 35, marginTop: '1rem', marginRight: 10, cursor: 'pointer', opacity: greenWishlist ? 1 : 0.5 }}
+            onClick={onSubmit}
           />
         </Flex>
         <StyledImage src={props.image} />
