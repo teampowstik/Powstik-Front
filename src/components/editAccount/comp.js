@@ -24,17 +24,20 @@ const Comp = (props) => {
 
   //console.log(data);
   const onSubmit = async (data) => {
-    if (data.email.indexOf("@") == -1) {
-      NotifyDanger("not valid email");
+    // email regex validation
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    if (!emailRegex.test(data.email)) {
+      NotifyDanger("Invalid Email");
       return;
     }
     if (isNaN(data.phone)) {
       NotifyDanger("Phone number is not valid");
       return;
     }
-
-    if (data.phone.length < 10 || data.phone.length > 13) {
-      NotifyDanger("Phone number is not valid");
+    // phone number validation
+    const phoneRegex = /^[0-9]{10}$/;
+    if (!phoneRegex.test(data.phone)) {
+      NotifyDanger("Invalid Phone Number");
       return;
     }
     console.log(data);

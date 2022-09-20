@@ -27,10 +27,11 @@ const Signup = () => {
 
 		//const baseURL = 'https://powstik-back-test.azurewebsites.net';
 		//const url = baseURL + '/user/register';
-		if (data.email.indexOf('@') == -1) {
-			NotifyDanger('not valid email');
-			return;
-		}
+		const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        if (!emailRegex.test(data.email)) {
+          NotifyDanger("Invalid Email");
+          return;
+        }
 		if (data.terms == false) {
 			NotifyDanger('Please accept the terms and conditions');
 			return;
@@ -43,11 +44,13 @@ const Signup = () => {
 			NotifyDanger('Phone number is not valid');
 			return;
 		}
+		const phoneRegex = /^[0-9]{10}$/;
+        if (!phoneRegex.test(data.phone)) {
+          NotifyDanger("Invalid Phone Number");
+          return;
+        }
 
-		if (data.phone.length < 10 || data.phone.length > 13) {
-			NotifyDanger('Phone number is not valid');
-			return;
-		}
+		
 		delete data.confirmPassword;
 		delete data.terms;
 		const data2 = JSON.parse(JSON.stringify(data));
