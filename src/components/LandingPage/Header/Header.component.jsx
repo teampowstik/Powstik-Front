@@ -8,6 +8,7 @@ import {
 	HeaderLinks
 } from './Header.styles';
 import cart from '../../../assets/Vector.svg';
+import wishlist from '../../../assets/wishlist.svg';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
 import BurgerButton from '../../../util/components/BurgerButton/BurgerButton.component';
@@ -38,6 +39,9 @@ const Header = () => {
 					<InputField />
 					<Link to="/cart">
 						<img src={cart} alt="cart" style={{ width: 30, height: 30 }} />
+					</Link>
+					<Link to="/wishlist">
+						<img src={wishlist} alt="wishlist" style={{ width: 30, height: 30 }} />
 					</Link>
 					{/* <Link to="/account-details">
 						<img src={AccountImage} alt="Account" style={{ width: 30, height: 30 }} />

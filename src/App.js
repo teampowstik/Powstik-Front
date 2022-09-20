@@ -25,7 +25,7 @@ import Credits from './components/dummyPages/credits';
 import NoRoutes from './components/noRoutes/noroutes';
 import Header from './components/LandingPage/Header/Header.component';
 import ProductOverview from './components/Products/ProductOverview/ProductOverview.component';
-
+import Checkout from './components/checkout/checkout';
 function App() {
 	return (
 		<Router>
@@ -52,6 +52,7 @@ function App() {
 					<Route path="/refund-policy" element={<RefundPolicy />} />
 					<Route path="/privacy-policy" element={<PrivacyPolicy />} />
 					<Route path="/credits" element={<Credits />} />
+					<Route path="/checkout" element={<Checkout />} />
 					<Route path="*" element={<NoRoutes />} />
 				</Routes>
 			</div>

@@ -1,12 +1,34 @@
-import React from 'react';
+import React from "react";
 
-import styled from 'styled-components';
-
+import styled from "styled-components";
+import wishlistcard from "../../assets/wishlistcard.svg";
+import { Submit } from "../../configApi/function";
 const ProductResults = (props) => {
+  const { id, type } = props;
+  const [greenWishlist, setGreenWishlist] = React.useState(false);
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    console.log("id", id);
+    const res = await Submit({ id, type }, "/wishlist", "post");
+    console.log(res);
+    if (res.status === 200 || res.status === 201) {
+      setGreenWishlist(true);
+    } else {
+      setGreenWishlist(false);
+    }
+  };
   return (
     <Container>
       <Card>
-        <DiscountTag> {props.discount}% OFF</DiscountTag>
+        <Flex>
+          <DiscountTag> {props.discount}% OFF</DiscountTag>
+          <img
+            src={wishlistcard}
+            alt="wishlist"
+            style={{ width: 35, height: 35, marginTop: '1rem', marginRight: 10, cursor: 'pointer', opacity: greenWishlist ? 1 : 0.5 }}
+            onClick={onSubmit}
+          />
+        </Flex>
         <StyledImage src={props.image} />
         <ProductType> {props.subtitle} </ProductType>
         <ProductDesc> {props.description} </ProductDesc>
@@ -14,10 +36,17 @@ const ProductResults = (props) => {
         <StyledBtn> Add to Cart </StyledBtn>
       </Card>
     </Container>
-  )
-}
+  );
+};
 
 export default ProductResults;
+
+const Flex = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+`;
 
 const Container = styled.div`
   width: auto;
@@ -26,8 +55,8 @@ const Container = styled.div`
 
 const Card = styled.div`
   width: fit-content;
-  height: auto; 
-  background-color: #E8F3DB;
+  height: auto;
+  background-color: #e8f3db;
   overflow: auto;
   padding-bottom: 1rem;
 `;
@@ -35,13 +64,13 @@ const Card = styled.div`
 const DiscountTag = styled.div`
   width: fit-content;
   height: 46.11px;
-  background: #8BC34A;
+  background: #8bc34a;
 
   font-style: normal;
   font-weight: 600;
   font-size: 23.954px;
   line-height: 29px;
-  color: #FFFFFF;
+  color: #ffffff;
   clip-path: polygon(80% 0, 100% 50%, 80% 100%, 0 100%, 0 0);
 
   padding-top: 0.5rem;
@@ -74,7 +103,7 @@ const ProductType = styled.div`
 `;
 
 const ProductDesc = styled.div`
-  font-family: 'Merriweather';
+  font-family: "Merriweather";
   font-style: normal;
   font-weight: 700;
   font-size: 17.0549px;
@@ -101,10 +130,10 @@ const ProductPrice = styled.div`
 `;
 
 const StyledBtn = styled.button`
-  background: #FFFFFF;
+  background: #ffffff;
   border-radius: 1px;
   border: 0px;
-  margin-top:5px ;
+  margin-top: 5px;
   font-style: normal;
   font-weight: 600;
   font-size: 17.0549px;
@@ -117,6 +146,6 @@ const StyledBtn = styled.button`
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   margin-right: 1rem;
-  
+
   float: right;
 `;
