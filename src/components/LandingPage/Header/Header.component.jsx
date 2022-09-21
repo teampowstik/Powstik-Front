@@ -37,7 +37,7 @@ const Header = () => {
 					<HeaderLinks to="/service">Services</HeaderLinks>
 					<InputField />
 					<Link to="/cart">
-						<img src={cart} alt="cart" style={{ width: 30, height: 30 }} />
+						<img src={cart} alt="cart" style={{ width: 30, height: 30, }} />
 					</Link>
 					{/* <Link to="/account-details">
 						<img src={AccountImage} alt="Account" style={{ width: 30, height: 30 }} />

@@ -6,7 +6,8 @@ import {
 	PageInfo,
 	PageInfoButton
 } from './DescriptionAndBuy.styles';
-import { H1, P1 } from '../../../util/StyledComponent/premadeComponent';
+import { H1 } from '../../../util/StyledComponent/premadeComponent';
+import { P1 } from '../../../util/StyledComponent/serviceStyle';
 import { Wrapper } from '../../../util/buttons/DownloadButton/DownloadButton.styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { addCart } from '../../../Store/cartSlice/cartslice';

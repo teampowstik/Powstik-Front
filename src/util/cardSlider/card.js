@@ -109,6 +109,8 @@ const StyledBtn = styled.button`
   font-weight: 600;
   font-size: 17.0549px;
   line-height: 21px;
+  border-radius: 3px;
+  scale:1.03;
 
   color: #000000;
 

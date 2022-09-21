@@ -97,9 +97,9 @@ const ProductOverview = (isClient) => {
                             Showing 1-12 of the 34 results
                         </P1>
                         <Filter>
-                            { categoryArray.map( ( i ) => { 
+                            {/* { categoryArray.map( ( i ) => { 
                                 <Accordian Title={ i } onClick={ getProductByCategory(i) } />
-                            } ) }
+                            } ) } */}
                         </Filter>
                         <P1 color='rgba(139, 195, 74, 1)' size={ 18 } weight={ 600 } style={ { paddingLeft: 15, paddingBottom: 10, paddingTop: 10 } }>Discount</P1>
                         <FilterDiv>

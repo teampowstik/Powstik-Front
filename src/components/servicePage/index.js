@@ -3,7 +3,8 @@ import DescriptionAndBuy from '../ProductPage/DescriptionAndBuy/DescriptionAndBu
 import { ProductContainer, Container, BuyContainer, ImageShow, Cards, CardsContainer, DiscountContainer, DiscountContent } from '../ProductPage/product.styles.jsx';
 import { ImageContainer } from './servicePage.styles';
 import image2 from '../../assets/Rectangle 61.svg';
-import { H1, P1 } from '../../util/StyledComponent/premadeComponent';
+import { H1 } from '../../util/StyledComponent/premadeComponent';
+import { P1 } from '../../util/StyledComponent/serviceStyle';
 import ProductCard from "../../util/cardSlider/card";
 import prod1 from '../../assets/Rectangle 63.svg';
 import prod2 from '../../assets/Rectangle 62.svg';

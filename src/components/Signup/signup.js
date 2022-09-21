@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import { NotifySuccess, NotifyDanger, Toastcontainer } from '../../util/notify';
 // import BuyNowButton from '../../../util/ShopNowButton/index';
-import { H1, P1 } from './../../util/StyledComponent/premadeComponent';
+import { H1, P1 } from './../../util/StyledComponent/serviceStyle';
 //images
 import loginImg from '../../assets/login.png';
 import { Input } from './../../util/StyledComponent/input';

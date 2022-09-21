@@ -14,11 +14,13 @@ export const Wrapper = styled(Link)`
 		align-items: center;
 		max-width: 170px;
 		font-size: 20px;
+		border-radius: 3px;
 		color: ${(props) => props.color || 'white'};
         cursor: pointer;
 		text-decoration:none ;
 
 		&:hover{
-			color: ${(props) => props.color || 'white'};
+			color: ${( props ) => props.color || 'white'};
+			scale: 1.03;
 		}
 `;

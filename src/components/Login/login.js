@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
-import { H1, P1 } from './../../util/StyledComponent/premadeComponent';
+import { H1, P1 } from './../../util/StyledComponent/serviceStyle';
 import loginImg from '../../assets/login.png';
 import { Input } from './../../util/StyledComponent/input';
 import LSButton from './../../util/buttons/LoginButton/loginbutton';

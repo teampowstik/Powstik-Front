@@ -11,7 +11,7 @@ export const Background = styled.div`
 export const SuperCard = styled.div`
     display:flex;
     padding:10px;
-    background-color: white;
+    background-color: #ffffff;
     border-radius: 30px;
     height:max-content;
     width:94vw;

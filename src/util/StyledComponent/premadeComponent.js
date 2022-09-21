@@ -9,6 +9,10 @@ export const H1 = styled.p`
 	margin: 0px !important;
 	/* or 128% */
 	/* primary */
+	cursor: pointer;
+	&:hover{
+        color: #558124;
+    };
 
 	color: ${(props) => props.color || '#111111'};
 
@@ -25,6 +29,12 @@ export const P1 = styled.p`
 
 	line-height: ${(props) => (props.lineHeight ? props.lineHeight + 'px' : '26px')};
 	/* or 162% */
+	cursor: pointer;
+	&:hover{
+        font-weight: 700;
+		background-color: #f8f8f8;
+		border-radius: 5px;
+    };
 
 	/* primary */
 	margin: 0px !important;
