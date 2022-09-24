@@ -17,14 +17,17 @@ import { NotifyDanger, NotifySuccess, Toastcontainer } from '../../util/notify';
 import { Submit } from '../../configApi/function';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser } from '../../Store/userSlice/userSlice';
+import {firebase} from '../../Firebase/firebase';
+
 const Login = () => {
 	const { register, handleSubmit, watch, formState: { errors } } = useForm();
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const onSubmit = async (data) => {
 		//console.log(data);
-		if (data.email.indexOf('@') == -1) {
-			NotifyDanger('not valid email');
+		const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+		if (!emailRegex.test(data.email)) {
+			NotifyDanger("Invalid Email");
 			return;
 		}
 		const res = await Submit(data, '/login', 'post');
@@ -44,6 +47,16 @@ const Login = () => {
 			console.log('login failed');
 		}
 	};
+
+	const signInWithFirebase = () => {
+		const google_provider = new firebase.auth.GoogleAuthProvider();
+		firebase.auth().signInWithPopup( google_provider ).then( ( result ) => {
+			console.log(result)
+		} ).catch( ( error ) => {
+			console.log(error);
+		} )
+		
+	}
 
 	return (
 		<React.Fragment>
@@ -91,7 +104,10 @@ const Login = () => {
 										<hr className="hrr" />
 									</div>
 									<div className="gdiv">
-										<GoognleButton />
+										<div onClick={signInWithFirebase}>
+										<GoognleButton/>
+										</div>
+										
 										<span className="registerlink">
 											Dont have account{' '}
 											<Link to="/register" className="link">
